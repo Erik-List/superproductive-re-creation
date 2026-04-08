@@ -1,0 +1,28 @@
+{
+  "workflow_id": "actuarial_specialist",
+  "engagement": "ey",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "15-person team producing ~1,146 total hours is generous for a self-described 'minimal scope' DC-only plan review. 4 actuarial specialists at 0.42 allocation (538 hours of specialist time) is notable when the scope explicitly states no defined benefit pensions and no material OPEB — DC plans do not require actuarial valuations. However, the multinational dimension (26 countries, ~166K employees) provides some justification: non-US statutory retirement obligations (e.g., gratuity in India, severance in Japan/Korea, termination indemnities in France/Italy) may require jurisdiction-specific specialist review even if individually immaterial. The tension between 'minimal scope' in the description and the staffing level is the primary flag. For comparison, this workflow's specialist hours (538) are disproportionate relative to valuation_specialist (10 specialists × 0.55 × 10 weeks × 40 = 2,200 hours for far more complex fair value work). Roles themselves are appropriate — Senior Manager oversight, Managers coordinating, Seniors/Staff executing, Specialists providing actuarial expertise, GDS handling documentation."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Individual allocation values are within plausible ranges. Senior Manager at 0.15 is appropriate for oversight of a limited-scope workstream. Manager at 0.2 and Senior at 0.2 reflect part-time involvement consistent with a secondary assignment. Staff at 0.15 is low but defensible for support work. Specialist at 0.42 reflects moderate dedication. GDS at 0.15 is reasonable for documentation support. No single allocation is implausible in isolation. Hour calculations: SM 48h, Mgr 128h, Sr 192h, Staff 96h, Specialist 538h, GDS 144h = 1,146 total hours. This is on the high end for DC-only scope but not clearly implausible given multinational complexity."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "The description is substantially accurate. Apple's 10-K filings confirm the company primarily sponsors defined contribution retirement plans (401(k) with employer match in the US, equivalent plans in other jurisdictions). Apple does not report material defined benefit pension obligations or OPEB in its financial statements. The characterization as 'minimal scope' is appropriate for the actuarial workstream. The mention of 'non-US retirement plan obligations in key jurisdictions' correctly acknowledges that some countries mandate statutory retirement-related obligations that may require specialist review even absent a traditional DB plan. No PCAOB standard paragraph numbers are cited in the description, so there are no citation accuracy issues to verify."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The single requirement_id 'specialist_evaluation' is correct and maps to AS 1210 (Using the Work of a Specialist). This is the primary PCAOB requirement governing the engagement team's use of actuarial specialists. No other requirement_ids are clearly missing — substantive testing of retirement plan balances would be covered by the substantive_procedures workflow elsewhere in the engagement model, not in this specialist-focused workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 12-19 (8 weeks) is reasonable. Apple's FY25 ends September 27, 2025. Week 12 falls approximately in early December 2025 and week 19 in late January 2026, placing this work squarely in the year-end fieldwork period. This timing allows the scoping output (input dependency) to be completed first and provides results before the audit opinion deadline. The 8-week duration is adequate for reviewing DC plan compliance and non-US retirement obligations across key jurisdictions. The workflow properly starts after scoping and concludes before the 10-K filing deadline (typically late October for the annual report, but the audit fieldwork extends into Q1 of the following calendar year). No sequencing conflicts with sibling workflows."
+    }
+  },
+  "corrections": []
+}

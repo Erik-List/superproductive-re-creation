@@ -1,0 +1,36 @@
+{
+  "workflow_id": "walkthroughs",
+  "engagement": "ey",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate for walkthrough execution across multiple transaction cycles at a $416B revenue client. 18 Seniors and 15 Staff provide sufficient capacity for parallel walkthrough execution across retail, App Store/services, procurement, treasury, and financial close cycles. 30 GDS/Offshore for documentation and workpaper support is consistent with Big 4 leverage models. 8 Managers to coordinate across process areas and locations is reasonable. Engagement Partner at minimal involvement (0.1) is appropriate for oversight-only role during walkthroughs."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Allocation values are within expected ranges. EP at 0.1 is appropriate governance-level involvement. Senior Manager at 0.5 reflects active direction of walkthrough teams. Manager at 0.65, Senior at 0.8, and Staff at 0.75 reflect heavy execution involvement consistent with walkthrough work. GDS/Offshore at 0.65 is reasonable for documentation support. Total hours: ~6,234 over 3 weeks (1×0.1 + 3×0.5 + 8×0.65 + 18×0.8 + 15×0.75 + 30×0.65) × 3 × 40. This is plausible for walkthroughs spanning five major transaction cycles at a company of Apple's complexity."
+    },
+    "description": {
+      "verdict": "FLAG",
+      "detail": "AS 2201.34 correctly references the PCAOB walkthrough requirement ('the auditor should perform at least one walkthrough for each major class of transactions'). The exclusion of factory walkthroughs due to contract manufacturing is factually appropriate for Apple. The five transaction cycles listed (retail store revenue, App Store/services revenue, procurement, treasury, financial close) appropriately cover Apple's major classes of transactions. However, the phrase 'Retail walkthroughs at sample of 535 stores' is ambiguous and potentially misleading — it reads as though 535 is the sample size (i.e., all stores), when in practice the auditor would visit a representative sample FROM the population of 535 stores. Under AS 2201, walkthroughs at perhaps 15–30 representative retail locations would be typical even for an engagement of this scale. If the intent is a census of all 535 stores, that would be disproportionate to the walkthrough objective."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The requirement_id 'walkthrough_per_process' correctly maps to this workflow. AS 2201.34 requires at least one walkthrough per major class of transactions, which is the core objective of this workflow. No additional requirement_ids are necessary — while walkthroughs inform control identification and risk linkage, those requirements are properly owned by their respective workflows (preliminary_control_id and audit_strategy)."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 7–10 (3 weeks duration) is well-sequenced. It begins after preliminary_control_id (weeks 5–7), whose output PreliminaryControlList is this workflow's input. It appropriately overlaps with and feeds into key_control_finalization (weeks 9.5–11) and design_effectiveness (weeks 9.5–13). For Apple's September 27 FY-end, these weeks correspond to approximately late July through mid-August, which is appropriate interim timing for walkthrough procedures. Three weeks is sufficient for executing walkthroughs across five major transaction cycles with the staffing provided."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Walk through key transaction cycles per AS 2201.34. No factory walkthroughs (contract manufacturing). Includes: retail store revenue cycle at representative locations, App Store/services revenue, procurement, treasury, financial close. Retail walkthroughs at sample of 535 stores.",
+      "proposed": "Walk through key transaction cycles per AS 2201.34. No factory walkthroughs (contract manufacturing). Includes: retail store revenue cycle at representative locations, App Store/services revenue, procurement, treasury, financial close. Retail walkthroughs at a representative sample from the population of 535 stores.",
+      "reason": "The original phrasing 'sample of 535 stores' is ambiguous — it could be read as the sample size being 535 (a census), which would be inconsistent with standard walkthrough practice under AS 2201. Walkthroughs require visiting representative locations, not all locations. Clarifying that 535 is the population, not the sample size, aligns the description with the stated 'representative locations' approach earlier in the same sentence."
+    }
+  ]
+}

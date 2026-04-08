@@ -1,0 +1,28 @@
+{
+  "workflow_id": "operating_effectiveness_testing",
+  "engagement": "superaudit",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate. Senior Auditors (4) serve as primary testers, Walkthrough Specialists (3) bring process knowledge from earlier walkthroughs, Component Seniors (4) handle component-level testing, and Engagement Manager provides review oversight. In a Big 4 setting for a $416B client, this workflow would typically involve 8-12 staff/seniors, 2-3 managers, and a partner at ~0.10 allocation, totaling 2,500-4,000 hours. The Superaudit model at ~1,050 allocated hours is credible for an AI-first approach where AI handles full-population testing of software controls and statistical sampling, with humans focused on exception review and judgment-intensive manual control inspection. No partner is allocated here, but the Engagement Manager at 0.25 provides sufficient review authority for testing execution, and partner-level review occurs in the downstream deficiency_evaluation workflow."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Allocation values are individually plausible: Senior Auditors at 0.5 reflects split attention with other concurrent work, Walkthrough Specialists at 0.3 is appropriate for a supporting role, Component Seniors at 0.15 reflects oversight rather than execution, and Engagement Manager at 0.25 reflects review duties. However, calculated total hours (4×0.5×7×40 + 3×0.3×7×40 + 4×0.15×7×40 + 1×0.25×7×40 = 560+252+168+70 = 1,050h) exceed the description's claimed 900h by ~17%. This is within tolerance since allocations represent capacity ceilings, not exact utilization, but worth noting."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "The description is technically sound. AS 2201 is the correct PCAOB standard for ICFR audits including operating effectiveness testing. Sample sizes align with AS 2201.45-46 guidance: daily controls 25-40 (standard minimum 25 for 250+ occurrences), weekly 5-15 (52 occurrences), monthly 2-4 (12 occurrences). The reference to 'AS 2201 frequency' is a general but accurate citation. Full-population testing of software/automated controls is consistent with AS 2201.B14-B15 and current practice. The ~500K three-way matches in AP is plausible for Apple's $416B revenue scale. The 80-120 key controls across all entities is reasonable for Apple's complexity. Internal hour breakdowns are self-consistent: software controls 30-40 at 2-4h = ~100h, human-software-assisted 40-50 at 4-6h = ~300h, manual 15-25 at 8-12h = ~300h, totaling 700h central + 200h component = 900h."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The requirement_id 'operating_effectiveness' correctly maps to this workflow. This workflow is specifically and exclusively focused on testing the operating effectiveness of controls. Related requirements like 'control_identification_and_testing' are covered by upstream workflows (control_identification), and 'deficiency_severity_evaluation' is covered by the downstream deficiency_evaluation workflow. No missing requirements."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "7-week duration (weeks 9-15) is realistic for testing 80-120 controls with AI-assisted full-population testing. The overlap with walkthroughs (weeks 7-11) and ITGC testing (weeks 5-10) is acceptable: OE testing can begin with controls whose walkthroughs and ITGC are already complete, and progressively pick up remaining controls. For Apple's September 27 FY-end, assuming engagement start in early May, weeks 9-15 falls roughly in July-August, which is appropriate for interim/roll-forward testing of operating effectiveness. The workflow feeds cleanly into period_end_controls (weeks 14-18) and deficiency_evaluation (weeks 16-18). No sequencing issues."
+    }
+  },
+  "corrections": []
+}

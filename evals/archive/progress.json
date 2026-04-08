@@ -1,0 +1,10 @@
+{
+  "started_at": "2026-03-22T14:51:58.263Z",
+  "completed": [
+    "integration/ey",
+    "integration/superaudit",
+    "integration/all"
+  ],
+  "failed": [],
+  "in_progress": []
+}

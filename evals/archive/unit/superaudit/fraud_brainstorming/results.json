@@ -1,0 +1,43 @@
+{
+  "workflow_id": "fraud_brainstorming",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "7-person composition (EP, EQR, Engagement Manager, 2 Senior Auditors, Component Partner, Tax Specialist) is appropriate for AS 2110 fraud brainstorming on a $416B engagement. Including the Ireland component partner is well-justified given Apple's significant Irish operations. All role names are valid. In an AI-first model the humans still must conduct the brainstorming discussion themselves—professional judgment and skepticism cannot be delegated to AI—so staffing this entirely with human roles is correct."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Each role at 0.05 allocation over 1 week (weeks 5–6) yields 0.05 × 1 × 40 = 2 hours per person, which exactly matches the described '2h session.' Total human investment is 14 hours (7 people × 2h). For a structured brainstorming session—even on a $416B client—2 hours of meeting time per participant is realistic. Partners at 0.05 is within the governance range. No implausible hours."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2110.49–.53 correctly references the 'Discussion Among the Engagement Team' paragraphs covering the required fraud brainstorming session. The revenue recognition fraud presumption (AS 2401.68) and management override presumption (AS 2401.66–.67) are both accurately described as required conclusions. 'At minimum Ireland partner' is reasonable given Apple's material Irish subsidiaries. 'AI prepares briefing package' is consistent with the AI-first model (note: no AI cost is shown in the workflow JSON, but this is a minor omission outside the evaluated fields)."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "fraud_risk_assessment and revenue_recognition_fraud_presumption are correct and essential. However, the description explicitly states 'management override always presumed' as a key conclusion of the brainstorming session. The management_override_evaluation requirement should be mapped here since AS 2401.66–.67 requires that management override of controls be treated as a fraud risk in every audit, and the brainstorming session is where this presumption is formally acknowledged and discussed."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 5–6 (1 week) is appropriate for scheduling and conducting a 2-hour brainstorming session with 7 senior participants. The input dependency on CalibratedScopingOutput from predecessor_calibration (weeks 4–6) is satisfied since the brainstorming starts at week 5 as calibration is completing. Output feeds partner_scoping_lock at weeks 6–7, which is correct sequencing—fraud risks must be identified before the scoping is locked. Timing aligns well with a planning-phase activity for Apple's late-September fiscal year-end."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "fraud_risk_assessment",
+        "revenue_recognition_fraud_presumption"
+      ],
+      "proposed": [
+        "fraud_risk_assessment",
+        "revenue_recognition_fraud_presumption",
+        "management_override_evaluation"
+      ],
+      "reason": "The description explicitly states 'management override always presumed' as a required conclusion of the brainstorming session, per AS 2401.66–.67. This is a mandatory presumption in every audit and the brainstorming session is the primary workflow where it is formally acknowledged. management_override_evaluation is a valid requirement_id and should be mapped to this workflow."
+    }
+  ]
+}

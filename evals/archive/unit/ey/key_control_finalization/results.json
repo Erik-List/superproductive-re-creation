@@ -1,0 +1,36 @@
+{
+  "workflow_id": "key_control_finalization",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate. Senior Managers (3) provide oversight, Managers (8) and Seniors (8) handle substantive review of walkthrough findings against the control matrix, Staff (5) assist, and GDS/Offshore (40) handle high-volume documentation updates across 600-1,200 controls. No partner is assigned, which is acceptable for a finalization/rationalization step that does not require engagement-level sign-off. Total ~2,586 hours over 1.5 weeks is reasonable for reviewing and finalizing 600-1,200 controls with walkthrough-informed revisions."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations are plausible. Senior Managers at 0.6 reflects active review work. Managers at 0.7 and Seniors at 0.65 reflect substantive analytical work revising the control matrix. Staff at 0.5 is reasonable given supporting role and concurrent responsibilities. GDS at 0.7 is appropriate for high-volume but structured documentation and control matrix update work. No implausible hour totals: GDS produces 1,680 hours (40×0.7×1.5×40), which is ~1.4-2.8 hours per control — reasonable for documentation updates."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The PCAOB citation AS 2201.37-39 is imprecise. Paragraphs 37-38 address performing walkthroughs (understanding likely sources of misstatement), not finalizing or selecting key controls. Paragraph 39 begins the section on 'Selecting Controls to Test,' and the full relevant guidance for key control selection runs through paragraphs 39-42. Since this workflow is about finalizing the key control list (not performing walkthroughs), the citation should reference AS 2201.39-42. The 600-1,200 key control range is plausible for Apple's scale and complexity, though it sits at the high end of industry benchmarks (~536 average for $5B+ companies). The claim about Apple's higher automation rate and more IT-dependent controls is reasonable for a technology company."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The requirement_id 'control_identification_and_testing' is correct and sufficient. This workflow is fundamentally about identifying and finalizing the key controls to be tested, which maps directly to that requirement. No additional requirement_ids are needed — walkthrough_per_process belongs to the upstream walkthroughs workflow, and design_effectiveness belongs to the downstream testing workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Duration of 1.5 weeks (weeks 9.5-11) is tight but achievable given the large team (64 people, ~2,586 hours). The overlap with walkthroughs (weeks 7-10) is appropriate — finalization can begin as walkthrough results become available for completed processes. The concurrent start with design_effectiveness (weeks 9.5-13) reflects a practical rolling handoff where early-finalized controls feed immediately into design testing. Timing aligns with Apple's September 27 FY-end: week 9.5 falls in approximately early January, which is appropriate for interim fieldwork phases."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Revise control matrix based on walkthrough findings. Finalize ~600-1,200 key controls per AS 2201.37-39. Apple's higher automation rate means more software/IT-dependent controls and fewer manual controls than industrial peers.",
+      "proposed": "Revise control matrix based on walkthrough findings. Finalize ~600-1,200 key controls per AS 2201.39-42. Apple's higher automation rate means more software/IT-dependent controls and fewer manual controls than industrial peers.",
+      "reason": "AS 2201 paragraphs 37-38 address performing walkthroughs, not selecting or finalizing key controls. Paragraph 39 begins the 'Selecting Controls to Test' section, and paragraphs 39-42 collectively cover the criteria for identifying controls important to the auditor's conclusion about ICFR. Since this workflow is about finalizing the key control list based on walkthrough findings (not performing walkthroughs), the citation should be AS 2201.39-42."
+    }
+  ]
+}

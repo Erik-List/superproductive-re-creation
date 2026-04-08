@@ -1,0 +1,28 @@
+{
+  "workflow_id": "entity_level_controls",
+  "engagement": "superaudit",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner and Engagement Manager are the correct seniority levels for entity-level controls evaluation. This is governance-heavy, judgment-intensive work centered on COSO framework assessment and management interviews—appropriately staffed at senior levels. In an AI-first model, the AI handles document parsing and structured analysis of board minutes, audit committee materials, and governance documents, while humans provide the professional judgment on control environment quality and conduct management interviews. A Big 4 firm would typically add 1-2 seniors or staff for documentation gathering and preliminary analysis (~40-80 hours), but the AI substitution at $30 is reasonable for that displacement."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner: 1 × 0.15 × 3 weeks × 40 = 18 hours. Description states 12h governance evaluation + 8h management interviews = 20h. The 18h computed allocation is slightly below the described 20h but within acceptable tolerance. Manager: 1 × 0.10 × 3 weeks × 40 = 12 hours, reasonable for oversight, review of AI outputs, and coordination. Total 30 human hours for entity-level controls on a $416B client with AI-assisted document analysis is plausible in the Superaudit model."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "The five COSO components are correctly enumerated: control environment, risk assessment, information and communication, monitoring activities, and control activities. The specific sub-elements listed (code of conduct, whistleblower programs, board composition, ERM process, IT governance, internal audit function, authorization policies, segregation of duties) are appropriate for a large public company entity-level controls evaluation. Source documents (board minutes, audit committee materials, code of conduct, internal audit charter, org charts) are standard inputs. No specific PCAOB AS paragraph numbers are cited, so none to verify. No Apple-specific factual claims appear in the description beyond what is provided in context. The description accurately matches the workflow's scope."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The requirement_id 'entity_level_controls' is valid and is the primary PCAOB requirement this workflow satisfies. Entity-level controls evaluation under AS 2201.22-27 is a distinct audit requirement. No additional requirement_ids are clearly missing—related requirements like control_identification_and_testing, design_effectiveness, and audit_committee_communication are appropriately handled by other workflows in the stream."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 5-7 (3 weeks) is appropriate timing for entity-level controls. This work is correctly positioned early in the control audit stream, as entity-level control conclusions inform the nature and extent of testing in subsequent workflows. The input dependency on ControlMatrix from control_identification (weeks 4-6) has a one-week overlap—entity-level controls starts week 5 while control_identification finishes week 6—but this is normal audit practice where work can begin with GovernanceDocuments and incorporate the ControlMatrix as it becomes available. The EntityLevelControlConclusion output is available by week 7, well before downstream consumers need it. Three weeks is sufficient duration given AI-assisted document analysis."
+    }
+  },
+  "corrections": []
+}

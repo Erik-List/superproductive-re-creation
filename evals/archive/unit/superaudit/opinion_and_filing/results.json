@@ -1,0 +1,63 @@
+{
+  "workflow_id": "opinion_and_filing",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate. Engagement Partner for opinion signing, Engagement Manager for coordination, AI Engineer for XBRL/EDGAR technical work, Documentation Lead for formatted reports, Senior Auditor for support. In a Big 4 context a $416B client would have more staff, but in an AI-first model where AI drafts the opinion and handles XBRL tagging, this lean team focused on review and sign-off is reasonable."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Total team hours from allocation: EP 1×0.75×0.5wk×40=15h, EM 1×0.5×0.5×40=10h, AI Eng 1×0.5×0.5×40=10h, Doc Lead 1×0.5×0.5×40=10h, Sr Auditor 1×0.25×0.5×40=5h. Total=50h. The description labels 50h of tasks as 'Partner:' work (20h+10h+10h+10h), but partner allocation only yields 15h. The 50h figure matches total team hours, suggesting the description mislabels team tasks as partner tasks. The EP allocation of 0.75 is high relative to typical partner governance (0.05-0.25) but defensible given opinion signing is the most partner-intensive workflow. The 0.5-week duration makes the window very tight for 50h of human review work."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2801 reference for subsequent events is correct. Dual opinion structure is correct. LAF 60-day deadline is correct. CAMs (revenue recognition, legal contingencies, income taxes) are plausible for Apple. However, the description labels all 50h of human tasks under 'Partner:' when these are distributed across the full team. Additionally, ICFR opinion types are listed as 'unmodified/adverse' but PCAOB AS 2201.96 also permits a disclaimer of opinion for scope limitations, making it three types not two."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description explicitly references performing 'final subsequent events check through opinion date per AS 2801' but subsequent_events is not in the requirement_ids. This is a clear omission. The remaining requirements (fs_opinion_format, integrated_icfr_opinion, cam_disclosure, tenure_disclosure, ten_k_filing_deadline) are all appropriate and complete for the workflow scope."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Week 22-22.5 of a 23-week engagement places this correctly near the end. Input (AuditCommitteePresentation from weeks 21-22) feeds directly in. The 0.5-week duration is tight but defensible in an AI-first model where AI handles drafting and XBRL tagging, leaving humans focused on review. Sequencing into documentation_archival (weeks 22.5-23) is logical. The 60-day LAF deadline from September 27 (November 26) aligns with the engagement timeline."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "fs_opinion_format",
+        "integrated_icfr_opinion",
+        "cam_disclosure",
+        "tenure_disclosure",
+        "ten_k_filing_deadline"
+      ],
+      "proposed": [
+        "fs_opinion_format",
+        "integrated_icfr_opinion",
+        "cam_disclosure",
+        "tenure_disclosure",
+        "ten_k_filing_deadline",
+        "subsequent_events"
+      ],
+      "reason": "The description explicitly states 'Performs final subsequent events check through opinion date per AS 2801' but subsequent_events is missing from requirement_ids. AS 2801 procedures are a core part of this workflow's described scope."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Partner: review and signature (20h), EDGAR filing coordination (10h), subsequent events sign-off (10h), quality check (10h).",
+      "proposed": "Human team: partner opinion review and signature (20h), EDGAR filing coordination (10h), subsequent events sign-off (10h), quality check (10h).",
+      "reason": "The 50h total matches aggregate team hours (EP 15h + EM 10h + AI Eng 10h + Doc Lead 10h + Sr Auditor 5h = 50h), not partner-only hours (15h). Labeling all tasks as 'Partner:' is misleading; these are distributed across the full human team."
+    },
+    {
+      "confidence": "LOW",
+      "field": "description",
+      "current": "(2) ICFR opinion (unmodified/adverse)",
+      "proposed": "(2) ICFR opinion (unmodified/adverse/disclaimer)",
+      "reason": "Per PCAOB AS 2201.96, a disclaimer of opinion on ICFR is permitted when scope limitations prevent the auditor from forming a conclusion. While unlikely for Apple, the description should be technically complete in listing possible opinion types."
+    }
+  ]
+}

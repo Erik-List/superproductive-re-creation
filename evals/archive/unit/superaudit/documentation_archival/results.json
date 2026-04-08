@@ -1,0 +1,36 @@
+{
+  "workflow_id": "documentation_archival",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are well-chosen. Documentation Lead at full allocation drives execution, Senior Auditors handle cleanup and verification, AI Engineer manages automated indexing/cross-referencing tools, Component Senior integrates component workpapers, and EP/EM provide review and sign-off. For a Big 4 on Apple, archival might involve more junior staff for physical/manual file assembly, but the AI-first model automates much of that work, making the lean team defensible. Total ~90 human hours for archival on a $416B engagement is tight but plausible with AI handling indexing and cross-reference verification."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Partner at 0.75 allocation exceeds the typical partner governance range (0.05-0.25). However, the workflow is only 0.5 weeks, yielding 15 absolute hours—a reasonable amount of partner time for final review and sign-off of the complete audit file on a $416B engagement. The high allocation rate is a mechanical artifact of the short duration rather than a substantive concern. All other allocations are plausible: Doc Lead at 1.0 (20h, full execution), Senior Auditors at 0.75 each (30h combined for cleanup), AI Engineer at 0.5 (10h), EM at 0.375 (7.5h), Component Senior at 0.375 (7.5h)."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 1215 (Audit Documentation) is the correct PCAOB standard for this workflow. The 14-day assembly deadline per AS 1215.16 is accurate. The 7-year retention requirement attributed to SOX Section 802 is substantively correct (SOX 802 establishes criminal penalties for destruction; the 7-year period derives from SEC Rule 2-06 implementing SOX 802). However, the parenthetical hour breakdown is inconsistent with the allocation math. Computed hours: Partner review ~15h (not 30h), team cleanup/verification ~65h (not 40h), AI-assisted archival execution ~10h (not 20h). The total of 90h is correct but the category breakdown is wrong."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "documentation_completion and documentation_retention are the two directly applicable requirement_ids. documentation_completion maps to AS 1215.15-16 (completing assembly of the final engagement file). documentation_retention maps to AS 1215.14 and SOX 802/SEC Rule 2-06 (7-year retention). No other requirement_ids from the valid registry are missing—this workflow is post-opinion archival, not substantive audit work."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 22.5-23 (0.5 weeks) follows opinion_and_filing (weeks 22-22.5) correctly. Archival must begin after the report release date per AS 1215.16, and the input dependency on AuditOpinion enforces this sequencing. The 0.5-week duration is tight but viable given AI-automated indexing and cross-reference checking. The workflow runs concurrently with the tail end of statutory_reporting (weeks 20-23), which is appropriate as component/statutory workpapers feed into the consolidated archive."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Partner review (30h), team cleanup (40h), archival execution (20h).",
+      "proposed": "Partner review (15h), team cleanup (65h), AI-assisted archival execution (10h).",
+      "reason": "The allocation math yields: EP 1×0.75×0.5wk×40h=15h (not 30h); Doc Lead 20h + Senior Auditors 30h + EM 7.5h + Component Senior 7.5h = 65h (not 40h); AI Engineer 1×0.5×0.5wk×40h=10h (not 20h). Total remains 90h but the category breakdown must match the staffing model."
+    }
+  ]
+}

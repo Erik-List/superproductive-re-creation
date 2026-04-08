@@ -1,0 +1,51 @@
+{
+  "workflow_id": "itgc_testing",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description explicitly allocates 80h to partner/manager review, yet no Engagement Manager or Engagement Partner is staffed on this workflow. Per AS 1201.03-.06, IT audit specialists are regular engagement team members requiring standard supervision — their work cannot be released without manager/partner sign-off. For a $416B client with 30-60 systems, Big 4 would staff 3-5 IT audit specialists plus an IT audit manager; the AI-first model reasonably compresses execution staff, but the oversight gap is a standards violation. The IT Audit Specialist (1×0.5) and Walkthrough Specialist (2×0.5) roles are appropriate for execution work."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "IT Audit Specialist at 0.5 over 6 weeks = 120h covers interviews (100h) and config review leadership. Walkthrough Specialists at 2×0.5 = 240h covers system walkthroughs, config review (60h), and component ITGC oversight (60h). Total 360h available vs 300h described is reasonable with buffer for coordination. Allocations are within expected ranges for execution roles."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Description accurately reflects ITGC testing scope: access management, change management, and operations are the three standard ITGC domains. The substantive-only fallback for ineffective ITGCs is correct per AS 2201.B6 and AS 2301.33-.36. No specific AS paragraph numbers are cited, so no citation errors. The 30-60 system count is plausible for Apple's ITGC audit scope (financially significant systems after scoping filters and SOC 1 report offloading). Human hour breakdown (100h+60h+80h+60h=300h) is internally consistent."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Currently mapped only to operating_effectiveness. ITGC testing per AS 2201.42-.47 requires evaluating both design effectiveness (whether controls are suitably designed) and operating effectiveness (whether they function as designed). These are sequential requirements — operating effectiveness cannot be concluded without first confirming design effectiveness. The workflow description confirms this: config analysis evaluates design while population testing evaluates operations. Missing design_effectiveness."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 5-10 (6 weeks) is reasonable for AI-assisted ITGC testing of 30-60 systems. Starts concurrently with control_identification (weeks 4-6), which produces the ControlMatrix input — partial overlap is manageable as systems can be tested as identified. For Apple's September 27 FY-end, this falls in the interim testing period (approximately June-July), which is standard timing for ITGC work. Completes before operating_effectiveness_testing (weeks 9-15), allowing ITGC results to inform the control reliance strategy."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team.Engagement Manager",
+      "current": null,
+      "proposed": {
+        "count": 1,
+        "allocation": 0.15
+      },
+      "reason": "Description explicitly requires 80h of partner/manager review, but no manager is staffed. AS 1201.03-.06 mandates partner/manager supervision of all engagement team members including IT specialists. An Engagement Manager at 0.15 allocation over 6 weeks (36h) provides oversight and review capacity. The remaining partner/manager review hours are covered by the Engagement Partner's cross-workflow oversight in sibling workflows (e.g., entity_level_controls, deficiency_evaluation)."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "operating_effectiveness"
+      ],
+      "proposed": [
+        "operating_effectiveness",
+        "design_effectiveness"
+      ],
+      "reason": "AS 2201.42-.43 requires evaluating design effectiveness of controls before testing operating effectiveness (AS 2201.44-.47). The workflow description confirms both are performed: config analysis addresses design while population testing addresses operations. Design effectiveness evaluation is a prerequisite to operating effectiveness conclusions per PCAOB standards."
+    }
+  ]
+}

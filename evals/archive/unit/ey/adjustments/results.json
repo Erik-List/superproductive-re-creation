@@ -1,0 +1,28 @@
+{
+  "workflow_id": "adjustments",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate for adjustment accumulation. EP provides governance, SMs lead accumulation analysis across locations, Managers/Seniors evaluate individual misstatements, Staff assist with compilation, and GDS/Offshore (25) handle data gathering from component auditors across 26 countries. Total 42-person team producing ~2,080 hours over 2 weeks is plausible for a $416B multi-location engagement. No EQR Partner needed on this specific workflow."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "EP at 0.15 is appropriate for reviewing accumulated misstatements and signing off on summary (12 hrs). SM at 0.55 reflects active leadership of accumulation process (132 hrs). Manager at 0.6 (240 hrs) and Senior at 0.5 (200 hrs) reflect evaluation and classification work. Staff at 0.4 (96 hrs) reflects limited compilation support. GDS at 0.7 (1,400 hrs) is the bulk of execution — compiling misstatement data from all locations, formatting schedules, and reconciling component auditor findings. GDS represents 67% of total hours, consistent with data-intensive compilation work delegated offshore. All values within expected ranges."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2810 (Evaluating Audit Results) is the correct PCAOB standard for misstatement accumulation — it requires the auditor to accumulate misstatements identified during the audit other than those that are clearly trivial. Apple-specific claims are factual: Epic Games litigation (ongoing since 2020), EU DMA/antitrust proceedings (European Commission), and DOJ antitrust suit (filed March 2024) are all real legal contingencies requiring judgment-heavy estimation for contingent liabilities under ASC 450. Description accurately reflects the workflow's scope of compiling misstatements across all locations."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "misstatement_accumulation maps directly to AS 2810.12-.18 requirements for accumulating and evaluating misstatements. audit_committee_communication maps to AS 1301 requiring communication of accumulated misstatements (both corrected and uncorrected) to the audit committee. These two requirements are the core obligations for this workflow. Other requirements like final_analytical_review and subsequent_events are handled by separate workflows in the engagement model."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 19.5-21.5 (2-week duration) is appropriate. Adjustment accumulation logically follows near-completion of substantive testing (final_substantive ends week 20.5) and fraud assessment (ends week 20.5). Starting at week 19.5 allows accumulation to begin as late-stage testing results flow in, with the final week (20.5-21.5) for completing accumulation after all inputs are available. For Apple's September 27 FY-end, this timing aligns with late October/early November work leading up to the 10-K filing (typically filed late October). Two weeks is sufficient for accumulation given that misstatements are identified and documented during the testing workflows themselves."
+    }
+  },
+  "corrections": []
+}

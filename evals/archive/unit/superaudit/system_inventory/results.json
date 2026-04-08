@@ -1,0 +1,71 @@
+{
+  "workflow_id": "system_inventory",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "IT Audit Specialist at 1×0.05 is reasonable for AI-first specialist review of the generated inventory. However, the description explicitly quantifies 'Manager reviews (2h), partner approves (2h)' yet neither Engagement Manager nor Engagement Partner appears in the team composition. Either those 4 hours are absorbed by their allocations on sibling workflows (plausible but undocumented) or they should be staffed here. In a Big 4 model, system inventory for a client of Apple's complexity would typically involve 1 IT audit manager (0.3-0.5) plus 1-2 IT audit staff (0.5-1.0) over 2-4 weeks, totaling 80-160 hours. The Superaudit 4-hour specialist review is defensible only if the AI output is highly reliable and the manager/partner review is accounted for elsewhere."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "IT Audit Specialist: 1 × 0.05 × 2 weeks × 40 = 4 hours. For reviewing and validating an AI-generated system inventory (not building it from scratch), 4 hours of specialist time is tight but plausible. The AI cost of $15 is reasonable for parsing IT disclosures and system documentation to produce structured JSON output."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "One factual error: 'iTunes Connect' was renamed to 'App Store Connect' in June 2018. All other Apple-specific claims are accurate (535 stores, 166K employees, SAP S/4HANA usage, Foxconn supply chain). The categorization scheme (ITGC-in-scope, data-extraction-in-scope, out-of-scope) is appropriate. No PCAOB AS paragraph numbers are cited, so none to verify. The described scope matches the workflow's purpose as a gating input for ITGC scoping."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "No requirement_ids are mapped to this workflow. System inventory is foundational to understanding the IT environment and directly supports risk assessment, significant account identification, and control identification. At minimum, risk_assessment_procedures and control_identification_and_testing should be mapped, as understanding the IT system landscape is prerequisite to both."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 1-3 (2 weeks duration) is appropriate. Starts after ClientDataRequest (weeks 0-1) begins delivering documentation, allowing overlap. Gates ITGC scoping which would follow in subsequent weeks. For an AI-driven parsing task with specialist review, 2 weeks provides adequate buffer. Timing aligns with early planning phase of a 23-week engagement starting approximately April 2025 for Apple's September 27 FY-end."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "App Store/iTunes Connect (digital revenue)",
+      "proposed": "App Store/App Store Connect (digital revenue)",
+      "reason": "iTunes Connect was renamed to App Store Connect in June 2018. The current name is factually incorrect for an FY25 engagement."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "requirements",
+      "current": [],
+      "proposed": [
+        "risk_assessment_procedures",
+        "control_identification_and_testing"
+      ],
+      "reason": "System inventory directly supports risk assessment (understanding the IT environment per AS 2110) and control identification (identifying IT systems relevant to ITGC scoping per AS 2201). These are the minimum requirement mappings for this workflow."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "agents.human.team",
+      "current": {
+        "IT Audit Specialist": {
+          "count": 1,
+          "allocation": 0.05
+        }
+      },
+      "proposed": {
+        "IT Audit Specialist": {
+          "count": 1,
+          "allocation": 0.05
+        },
+        "Engagement Manager": {
+          "count": 1,
+          "allocation": 0.025
+        },
+        "Engagement Partner": {
+          "count": 1,
+          "allocation": 0.025
+        }
+      },
+      "reason": "The description explicitly states 'Manager reviews (2h), partner approves (2h)' but neither role is staffed. Adding Engagement Manager at 0.025 (2h over 2 weeks) and Engagement Partner at 0.025 (2h over 2 weeks) would align staffing with the described review gates. Alternatively, if these hours are absorbed elsewhere, the description should be amended to remove the specific hour references."
+    }
+  ]
+}

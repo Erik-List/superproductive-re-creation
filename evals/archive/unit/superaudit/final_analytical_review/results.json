@@ -1,0 +1,36 @@
+{
+  "workflow_id": "final_analytical_review",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "AI-only is appropriate for this computational workflow. Final analytical procedures involve ratio computation, trend analysis, and variance detection—well-suited for AI execution. Human review occurs downstream in the EQR workflow (weeks 19.5–21), which includes Engagement Partner and EQR Partner oversight. In a Big 4 model, a senior/manager would perform this with partner review; in the Superaudit AI-first model, the AI performs the computation and the EQR provides the human judgment layer."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "No human allocation to evaluate. The $30 AI cost for ~30 minutes of analytical computation across consolidated financials, 2 segments, and 5 geographic areas is reasonable."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The citation 'AS 2810.04' is imprecise. AS 2810.04 is an overview paragraph listing six evaluation components the auditor must address at the conclusion of the audit; it mentions analytical procedures as one item but does not itself establish the requirement to perform them. The actual directive to perform analytical procedures in the overall review is AS 2810.05, which states the auditor should perform analytical procedures to evaluate conclusions on significant accounts and assist in forming an opinion on the financial statements. Apple-specific claims (segments: Products/Services; geographies: Americas, Europe, Greater China, Japan, Rest of Asia Pacific) are accurate."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_id 'final_analytical_review' correctly maps to this workflow. The final analytical procedures requirement is the primary PCAOB requirement addressed. Misstatement accumulation is handled via the AdjustmentsSummary input from a separate workflow, and subsequent events is a distinct workflow—no missing requirements."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Duration of 0.5 weeks (weeks 19–19.5) is realistic for AI-driven computation described as ~30 minutes of processing. Inputs (FinalSubstantiveResults, AdjustmentsSummary) should be available by week 19 after substantive testing is complete. Output (AnalyticalReviewOutput) feeds directly into EQR at week 19.5, which is the correct sequencing—analytical review must be completed before engagement quality review. Timing aligns with Apple's late-September FY-end and ~60-day filing deadline for large accelerated filers."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Overall analytical review per AS 2810.04.",
+      "proposed": "Overall analytical review per AS 2810.05.",
+      "reason": "AS 2810.04 is an overview paragraph enumerating six evaluation components; it references analytical procedures as one listed item but does not establish the requirement. AS 2810.05 is the directive paragraph that specifically requires the auditor to perform analytical procedures in the overall review of the financial statements."
+    }
+  ]
+}

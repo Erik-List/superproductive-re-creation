@@ -1,0 +1,48 @@
+{
+  "workflow_id": "public_data_scoping",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "No human team is assigned. For a pure public-data-ingestion workflow in an AI-first model this is appropriate — the work is algorithmic (pulling SEC filings, parsing XBRL, computing preliminary materiality). Human oversight occurs downstream in predecessor_calibration (weeks 4-6) and partner_scoping_lock (weeks 6-7), where the Engagement Partner reviews and approves the scoping output."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "No human allocations to evaluate. AI cost of $30 for ~15 minutes of reasoning-tier model work against public EDGAR data is plausible for the described scope (multiple filing types, peer benchmarking, subsidiary analysis, materiality calculation)."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Claims verified: (1) AS 2110.68 correctly states the presumption of fraud risk related to revenue recognition within the risk assessment standard. (2) Apple SIC 3571 (Electronic Computers) is correct. (3) Materiality: 0.75% × $416B ≈ $3.12B (~$3B overall) checks out; performance materiality at ~75% of overall (~$2.25B) is consistent with common practice. (4) Apple Exhibit 21 lists 100+ subsidiaries; scoping ~25 significant ones (20-40%) is reasonable. (5) 8-12 high-risk areas from 10-K risk factors and MD&A is a plausible range."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description explicitly states the workflow 'Classifies fraud risks per AS 2110.68 (revenue recognition presumed).' This is fraud risk assessment work and the revenue recognition fraud presumption, yet neither fraud_risk_assessment nor revenue_recognition_fraud_presumption appears in requirement_ids. Both should be added."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Week 0-0.5 for ~15 min of AI work is generous but appropriate — it allows for any pipeline latency, retries, or data availability issues. Placing it at engagement start (post-FY-end, ~October 2025 for Apple's Sep 27 FY-end) is correct sequencing. Output feeds client_data_scoping at weeks 2-4, providing a reasonable gap for review."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "risk_assessment_procedures",
+        "materiality_establishment",
+        "significant_account_identification",
+        "audit_strategy"
+      ],
+      "proposed": [
+        "risk_assessment_procedures",
+        "fraud_risk_assessment",
+        "revenue_recognition_fraud_presumption",
+        "materiality_establishment",
+        "significant_account_identification",
+        "audit_strategy"
+      ],
+      "reason": "The workflow description explicitly states it 'Classifies fraud risks per AS 2110.68 (revenue recognition presumed).' Identifying and classifying fraud risks satisfies fraud_risk_assessment, and the explicit presumption of revenue recognition fraud satisfies revenue_recognition_fraud_presumption. Both are valid requirement_ids and directly match the described work."
+    }
+  ]
+}

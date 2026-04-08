@@ -1,0 +1,52 @@
+{
+  "workflow_id": "fraud_assessment",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "117-person team is appropriate for fraud assessment on a $416B revenue client with global operations. The GDS-heavy model (68 of 117, ~58%) is well-suited for execution-intensive journal entry testing across Apple's global entities. Partner count of 2 at 0.2 allocation provides appropriate oversight without overcommitting senior resources. Total of ~7,184 hours over 2 weeks is plausible for the scope."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations fall within plausible ranges. Partners at 0.2 (within 0.05-0.25 governance band). Senior Managers at 0.6 reflects higher oversight demands of fraud work. Managers at 0.7, Seniors at 0.8, GDS at 0.8 are standard execution-level allocations. Staff at 0.75 is slightly below typical execution range but reasonable given the more supervised nature of fraud testing procedures. Hours by role: EP 32, SM 192, Manager 448, Senior 960, Staff 1,200, GDS 4,352 — total 7,184 hours."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description attributes the revenue recognition fraud risk presumption to AS 2401, but this presumption actually originates from AS 2110.68 (Identifying and Assessing Risks of Material Misstatement). AS 2401 covers the overall consideration of fraud but the specific rebuttable presumption that revenue recognition is a fraud risk is codified in AS 2110.68. The Apple-specific claims (hardware + services allocation complexity, App Store timing) are factually accurate. The remainder of the description correctly references management override testing and journal entry testing, which are AS 2401 procedures."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "The three mapped requirement_ids (journal_entry_fraud_testing, management_override_evaluation, revenue_recognition_fraud_presumption) are all correct and directly relevant. However, fraud_risk_assessment is a valid requirement_id that this workflow arguably satisfies — the workflow is literally named 'Fraud Assessment' and its output is 'FraudAssessment'. If fraud_risk_assessment is not already covered by an upstream risk assessment workflow, it should be added here."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 18.5-20.5 (2-week duration) aligns well with late-stage audit timing. Apple's FY ends ~September 27, placing this workflow in late January/early February — consistent with final fieldwork before the 10-K filing deadline (~60 days post FY-end). The workflow correctly depends on TestedBalances as input, and its timing overlaps with final_substantive (weeks 17.5-20.5), which is appropriate since fraud procedures run concurrently with final substantive testing. The 2-week compressed timeline is aggressive but feasible given the 117-person team."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Per AS 2401: revenue recognition fraud risk presumed (hardware + services allocation, App Store timing). Management override testing across all entities. App Store/services revenue allocation is estimation-heavy. Journal entry testing across global operations.",
+      "proposed": "Per AS 2110.68: revenue recognition fraud risk presumed (hardware + services allocation, App Store timing). Management override testing per AS 2401 across all entities. App Store/services revenue allocation is estimation-heavy. Journal entry testing across global operations.",
+      "reason": "The revenue recognition fraud risk presumption is codified in AS 2110.68 (Identifying and Assessing Risks of Material Misstatement), not AS 2401. AS 2401 governs the overall fraud consideration framework and management override procedures, so it is correctly referenced for the management override and journal entry testing aspects."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "journal_entry_fraud_testing",
+        "management_override_evaluation",
+        "revenue_recognition_fraud_presumption"
+      ],
+      "proposed": [
+        "fraud_risk_assessment",
+        "journal_entry_fraud_testing",
+        "management_override_evaluation",
+        "revenue_recognition_fraud_presumption"
+      ],
+      "reason": "fraud_risk_assessment is a valid requirement_id and this workflow — named 'Fraud Assessment' with output 'FraudAssessment' — directly performs fraud risk assessment procedures. Adding it ensures the workflow maps to all PCAOB requirements it satisfies, unless it is intentionally mapped to an upstream risk assessment workflow instead."
+    }
+  ]
+}

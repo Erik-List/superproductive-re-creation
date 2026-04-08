@@ -1,0 +1,10 @@
+stdout:
+{"type":"result","subtype":"success","is_error":false,"duration_ms":3234,"duration_api_ms":175107,"num_turns":1,"result":"The background PCAOB verification agent has completed and confirms all citations are correct. My evaluation above is final — the only correction needed is the hour total discrepancy in the description (170h claimed vs. 255h computed from staffing).","stop_reason":"end_turn","session_id":"88470dd6-f8c8-4159-8637-94b92cfe3881","total_cost_usd":0.587529,"usage":{"input_tokens":3,"cache_creation_input_tokens":15155,"cache_read_input_tokens":14703,"output_tokens":54,"server_tool_use":{"web_search_requests":0,"web_fetch_requests":0},"service_tier":"standard","cache_creation":{"ephemeral_1h_input_tokens":15155,"ephemeral_5m_input_tokens":0},"inference_geo":"","iterations":[],"speed":"standard"},"modelUsage":{"claude-opus-4-6":{"inputTokens":1935,"outputTokens":6654,"cacheReadInputTokens":93281,"cacheCreationInputTokens":31515,"webSearchRequests":0,"costUSD":0.41963425,"contextWindow":200000,"maxOutputTokens":64000},"claude-haiku-4-5-20251001":{"inputTokens":74696,"outputTokens":2002,"cacheReadInputTokens":0,"cacheCreationInputTokens":42551,"webSearchRequests":3,"costUSD":0.16789475,"contextWindow":200000,"maxOutputTokens":32000}},"permission_denials":[],"fast_mode_state":"off","uuid":"8ad36c17-933d-4211-ae59-861ada53ec85"}
+
+
+stderr:
+
+
+exit code: 0
+
+error: Error: No JSON object found in result

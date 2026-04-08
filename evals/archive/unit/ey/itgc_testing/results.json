@@ -1,0 +1,50 @@
+{
+  "workflow_id": "itgc_testing",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "70-person team is appropriate for ITGC testing across 30-60 in-scope systems at a $416B tech company. 30 IT audit specialists form the core execution workforce (CISA-holders testing access controls, change management, etc.), supported by 15 seniors and 15 staff for workpaper preparation and evidence gathering. 8 managers provide team-level oversight across system groupings, and 2 senior managers handle quality review. Total ~20,160 hours across 9 weeks yields roughly 22-45 hours per ITGC depending on system count, which is reasonable given the mix of straightforward controls (password policies) and complex ones (change management for custom applications)."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations are plausible. Specialists at 0.92 reflects that ITGC testing is their primary function—they are nearly full-time on this workflow. Seniors at 0.8 and Staff at 0.7 reflect heavy execution with some time for other work. Managers at 0.65 reflects split between active review and other supervisory duties. Senior Managers at 0.35 reflects governance/quality review role. No allocation produces implausible hours."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "iTunes Connect was rebranded to App Store Connect in June 2018. The current description references the outdated name. All other Apple-specific claims are reasonable: SAP for financials is well-established, 535 retail stores implies POS systems in scope, iCloud services infrastructure and supply chain management are appropriate for Apple's business model. The 30-60 system estimate and 15 ITGCs per system are within plausible ranges. No PCAOB AS paragraph numbers are cited, so no standard references to verify."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "control_identification_and_testing and operating_effectiveness are correctly mapped. However, design_effectiveness is missing. PCAOB AS 2201.42-43 requires the auditor to test both the design and operating effectiveness of controls. ITGC testing must evaluate whether controls are suitably designed to prevent or detect misstatements before testing whether they operate effectively. This is a core requirement for any control testing workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 9-17 (9 weeks) places ITGC testing roughly June through August for a September 27 fiscal year-end. This is standard timing for interim ITGC testing—early enough to identify and remediate deficiencies before year-end, with rollforward testing handled separately closer to or after period-end. The ScopingOutput input dependency is satisfied since scoping workflows typically complete before week 9. Duration of 9 weeks is adequate for 450-900 ITGCs with this team size."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Test ITGCs across Apple's in-scope systems: SAP (financials), retail POS systems, App Store/iTunes Connect, iCloud services infrastructure, supply chain management, treasury systems. Fewer systems than diversified industrials (no factory ERP). ~30-60 in-scope systems, 15 ITGCs per system.",
+      "proposed": "Test ITGCs across Apple's in-scope systems: SAP (financials), retail POS systems, App Store Connect, iCloud services infrastructure, supply chain management, treasury systems. Fewer systems than diversified industrials (no factory ERP). ~30-60 in-scope systems, 15 ITGCs per system.",
+      "reason": "iTunes Connect was rebranded to App Store Connect in June 2018. The platform has operated under this name for over seven years."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "control_identification_and_testing",
+        "operating_effectiveness"
+      ],
+      "proposed": [
+        "control_identification_and_testing",
+        "design_effectiveness",
+        "operating_effectiveness"
+      ],
+      "reason": "PCAOB AS 2201.42-43 requires testing both design and operating effectiveness of internal controls. ITGC testing must first evaluate whether each control is suitably designed before assessing operating effectiveness. design_effectiveness is a distinct requirement that should be explicitly mapped."
+    }
+  ]
+}

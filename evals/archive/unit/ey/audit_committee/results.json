@@ -1,0 +1,28 @@
+{
+  "workflow_id": "audit_committee",
+  "engagement": "ey",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "Roles are appropriate—audit committee communication is partner-led and requires senior involvement for compiling findings. However, GDS/Offshore headcount of 9 is high for a communication/presentation workflow. For comparison, the opinion workflow uses only 6 GDS. While Apple's complexity ($416B revenue, 26 countries) justifies substantial material preparation, a realistic Big 4 staffing for this workflow would more likely be 4-6 GDS. The 23 total headcount (2 EP + 4 SM + 3 M + 3 Sr + 2 Staff + 9 GDS) produces 606 hours over 1.5 weeks, which is generous but not implausible for a client of this scale. For Superaudit, human roles should focus on partner presentation and committee interaction—AI can handle material compilation and formatting."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Partner at 0.40 exceeds the stated benchmark of 0.05-0.25 for governance roles. However, audit committee communication is one of the most partner-intensive activities—the EP directly presents to the committee. At 2×0.4×1.5wks×40hrs = 48 hours total (24 each), this is justifiable for Apple's audit committee which meets 8-10x/year. Senior Manager at 0.60 is appropriate as they compile and synthesize findings. Staff at 0.30 and GDS at 0.40 are below the 0.8-1.0 execution benchmark, but this is communication work, not execution, so lower allocations are appropriate. No correction proposed—allocations are at the high end but defensible for this specific workflow on a $416B client."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 1301 correctly references PCAOB standard 'Communications with Audit Committees.' Apple's Audit and Finance Committee meeting frequency of ~8-10x/year is confirmed by proxy statement disclosures (historically 8-9 meetings per year). The description accurately reflects the workflow's scope of communicating audit results to the committee."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "The three mapped requirements are correct: (1) audit_committee_communication—directly maps to AS 1301 scope; (2) deficiency_written_communication—AS 1305 requires written communication of significant deficiencies and material weaknesses to the audit committee; (3) non_audit_service_preapproval—audit committee pre-approval of non-audit services per SOX Section 202/PCAOB Rules 3524-3525. One could argue cam_disclosure (AS 3101) should be linked since CAMs are definitionally derived from matters communicated to the audit committee, but CAM disclosure in the auditor's report is more properly mapped to the opinion workflow. The current mapping is sufficient and correct."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Duration of 1.5 weeks (22.5-24) is realistic for a focused communication workflow. Sequencing is sound: the workflow depends on EQRSignOff (EQR runs 21.5-23.5), and starting at week 22.5 allows preparation to proceed in parallel with EQR completion, with final presentation after sign-off. The workflow feeds into the opinion workflow (23.5-24.5), which is correct—audit committee communication should be substantially complete before opinion issuance. Timing aligns with Apple's September 27 FY-end: assuming these are weeks from engagement start, this places audit committee communication in the final phase before the 60-day 10-K filing deadline for large accelerated filers (~November 26)."
+    }
+  },
+  "corrections": []
+}

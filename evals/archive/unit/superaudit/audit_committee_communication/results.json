@@ -1,0 +1,36 @@
+{
+  "workflow_id": "audit_committee_communication",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner, Engagement Manager, and Senior Auditor are appropriate roles for audit committee communication on a $416B client. In a traditional Big 4 model, a dedicated admin/presentation specialist might assist, but in an AI-first model the AI handles drafting while the Partner leads delivery — sensible allocation of human oversight to the highest-judgment tasks."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "The description states Partner hours totaling 50h (16h + 18h + 16h), but the allocation of 0.8 × 1 week × 40h yields only 32h. Even at allocation 1.0 (the maximum), only 40h are available in a single week. The described work cannot be completed within the modeled capacity. Engagement Manager at 0.3 (12h) and Senior Auditor at 0.15 (6h) are reasonable for supporting roles in an AI-first model."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 1301 (Communications with Audit Committees) is the correct standard. AS 2201.78-84 correctly references the paragraphs on written communication of significant deficiencies and material weaknesses. 'Apple's Audit and Finance Committee' is the correct committee name. However, the parenthetical partner hour breakdown (16h + 18h + 16h = 50h) is inconsistent with the allocation-derived capacity of 32h. The description must be reconciled."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "audit_committee_communication maps to AS 1301 requirements and deficiency_written_communication maps to AS 2201.78-84 written communications. Both are correct and sufficient for the described scope. CAMs are mentioned in the presentation content but the cam_disclosure requirement properly belongs to the opinion_and_filing workflow where the auditor's report is issued, not here."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 21-22 (1 week duration) follows EQR completion at week 21 and precedes opinion_and_filing at week 22. Sequencing with input EQRSignOff is correct. For Apple's Sept 27 FY-end with a 60-day large accelerated filer deadline (~Nov 26), this timing places committee communication in the final weeks before filing, which is standard practice. One week is tight but feasible with AI-drafted materials and focused partner review."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Partner: presentation prep and delivery (16h), reviews deficiency letters (18h), finalizes management letter (16h).",
+      "proposed": "Partner: presentation prep and delivery (12h), reviews deficiency letters (12h), finalizes management letter (8h).",
+      "reason": "The original parenthetical hours sum to 50h, but the Partner's modeled capacity is 1 × 0.8 × 1 week × 40h = 32h. Even at maximum allocation (1.0), only 40h are available. Revised breakdown sums to 32h, consistent with the 0.8 allocation. In an AI-first model where the AI drafts all materials, 32h of partner review and delivery is realistic."
+    }
+  ]
+}

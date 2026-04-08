@@ -1,0 +1,28 @@
+{
+  "workflow_id": "opinion",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate for opinion finalization. Two Engagement Partners reflects dual-signing practice common on mega-cap engagements (concurring and signing partner). Senior Managers (4) and Managers (3) handle opinion drafting, CAM language finalization, and ICFR conclusion assembly. GDS/Offshore (6) is at the higher end for sensitive opinion work but defensible for a $416B client given documentation compilation, cross-referencing, and formatting support needs."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner allocation of 0.8 exceeds the typical 0.05-0.25 governance range but is justified: opinion sign-off is the single most partner-intensive workflow in the entire engagement. During this 1-week window, partners are actively reviewing the opinion letter, CAM language, ICFR conclusions, and performing final sign-off — this is substantive execution, not governance oversight. Total hours: EP 64h, SM 112h, Mgr 66h, Sr 48h, Staff 20h, GDS 84h = ~394 hours for one week. Plausible for Apple's complexity."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Description is accurate. Dual opinion (FS + ICFR) is correct for an integrated audit under AS 2201. CAM identification per AS 3101 is properly scoped. The three identified likely CAMs — revenue recognition (bundled arrangements under ASC 606 multi-element), legal contingencies (Apple's extensive litigation portfolio), and income taxes (complex international structure with significant deferred tax positions) — are all reasonable and consistent with publicly disclosed CAMs for large technology companies."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "All four requirement_ids are correct and core to this workflow: fs_opinion_format (AS 3101 opinion format), integrated_icfr_opinion (AS 2201 ICFR opinion), cam_disclosure (AS 3101 CAM requirements), tenure_disclosure (AS 3101 auditor tenure). One could argue for including documentation_completion (AS 1215, 45-day assembly deadline triggered by report release) or subsequent_events (AS 2801, evaluation through report date), but these are reasonably handled in adjacent workflows (sec_filing and final_analytics respectively)."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "One-week duration (weeks 23.5-24.5) is realistic for the actual sign-off phase, as substantive work is completed in prior workflows. Timing aligns with Apple's late-November 10-K filing: FY ends ~Sep 27, 60-day LAF deadline ~Nov 26, placing opinion signing in mid-to-late November. Sequencing is correct: takes AuditCommitteePresentation input (audit_committee starts week 22.5), and feeds into sec_filing (starts week 24.5). The 0.5-week overlap with audit_committee is natural — committee presentation occurs early in that workflow, allowing opinion finalization to commence."
+    }
+  },
+  "corrections": []
+}

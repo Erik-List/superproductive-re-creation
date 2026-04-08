@@ -1,0 +1,47 @@
+{
+  "workflow_id": "deficiency_evaluation",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Appropriate inverted pyramid for judgment-heavy work. Partner involvement (2×0.2) justified for signing off on deficiency severity conclusions and ICFR opinion. Heavier manager/senior manager weighting (4 SM, 10 Mgr) over staff (5) correctly reflects that deficiency evaluation requires experienced professional judgment, not rote execution. 25 GDS at 0.65 is plausible for aggregating findings across 535 retail stores and multiple component locations across 26 countries. Total ~3,954 hours for a $416B client is reasonable."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations fall within plausible ranges. EP at 0.2 is at the high end of the 0.05-0.25 governance band, justified by the opinion-forming nature of this workflow. SM at 0.6 and Manager at 0.65 reflect the heavy coordination and review burden of aggregating multi-location deficiency findings. Senior at 0.6 is reasonable for drafting deficiency assessments. Staff at 0.4 is appropriately low for a workflow with limited rote execution. GDS at 0.65 is reasonable for compiling and formatting component-level findings. No implausible hour totals."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2201.62-70 correctly references the PCAOB paragraphs governing evaluation of identified control deficiencies, including severity assessment (.62-.66), strong indicators of material weakness (.67-.69), and aggregation of deficiencies (.70). Apple-specific claims are accurate: global retail footprint across 535 stores in 26 countries does add genuine complexity to deficiency aggregation. Description accurately reflects the workflow scope of aggregating control conclusions and evaluating deficiency combinations."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The four mapped requirements (deficiency_severity_evaluation, material_weakness_adverse_opinion, deficiency_written_communication, component_findings_evaluation) are all correct and appropriate. However, the workflow outputs ICFROpinion and is the terminal workflow in the Control Audit stream—it is where the integrated ICFR opinion is formed. The integrated_icfr_opinion requirement should be mapped here."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "3-week duration (weeks 17.5-20.5) is realistic for aggregating deficiency conclusions on a client of this scale. Timing aligns with Apple's September 27 FY-end: week 17.5 falls in late October, giving sufficient time to complete before the 60-day 10-K filing deadline (~November 25). Inputs are properly sequenced: OperatingEffectivenessResults available from week 16.5, and YearEndResults arriving during weeks 17-18.5 allow preliminary deficiency evaluation to begin while year-end close completes—a standard parallel execution pattern."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "deficiency_severity_evaluation",
+        "material_weakness_adverse_opinion",
+        "deficiency_written_communication",
+        "component_findings_evaluation"
+      ],
+      "proposed": [
+        "deficiency_severity_evaluation",
+        "material_weakness_adverse_opinion",
+        "deficiency_written_communication",
+        "component_findings_evaluation",
+        "integrated_icfr_opinion"
+      ],
+      "reason": "This workflow outputs ICFROpinion and is the final workflow in the Control Audit stream. The integrated_icfr_opinion requirement (AS 2201.85-.86) governs the formation of the auditor's opinion on ICFR, which is the culminating objective of deficiency evaluation. Without this mapping, no workflow in the Control Audit stream satisfies the integrated_icfr_opinion requirement."
+    }
+  ]
+}

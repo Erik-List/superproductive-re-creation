@@ -1,0 +1,52 @@
+{
+  "workflow_id": "component_monitoring",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "Team lists EM (1×0.1), Senior Auditor (1×0.1), AI Engineer (1×0.05) producing ~90h over 9 weeks. Description references '4 component coordinators across 8 full-scope relationships' but no Component Partner or Component Senior roles appear in the team. In Big 4 practice, monitoring 8 full-scope component relationships for a $416B client would require dedicated coordinators (typically 4-6 seniors/managers). In an AI-first model, the AI absorbs the routine tracking, but the described 80h of human work (40h calls + 40h exception review) across 8 relationships over 9 weeks is tight — roughly 1h/week/entity for calls plus 0.5h/week/entity for exceptions. Borderline plausible if AI handles all workpaper screening and only escalates true exceptions, but the '4 component coordinators' reference is orphaned from the staffing."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "EM at 0.1 (36h) for oversight of AI-driven monitoring is reasonable. Senior Auditor at 0.1 (36h) for exception review is light but defensible given AI pre-screening. AI Engineer at 0.05 (18h) for tool maintenance is appropriate. Total 90h roughly aligns with the described 80h of human effort plus some overhead. No implausible values."
+    },
+    "description": {
+      "verdict": "FLAG",
+      "detail": "No incorrect PCAOB AS references (none are cited). No verifiably false Apple claims. The term 'affiliate entities' is non-standard PCAOB terminology — AS 2101 uses 'component auditor' and distinguishes between referred-to vs. supervised component auditors. 'More re-performance required for affiliate entities' is directionally correct (less-known component auditors require greater supervision per AS 2101.13-14) but imprecise. The mention of '4 component coordinators across 8 full-scope relationships' is not reflected in team composition, creating an internal inconsistency."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "No requirement_ids are mapped to this workflow. Component monitoring is the primary execution mechanism for AS 2101 (component_auditor_supervision), which requires the group engagement team to supervise component auditors, review their work, and evaluate whether sufficient appropriate evidence has been obtained. This is the core requirement this workflow satisfies and must be mapped."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 9-17 (9 weeks). Begins as component_instructions (weeks 7-9) concludes, so monitoring starts once instructions are issued — correct sequencing. Ends at week 17 when component_findings_evaluation (weeks 17-19) begins — clean handoff. For Apple's Sep 27 FY-end, week 9 falls roughly in mid/late August and week 17 in mid/late October, covering the critical period around and after year-end when component work is being completed. Duration of 9 weeks is reasonable for monitoring cycle."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [],
+      "proposed": [
+        "component_auditor_supervision"
+      ],
+      "reason": "This workflow's core function — monitoring component auditor deliverables, reviewing workpapers for completeness, consistency, and quality, and flagging delays — is the direct execution of AS 2101 requirements for supervision of component auditors. component_auditor_supervision is the obvious and mandatory mapping."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "More re-performance required for affiliate entities.",
+      "proposed": "More re-performance required for less-familiar component auditors.",
+      "reason": "'Affiliate entities' is not standard PCAOB terminology. AS 2101 frames supervision requirements around component auditors, with greater supervision (including re-performance) required when the group engagement team has less experience with or knowledge of a component auditor. Using 'less-familiar component auditors' aligns with the standard's framework."
+    },
+    {
+      "confidence": "LOW",
+      "field": "description",
+      "current": "4 component coordinators across 8 full-scope relationships.",
+      "proposed": "Coordination across 8 full-scope component relationships.",
+      "reason": "The team composition does not include 4 component coordinators in any role. Either Component Senior roles should be added to the team (separate correction) or the description should be updated to remove the specific headcount claim that is not reflected in staffing. This correction takes the conservative approach of removing the orphaned headcount reference."
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "run_at": "2026-03-22T14:51:23.352Z",
+  "auto_applied": [
+    {
+      "id": "c-ey-capital_return-001",
+      "workflow": "capital_return",
+      "engagement": "ey",
+      "field": "agents.human.team.Engagement Partner.allocation",
+      "change": "0.03 → 0.05",
+      "reason": "EP allocation of 0.03 is below the typical partner governance range of 0.05-0.25. For the largest corporate buyback program in history involving complex ASR derivatives, minimum partner oversight of 0.05 is warranted. This yields ~13 hours over 6.5 weeks — still lean but meets the floor.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-capital_return-002",
+      "workflow": "capital_return",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"$650B+ cumulative since 2012\" → \"$700B+ cumulative since 2012\"",
+      "reason": "By FY25, Apple's cumulative buybacks have reached approximately $700B+, per Yahoo Finance reporting and derivable from annual spending of ~$89-95B in FY2024-2025 added to previously reported totals. The $650B figure was accurate circa 2023 but is now stale by roughly one full year of spending.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-capital_return-003",
+      "workflow": "capital_return",
+      "engagement": "ey",
+      "field": "requirement_ids",
+      "change": "[\"substantive_procedures\"] → [\"substantive_procedures\",\"specialist_evaluation\"]",
+      "reason": "The workflow description explicitly includes 'ASR derivative/forward contract fair value assessment.' ASRs are accounted for as equity-linked forward contracts under ASC 505-30, and their fair value measurement triggers PCAOB AS 1210 specialist requirements. Big 4 firms routinely engage valuation specialists for ASR derivative components, especially at Apple's scale with potential collar structures and VWAP-based settlement.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-deficiency_evaluation-001",
+      "workflow": "deficiency_evaluation",
+      "engagement": "ey",
+      "field": "requirement_ids",
+      "change": "[\"deficiency_severity_evaluation\",\"material_weakness_adverse_opinion\",\"deficiency_written_communication\",\"component_findings_evaluation\"] → [\"deficiency_severity_evaluation\",\"material_weakness_adverse_opinion\",\"deficiency_written_communication\",\"component_findings_evaluation\",\"integrated_icfr_opinion\"]",
+      "reason": "This workflow outputs ICFROpinion and is the final workflow in the Control Audit stream. The integrated_icfr_opinion requirement (AS 2201.85-.86) governs the formation of the auditor's opinion on ICFR, which is the culminating objective of deficiency evaluation. Without this mapping, no workflow in the Control Audit stream satisfies the integrated_icfr_opinion requirement.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-final_analytics-001",
+      "workflow": "final_analytics",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"Final overall analytical review of Apple's audited financial statements (AS 2810.04). Must cover consolidated balances and component-level analytics across all geographic segments.\" → \"Final overall analytical review of Apple's audited financial statements (AS 2810.30). Must cover consolidated balances and component-level analytics across all geographic segments.\"",
+      "reason": "AS 2810.04 addresses accumulation of misstatements, not final analytical procedures. AS 2810.30 is the correct paragraph requiring the auditor to perform analytical procedures near the end of the audit to form an overall conclusion about the financial statements.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-final_substantive-001",
+      "workflow": "final_substantive",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"subsequent events (AS 2905)\" → \"subsequent events (AS 2801)\"",
+      "reason": "AS 2905 is 'Subsequent Discovery of Facts Existing at the Date of the Auditor's Report' — a post-report remedial standard. The correct standard for subsequent events testing during the audit is AS 2801 'Subsequent Events'.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-fraud_assessment-001",
+      "workflow": "fraud_assessment",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"Per AS 2401: revenue recognition fraud risk presumed (hardware + services allocation, App Store timing). Management override testing across all entities. App Store/services revenue allocation is estimation-heavy. Journal entry testing across global operations.\" → \"Per AS 2110.68: revenue recognition fraud risk presumed (hardware + services allocation, App Store timing). Management override testing per AS 2401 across all entities. App Store/services revenue allocation is estimation-heavy. Journal entry testing across global operations.\"",
+      "reason": "The revenue recognition fraud risk presumption is codified in AS 2110.68 (Identifying and Assessing Risks of Material Misstatement), not AS 2401. AS 2401 governs the overall fraud consideration framework and management override procedures, so it is correctly referenced for the management override and journal entry testing aspects.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-itgc_testing-001",
+      "workflow": "itgc_testing",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"Test ITGCs across Apple's in-scope systems: SAP (financials), retail POS systems, App Store/iTunes Connect, iCloud services infrastructure, supply chain management, treasury systems. Fewer systems than diversified industrials (no factory ERP). ~30-60 in-scope systems, 15 ITGCs per system.\" → \"Test ITGCs across Apple's in-scope systems: SAP (financials), retail POS systems, App Store Connect, iCloud services infrastructure, supply chain management, treasury systems. Fewer systems than diversified industrials (no factory ERP). ~30-60 in-scope systems, 15 ITGCs per system.\"",
+      "reason": "iTunes Connect was rebranded to App Store Connect in June 2018. The platform has operated under this name for over seven years.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-itgc_testing-002",
+      "workflow": "itgc_testing",
+      "engagement": "ey",
+      "field": "requirement_ids",
+      "change": "[\"control_identification_and_testing\",\"operating_effectiveness\"] → [\"control_identification_and_testing\",\"design_effectiveness\",\"operating_effectiveness\"]",
+      "reason": "PCAOB AS 2201.42-43 requires testing both design and operating effectiveness of internal controls. ITGC testing must first evaluate whether each control is suitably designed before assessing operating effectiveness. design_effectiveness is a distinct requirement that should be explicitly mapped.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-mgmt_letter-001",
+      "workflow": "mgmt_letter",
+      "engagement": "ey",
+      "field": "requirement_ids",
+      "change": "null → [\"deficiency_written_communication\"]",
+      "reason": "The management letter is the primary deliverable for communicating control deficiencies and recommendations to management per PCAOB AS 1305. deficiency_written_communication is the most directly applicable requirement for this workflow and must be mapped.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-operating_effectiveness-001",
+      "workflow": "operating_effectiveness",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"Test ~600-1,200 key controls across Apple's operations. Higher proportion of automated controls reduces sample sizes vs. industrial peers but Apple's heavy automation increases IT-dependent control population and ITGC reliance testing. Retail store controls tested at sample of locations. Sample sizes: 15-30 daily/weekly, 6-12 monthly/quarterly.\" → \"Test operating effectiveness of ~150-300 controls (80-150 key controls) across Apple's operations. Higher proportion of automated controls reduces sample sizes vs. industrial peers but Apple's heavy automation increases IT-dependent control population and ITGC reliance testing. Retail store controls tested at sample of locations. Sample sizes per firm methodology: 25-40 daily, 5-15 weekly, 2-4 monthly, 2 quarterly, 1 annual.\"",
+      "reason": "Two fixes merged: (1) '600-1,200 key controls' conflates total control population with key controls selected for testing per AS 2201.39; 150-300 total with 80-150 key is realistic for a mega-cap. (2) Sample sizes '15-30 daily/weekly, 6-12 monthly/quarterly' are incorrect — daily controls need 25-40 samples (not 15), weekly need 5-15 (not 30), monthly need 2-4 (not 6-12), and quarterly controls have a population of only 4 making '6-12' impossible. Corrected to standard AICPA/firm methodology ranges consistent with the project's own workflow.ts implementation.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-sec_filing-001",
+      "workflow": "sec_filing",
+      "engagement": "ey",
+      "field": "description",
+      "change": "\"File Apple's 10-K with audit reports on EDGAR. LAF deadline: 60 days after September 27 FY-end (~late November). AS 1215 14-day archival across workpapers from all locations.\" → \"File Apple's 10-K with audit reports on EDGAR. LAF deadline: 60 days after September 27 FY-end (~late November). AS 1215 45-day archival across workpapers from all locations.\"",
+      "reason": "PCAOB Release 2024-004 amended AS 1215.15 from 45 to 14 days, but the effective date for large firms is fiscal years beginning on or after December 15, 2024. Apple FY25 began September 29, 2024 — before the effective date — so the pre-amendment 45-day documentation completion deadline applies to this engagement.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-tax_specialist-001",
+      "workflow": "tax_specialist",
+      "engagement": "ey",
+      "field": "requirement_ids",
+      "change": "[\"specialist_evaluation\"] → [\"specialist_evaluation\",\"substantive_procedures\"]",
+      "reason": "Tax specialist work directly supports substantive audit procedures — ASC 740 provision testing, transfer pricing analysis, UTB assessment, and tax rate reconciliation are all substantive procedures. AS 1210 technically excludes tax specialists from its scope, but specialist_evaluation is retained as the closest available requirement for specialist oversight. substantive_procedures should be added to reflect the substantive nature of tax testing work.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-ey-year_end_close-001",
+      "workflow": "year_end_close",
+      "engagement": "ey",
+      "field": "agents.human.team.Engagement Partner",
+      "change": "null → {\"count\":1,\"allocation\":0.1}",
+      "reason": "Year-end close is a critical engagement phase requiring partner oversight under AS 1201 supervision requirements. Both the preceding operating_effectiveness workflow (EP 2×0.1) and subsequent deficiency_evaluation workflow (EP 2×0.2) include partner involvement. A minimum allocation of 1×0.1 provides necessary sign-off on roll-forward conclusions for a $416B revenue client.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-actuarial_specialist-001",
+      "workflow": "actuarial_specialist",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Non-US: reviews local retirement obligations in 40+ jurisdictions for proper classification (DC vs. DB) and disclosure.\" → \"Non-US: reviews local retirement obligations in 26 country jurisdictions for proper classification (DC vs. DB) and disclosure.\"",
+      "reason": "The engagement context specifies Apple operates in 26 countries. Retirement obligations are governed at the country level, so '40+ jurisdictions' overstates the scope. Correcting to 26 aligns with stated engagement parameters.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-audit_committee_communication-001",
+      "workflow": "audit_committee_communication",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Partner: presentation prep and delivery (16h), reviews deficiency letters (18h), finalizes management letter (16h).\" → \"Partner: presentation prep and delivery (12h), reviews deficiency letters (12h), finalizes management letter (8h).\"",
+      "reason": "The original parenthetical hours sum to 50h, but the Partner's modeled capacity is 1 × 0.8 × 1 week × 40h = 32h. Even at maximum allocation (1.0), only 40h are available. Revised breakdown sums to 32h, consistent with the 0.8 allocation. In an AI-first model where the AI drafts all materials, 32h of partner review and delivery is realistic.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-client_data_request-001",
+      "workflow": "client_data_request",
+      "engagement": "superaudit",
+      "field": "agents.human.team.Engagement Partner",
+      "change": "null → {\"count\":1,\"allocation\":0.05}",
+      "reason": "Description states 'partner approves (2h)' but no Engagement Partner is in the team. Adding partner at 0.05 allocation × 1 week × 40h = 2h, matching the described approval time. Partner sign-off on PBC requests is standard for major engagements.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-client_data_scoping-001",
+      "workflow": "client_data_scoping",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"risk_assessment_procedures\",\"materiality_establishment\",\"significant_account_identification\",\"risk_to_procedure_linkage\"] → [\"risk_assessment_procedures\",\"materiality_establishment\",\"significant_account_identification\",\"risk_to_procedure_linkage\",\"audit_strategy\"]",
+      "reason": "The workflow determines component scope type per entity (full/specified/analytical/none) based on contribution thresholds and produces the definitive ScopingOutput replacing Phase 1 preliminary. This is core audit strategy work under AS 2101 (Audit Planning) and should be mapped accordingly.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-component_monitoring-001",
+      "workflow": "component_monitoring",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[] → [\"component_auditor_supervision\"]",
+      "reason": "This workflow's core function — monitoring component auditor deliverables, reviewing workpapers for completeness, consistency, and quality, and flagging delays — is the direct execution of AS 2101 requirements for supervision of component auditors. component_auditor_supervision is the obvious and mandatory mapping.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-component_scoping-001",
+      "workflow": "component_scoping",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Partner approves (12h), manager coordinates (8h).\" → \"Partner approves (18h), manager coordinates (12h).\"",
+      "reason": "The description's stated hours must align with the allocation math. Partner: 0.15 × 1 × 3 weeks × 40h/week = 18h. Manager: 0.10 × 1 × 3 weeks × 40h/week = 12h. The original values (12h, 8h) imply allocations of ~0.10 and ~0.067 respectively, which contradict the defined allocation values.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-control_identification-001",
+      "workflow": "control_identification",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Manager reviews matrix (24h), partner approves (16h).\" → \"Manager reviews matrix (24h), partner approves (12h).\"",
+      "reason": "The Engagement Partner allocation of 0.1 × 3 weeks × 40h = 12h available. The description claims 16h for partner approval, which exceeds the allocated hours by 33%. Correcting the description to 12h aligns with the allocation. Alternatively the partner allocation could be raised to ~0.134, but 12h of partner review is sufficient in an AI-first model where the AI generates a structured ControlMatrix for focused review.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-deficiency_evaluation-001",
+      "workflow": "deficiency_evaluation",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"80h central + 50h component = 130h total.\" → \"156h central + 39h component = 195h total.\"",
+      "reason": "Allocation math: Central = EP(1×0.5×3×40=60) + EM(1×0.3×3×40=36) + SA(2×0.25×3×40=60) = 156h. Component = CP(2×0.1×3×40=24) + CS(1×0.125×3×40=15) = 39h. Total = 195h. The claimed 130h does not match the staffing model.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-deficiency_evaluation-002",
+      "workflow": "deficiency_evaluation",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"deficiency_severity_evaluation\",\"material_weakness_adverse_opinion\"] → [\"deficiency_severity_evaluation\",\"material_weakness_adverse_opinion\",\"integrated_icfr_opinion\"]",
+      "reason": "The description explicitly states the partner 'determines overall ICFR conclusion (30h).' This is the terminal workflow in the Control Audit stream with no downstream ICFR opinion workflow, so integrated_icfr_opinion must be satisfied here.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-documentation_archival-001",
+      "workflow": "documentation_archival",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Partner review (30h), team cleanup (40h), archival execution (20h).\" → \"Partner review (15h), team cleanup (65h), AI-assisted archival execution (10h).\"",
+      "reason": "The allocation math yields: EP 1×0.75×0.5wk×40h=15h (not 30h); Doc Lead 20h + Senior Auditors 30h + EM 7.5h + Component Senior 7.5h = 65h (not 40h); AI Engineer 1×0.5×0.5wk×40h=10h (not 20h). Total remains 90h but the category breakdown must match the staffing model.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-engagement_letter_and_independence-001",
+      "workflow": "engagement_letter_and_independence",
+      "engagement": "superaudit",
+      "field": "agents.human.team.Engagement Partner",
+      "change": "null → {\"count\":1,\"allocation\":0.1}",
+      "reason": "Engagement letters require partner signature per PCAOB standards and firm policies. The partner must also approve independence conclusions for a $416B public company audit. A 0.1 allocation (4 hours over 1 week) covers review of the group engagement letter, approval of local engagement letter terms, and sign-off on independence conclusions. The Engagement Partner is already allocated to predecessor_communication in weeks 0-1 at 0.2, so 0.1 here reflects focused review rather than drafting.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-final_substantive-001",
+      "workflow": "final_substantive",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"240h central + 350h component = 590h total\" → \"457.5h central + 280h component = 737.5h total\"",
+      "reason": "Staffing math produces 737.5h total, not 590h. Central: Senior Auditor 3×0.4×5wk×40h=240 + Engagement Manager 60 + Engagement Partner 40 + Walkthrough Specialist 80 + AI Engineer 37.5 = 457.5h. Component: Component Senior 6×0.2×5×40=240 + Component Partner 2×0.1×5×40=40 = 280h. Grand total = 737.5h.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-fraud_brainstorming-001",
+      "workflow": "fraud_brainstorming",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"fraud_risk_assessment\",\"revenue_recognition_fraud_presumption\"] → [\"fraud_risk_assessment\",\"revenue_recognition_fraud_presumption\",\"management_override_evaluation\"]",
+      "reason": "The description explicitly states 'management override always presumed' as a required conclusion of the brainstorming session, per AS 2401.66–.67. This is a mandatory presumption in every audit and the brainstorming session is the primary workflow where it is formally acknowledged. management_override_evaluation is a valid requirement_id and should be mapped to this workflow.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-fraud_procedures-001",
+      "workflow": "fraud_procedures",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"120h central + 50h component review = 170h total.\" → \"162h central + 93h component review = 255h total.\"",
+      "reason": "Hour figures do not match team allocations over the 3-week window (120h per FTE). Central: EP 1×0.25=30h + SA 2×0.3=72h + AIE 1×0.3=36h + EM 1×0.2=24h = 162h. Component: CS 3×0.15=54h + CP 2×0.1625=39h = 93h. Total = 255h, not 170h.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-interim_substantive-001",
+      "workflow": "interim_substantive",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Journal entry testing (AS 2401.61-.67): analyzes 100% of journal entries across all entities — flags entries with fraud indicators (round amounts, post-close entries, unusual accounts, entries by senior management, entries without descriptions).\" → \"Journal entry testing (AS 2401.58-.67): analyzes 100% of journal entries across all entities — flags entries with fraud indicators (round amounts, post-close entries, unusual accounts, entries by senior management, entries without descriptions).\"",
+      "reason": "AS 2401.58-.60 contain the foundational requirements for journal entry fraud testing — .58 establishes the requirement to examine journal entries for fraud evidence, .59-.60 require understanding the financial reporting process and controls. The current citation starting at .61 omits these foundational paragraphs. The range .58-.67 covers all management override procedures (journal entries .58-.62, accounting estimates .63-.65, unusual transactions .66-.67), which matches this workflow's broad fraud indicator screening scope.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-itgc_testing-001",
+      "workflow": "itgc_testing",
+      "engagement": "superaudit",
+      "field": "agents.human.team.Engagement Manager",
+      "change": "null → {\"count\":1,\"allocation\":0.15}",
+      "reason": "Description explicitly requires 80h of partner/manager review, but no manager is staffed. AS 1201.03-.06 mandates partner/manager supervision of all engagement team members including IT specialists. An Engagement Manager at 0.15 allocation over 6 weeks (36h) provides oversight and review capacity. The remaining partner/manager review hours are covered by the Engagement Partner's cross-workflow oversight in sibling workflows (e.g., entity_level_controls, deficiency_evaluation).",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-misstatement_accumulation-001",
+      "workflow": "misstatement_accumulation",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Partner: evaluates qualitative factors (30h), management discussion (20h), aggregate evaluation (30h). Component aggregation: +100h. 80h central + 100h component = 180h total.\" → \"Partner: evaluates qualitative factors (30h), management discussion (20h), aggregate evaluation (30h). Component aggregation: +100h. Central team (EP+EM+SA+AIE): ~204h + component team (CP+CS): ~156h = ~360h total.\"",
+      "reason": "The stated 180h total contradicts the staffing allocations which produce ~360h (1×0.75 + 1×0.5 + 2×0.5 + 3×0.25 + 6×0.2 + 1×0.3 = 4.5 FTEs × 2 weeks × 40h = 360h). Additionally, the partner task breakdown sums to 80h but EP allocation only yields 60h. For a $416B multi-component engagement, ~360h is more realistic. The description should reflect the actual staffing hours.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-opening_balance_procedures-001",
+      "workflow": "opening_balance_procedures",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Reasoning-tier model, public_data + client_data_read access via edgar_api + gl_reader + analytics_engine. Compares FY24 10-K balances against Q1 FY25 10-Q for consistency per AS 2510. Analyzes GL opening balances against prior year audited figures. Identifies accounts requiring additional first-year procedures: significant estimates (deferred revenue, legal contingencies, tax UTPs), areas with accounting policy changes, accounts where predecessor access would materially improve evidence. Designed to produce valid output WITHOUT predecessor workpapers. Outputs structured OpeningBalancePlan JSON with per-account procedure requirements. Senior auditor reviews (4h), manager validates (4h).\" → \"Reasoning-tier model, public_data + client_data_read access via edgar_api + gl_reader + analytics_engine. Compares FY24 10-K balances against Q1 FY25 10-Q for consistency per AS 2610. Analyzes GL opening balances against prior year audited figures. Identifies accounts requiring additional first-year procedures: significant estimates (deferred revenue, legal contingencies, tax UTPs), areas with accounting policy changes, accounts where predecessor access would materially improve evidence. Designed to produce valid output WITHOUT predecessor workpapers. Outputs structured OpeningBalancePlan JSON with per-account procedure requirements. Senior auditor reviews (4h), manager validates (4h).\"",
+      "reason": "AS 2510 is 'Auditing Inventories' and has no relevance to opening balance procedures. AS 2610 'Initial Audits—Communications Between Predecessor and Successor Auditors' (paragraphs .12-.13) is the correct standard governing opening balance evidence requirements for successor auditors. Likely a digit transposition error (2510 vs 2610).",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-opening_balance_procedures-002",
+      "workflow": "opening_balance_procedures",
+      "engagement": "superaudit",
+      "field": "agents.human.team",
+      "change": "{\"Senior Auditor\":{\"count\":1,\"allocation\":0.1}} → {\"Senior Auditor\":{\"count\":1,\"allocation\":0.1},\"Engagement Manager\":{\"count\":1,\"allocation\":0.05}}",
+      "reason": "Description explicitly states 'manager validates (4h)' but no Engagement Manager is staffed. Adding Engagement Manager at 1×0.05 over the 2-week duration yields exactly 4 hours (0.05 × 2 × 40 = 4h), matching the described effort. Manager validation of the opening balance plan is appropriate for a first-year engagement on a $416B client.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-opinion_and_filing-001",
+      "workflow": "opinion_and_filing",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"fs_opinion_format\",\"integrated_icfr_opinion\",\"cam_disclosure\",\"tenure_disclosure\",\"ten_k_filing_deadline\"] → [\"fs_opinion_format\",\"integrated_icfr_opinion\",\"cam_disclosure\",\"tenure_disclosure\",\"ten_k_filing_deadline\",\"subsequent_events\"]",
+      "reason": "The description explicitly states 'Performs final subsequent events check through opinion date per AS 2801' but subsequent_events is missing from requirement_ids. AS 2801 procedures are a core part of this workflow's described scope.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-opinion_and_filing-002",
+      "workflow": "opinion_and_filing",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Partner: review and signature (20h), EDGAR filing coordination (10h), subsequent events sign-off (10h), quality check (10h).\" → \"Human team: partner opinion review and signature (20h), EDGAR filing coordination (10h), subsequent events sign-off (10h), quality check (10h).\"",
+      "reason": "The 50h total matches aggregate team hours (EP 15h + EM 10h + AI Eng 10h + Doc Lead 10h + Sr Auditor 5h = 50h), not partner-only hours (15h). Labeling all tasks as 'Partner:' is misleading; these are distributed across the full human team.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-period_end_controls-001",
+      "workflow": "period_end_controls",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"120h central + 50h component = 170h total\" → \"192.5h central + 20h component = 212.5h total\"",
+      "reason": "Hours stated in the description do not match the staffing allocations. Central roles (Senior Auditor 2×0.35 = 140h, Walkthrough Specialist 1×0.2 = 40h, Engagement Manager 1×0.0625 = 12.5h) total 192.5h. Component (Component Senior 1×0.1 = 20h) totals 20h. Grand total is 212.5h, not 170h.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-predecessor_workpaper_request-001",
+      "workflow": "predecessor_workpaper_request",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Ingests PredecessorCommunicationMemo + PCAOB standards (AS 2610, AS 2510).\" → \"Ingests PredecessorCommunicationMemo + PCAOB standards (AS 2610, AS 2101).\"",
+      "reason": "AS 2510 is 'Auditing Inventories' and is irrelevant to predecessor workpaper requests. AS 2101 (Audit Planning) is the correct companion standard — paragraph .18 requires predecessor communication per AS 2610 for initial audits, and paragraph .19 addresses planning considerations for opening balances.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-public_data_scoping-001",
+      "workflow": "public_data_scoping",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"risk_assessment_procedures\",\"materiality_establishment\",\"significant_account_identification\",\"audit_strategy\"] → [\"risk_assessment_procedures\",\"fraud_risk_assessment\",\"revenue_recognition_fraud_presumption\",\"materiality_establishment\",\"significant_account_identification\",\"audit_strategy\"]",
+      "reason": "The workflow description explicitly states it 'Classifies fraud risks per AS 2110.68 (revenue recognition presumed).' Identifying and classifying fraud risks satisfies fraud_risk_assessment, and the explicit presumption of revenue recognition fraud satisfies revenue_recognition_fraud_presumption. Both are valid requirement_ids and directly match the described work.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-statutory_reporting-001",
+      "workflow": "statutory_reporting",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"Australia (Corporations Act 2001 s.307C)\" → \"Australia (Corporations Act 2001 s.308)\"",
+      "reason": "Section 307C of the Corporations Act 2001 governs the auditor's independence declaration, not the auditor's report on financial statements. Section 308 is the correct provision governing the auditor's report on the annual financial report.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-system_inventory-001",
+      "workflow": "system_inventory",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"App Store/iTunes Connect (digital revenue)\" → \"App Store/App Store Connect (digital revenue)\"",
+      "reason": "iTunes Connect was renamed to App Store Connect in June 2018. The current name is factually incorrect for an FY25 engagement.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-system_inventory-002",
+      "workflow": "system_inventory",
+      "engagement": "superaudit",
+      "field": "requirements",
+      "change": "[] → [\"risk_assessment_procedures\",\"control_identification_and_testing\"]",
+      "reason": "System inventory directly supports risk assessment (understanding the IT environment per AS 2110) and control identification (identifying IT systems relevant to ITGC scoping per AS 2201). These are the minimum requirement mappings for this workflow.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-testing_plan_generation-001",
+      "workflow": "testing_plan_generation",
+      "engagement": "superaudit",
+      "field": "requirement_ids",
+      "change": "[\"risk_to_procedure_linkage\"] → [\"risk_to_procedure_linkage\",\"component_auditor_supervision\"]",
+      "reason": "The workflow explicitly produces ComponentAuditInstructions as a named output, including materiality allocation, required procedures, and reporting templates per AS 1205. This directly satisfies the component_auditor_supervision requirement (PCAOB AS 1205 supervision of component auditors). Omitting this requirement leaves a gap between the workflow's stated outputs and its requirement coverage.",
+      "decision": "auto_applied"
+    },
+    {
+      "id": "c-superaudit-walkthroughs-001",
+      "workflow": "walkthroughs",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"AS 2201.34: at least one walkthrough per significant process across ALL entities.\" → \"AS 2201.37: walkthroughs for each significant process across relevant entities.\"",
+      "reason": "Paragraph 34 of AS 2201 sets out understanding objectives; the walkthrough procedure is in paragraph 37. The 'at least one walkthrough per significant process' mandatory language originated in the superseded AS No. 2 (paragraph 79); AS 2201.37 describes walkthroughs as 'frequently the most effective way' rather than a per-process mandate. 'ALL entities' is not in the standard text and overstates the requirement.",
+      "decision": "auto_applied"
+    }
+  ],
+  "approved": [],
+  "rejected": [],
+  "skipped": [
+    {
+      "id": "c-ey-eqr-005",
+      "workflow": "eqr",
+      "engagement": "ey",
+      "field": "agents.human.team.Staff.count",
+      "change": "2 → 1",
+      "reason": "Staff role in EQR is limited to administrative support. 1 Staff is sufficient for a review-focused workflow.",
+      "decision": "skipped"
+    },
+    {
+      "id": "c-superaudit-component_monitoring-003",
+      "workflow": "component_monitoring",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"4 component coordinators across 8 full-scope relationships.\" → \"Coordination across 8 full-scope component relationships.\"",
+      "reason": "The team composition does not include 4 component coordinators in any role. Either Component Senior roles should be added to the team (separate correction) or the description should be updated to remove the specific headcount claim that is not reflected in staffing. This correction takes the conservative approach of removing the orphaned headcount reference.",
+      "decision": "skipped"
+    },
+    {
+      "id": "c-superaudit-opinion_and_filing-003",
+      "workflow": "opinion_and_filing",
+      "engagement": "superaudit",
+      "field": "description",
+      "change": "\"(2) ICFR opinion (unmodified/adverse)\" → \"(2) ICFR opinion (unmodified/adverse/disclaimer)\"",
+      "reason": "Per PCAOB AS 2201.96, a disclaimer of opinion on ICFR is permitted when scope limitations prevent the auditor from forming a conclusion. While unlikely for Apple, the description should be technically complete in listing possible opinion types.",
+      "decision": "skipped"
+    }
+  ]
+}

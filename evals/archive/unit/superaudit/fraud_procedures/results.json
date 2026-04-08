@@ -1,0 +1,37 @@
+{
+  "workflow_id": "fraud_procedures",
+  "engagement": "superaudit",
+  "type": "unit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Appropriate for AI-first fraud procedures at Apple's scale. EP provides required partner oversight for fraud conclusions. Two Senior Auditors handle detailed review of AI-generated results. AI Engineer manages population_tester, gl_reader, and analytics_engine for full-population testing. Three Component Seniors and two Component Partners cover multinational entity-level review across Apple's 26-country footprint. Lean but justified given AI handles the analytics-intensive work (100% population testing of revenue transactions and journal entries)."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations within plausible ranges. EP at 0.25 (top of partner range) is justified — fraud conclusions require significant partner judgment under AS 2401 and AS 2110. Senior Auditors at 0.3 are consistent with concurrent 0.4 allocation to final_substantive during the same weeks 16-18 window (combined 0.7). Component Partners at 0.1625 is oddly precise but valid (within 0.05-0.25 partner range). EM at 0.2 and AIE at 0.3 are reasonable for coordination and technical roles."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "PCAOB references verified correct: AS 2110.68 confirmed as exact citation for revenue recognition fraud presumption ('The auditor should presume that there is a fraud risk involving improper revenue recognition'). AS 2401 confirmed as correct standard for management override; calling it 'always presumed' is common practitioner shorthand for what is technically mandatory procedures unconditionally required on every engagement (AS 2401.57-.67), not a rebuttable presumption — a precision note that does not affect procedures. Apple claims all verified factual: $416B is confirmed actual FY25 revenue ($416,161M per 10-K), App Store is the correct brand with net-basis revenue recognition, ASC 606 allocation confirmed required for Apple One bundles (3 tiers, up to 6 services, $8.25B deferred revenue at FY24), warranty reserves confirmed (last disclosed ~$2.74B), legal contingencies are material (Epic Games, EU DMA €500M fine, DOJ antitrust, €13B ECJ ruling), and UTPs are significant (effective tax rate swung 14.7%-24.1%-15.6% across FY23-FY25). Only error: stated hours '120h central + 50h component review = 170h total' do not reconcile to team allocations which yield 162h central + 93h component = 255h."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "All three requirement_ids are directly applicable and sufficient: revenue_recognition_fraud_presumption (100% revenue transaction testing per AS 2110.68), journal_entry_fraud_testing (full-population JE testing per AS 2401.58-.62), management_override_evaluation (estimates bias review per AS 2401.63-.65, unusual transaction evaluation per AS 2401.66-.67). No valid requirements missing — fraud_risk_assessment covers upstream risk identification (reflected as input FraudRiskSummary), not procedure execution."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 16-18 (3 weeks) is sound. Starting at week 16 allows fraud procedures to work with incremental final_substantive results (weeks 14-18) and incorporate the final wave by week 18. FraudRiskSummary from planning is available well before week 16. Completion at week 18 feeds FraudAssessment into misstatement_accumulation (weeks 18-19) with proper sequencing. Resource overlap with final_substantive is manageable — Senior Auditors at 0.3+0.4=0.7 combined allocation leaves capacity."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "120h central + 50h component review = 170h total.",
+      "proposed": "162h central + 93h component review = 255h total.",
+      "reason": "Hour figures do not match team allocations over the 3-week window (120h per FTE). Central: EP 1×0.25=30h + SA 2×0.3=72h + AIE 1×0.3=36h + EM 1×0.2=24h = 162h. Component: CS 3×0.15=54h + CP 2×0.1625=39h = 93h. Total = 255h, not 170h."
+    }
+  ]
+}

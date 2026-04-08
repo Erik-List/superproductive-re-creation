@@ -1,0 +1,36 @@
+{
+  "workflow_id": "valuation_specialist",
+  "engagement": "superaudit",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate. Valuation Specialist is the correct lead for impairment, investment fair value, and stock compensation work. Senior Auditor provides central coordination, Component Senior handles component-level oversight, and AI Engineer supports tooling. In a Big 4 context for a $416B client, a dedicated valuation team of 3-5 specialists plus partner oversight would be typical (150-300h). At 50h total in an AI-first model where AI handles computational heavy-lifting (fair value calculations, market data comparison, sensitivity analysis), this is lean but defensible. No partner-level role is listed, but specialist_evaluation under PCAOB AS 1210 requires the engagement team (not the specialist's own team) to evaluate the specialist — the Senior Auditor at 8h can fulfill this oversight role."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Hour calculations: Valuation Specialist 1×0.1×8wks×40h=32h, Senior Auditor 1×0.025×8×40=8h, Component Senior 1×0.025×8×40=8h, AI Engineer 1×0.00625×8×40=2h. Total=50h, matching the description's stated total. Allocations are internally consistent and reasonable for an AI-first model. The Valuation Specialist at 10% (roughly 4h/week) provides adequate specialist review time when AI performs initial computations and data gathering."
+    },
+    "description": {
+      "verdict": "FLAG",
+      "detail": "Two issues: (1) Hour breakdown in description is inconsistent with allocation-derived hours. Description states 'specialist reviews (20h), component oversight (10h). 20h central + 30h component = 50h total' but allocations produce ~40h central (32h VS + 8h SA) and ~10h component (8h CS + 2h AI Eng), not 20h/30h. (2) Stock compensation reference to 'Black-Scholes/Monte Carlo inputs against market data (volatility, risk-free rate, expected term)' is slightly misleading for Apple — Apple primarily grants RSUs (valued at grant-date stock price, no option-pricing model needed). Black-Scholes is used only for Apple's Employee Stock Purchase Plan (ESPP), which is a much smaller component. The description over-implies options-based compensation. Apple-specific factual claims ($100B+ investment portfolio, minimal goodwill from few large acquisitions) are accurate. No PCAOB AS paragraph numbers are cited, so nothing to verify there."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "specialist_evaluation (PCAOB AS 1210) is the correct and primary requirement for valuation specialist work. This workflow evaluates specialist conclusions on fair values, impairment, and stock compensation — squarely within AS 1210's scope. No obvious missing requirements; substantive_procedures and significant_account_identification are properly mapped to other workflows that consume ValuationConclusions."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 8-16 (8 weeks) is appropriate. Apple's FY25 ends ~September 27, 2025. If week 1 begins early October, week 8 starts late November and week 16 ends late January — aligning with interim/fieldwork phases when financial data and scoping outputs are available. ReviewedScopingOutput should be ready by week 8 (scoping typically completes by weeks 4-6). FinancialData availability is reasonable given Apple files its 10-K within 60 days of FY-end (~late November). Eight weeks provides adequate time for the described scope (impairment testing, investment fair values, stock compensation, component valuations) in an AI-assisted model."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Human: specialist reviews (20h), component oversight (10h). 20h central + 30h component = 50h total.",
+      "proposed": "Human: specialist reviews (32h), component oversight (8h). 40h central + 10h component = 50h total.",
+      "reason": "Allocation-derived hours show Valuation Specialist at 32h and Senior Auditor at 8h (40h central), Component Senior at 8h and AI Engineer at 2h (10h component). The description's stated 20h/30h central/component split contradicts the allocation math. The total of 50h is correct but the internal breakdown is wrong."
+    }
+  ]
+}

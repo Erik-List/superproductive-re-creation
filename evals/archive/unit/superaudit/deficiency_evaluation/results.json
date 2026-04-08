@@ -1,0 +1,57 @@
+{
+  "workflow_id": "deficiency_evaluation",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Appropriate roles for deficiency evaluation. Engagement Partner as final decision-maker on severity classifications is correct. Component Partner and Component Senior support component deficiency aggregation. Senior Auditors assist with analysis. For Big 4 on a $416B client, you'd typically see 2-3 additional staff performing manual aggregation and documentation (300-400h total). For Superaudit AI-first, the AI handles aggregation/classification and humans focus on judgment and review, so the leaner team of ~7 people is coherent with the model."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Partner at 0.5 is double the typical partner governance range (0.05-0.25), but this is the most judgment-intensive workflow in the entire control audit — the partner is making final severity determinations and the overall ICFR conclusion, not just reviewing. This elevated allocation is arguably justified. However, the allocation-derived hours (EP: 60h over 3 weeks) conflict with the description's claim of 100h of partner activities (40h + 30h + 30h). The description's hour breakdown is internally inconsistent with the staffing model."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2201.62-70 reference is correct — these paragraphs cover deficiency definitions (.62), evaluation requirements (.63), material weakness indicators (.64-.65), prudential considerations (.66-.67), combination assessment (.68-.69), and overall determination (.70). Apple-specific claims are not made in this description. However, the stated hour totals are materially wrong: allocation math yields ~156h central (EP 60h + EM 36h + SA 60h) and ~39h component (CP 24h + CS 15h) = ~195h total, but the description claims 80h central + 50h component = 130h total. The partner's itemized review hours (40h + 30h + 30h = 100h) also exceed the 60h produced by the EP allocation."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "deficiency_severity_evaluation and material_weakness_adverse_opinion are correct mappings. However, the description explicitly states the partner 'determines overall ICFR conclusion' — this maps directly to integrated_icfr_opinion, which is missing from requirement_ids. This workflow is the terminal node in the Control Audit stream and no other sibling workflow covers ICFR opinion formation."
+    },
+    "timing": {
+      "verdict": "FLAG",
+      "detail": "3 weeks (weeks 16-18) is tight but feasible given AI handles aggregation and classification. Key concern: PeriodEndResults is a listed input but period_end_controls runs weeks 14-18, meaning this workflow starts at week 16 before its input is fully available. This can work if deficiency evaluation processes results incrementally as period-end testing completes, but creates a dependency risk — any delays in period_end_controls compress the already-tight window for partner review. Sequencing with OperatingEffectivenessResults (weeks 9-15, complete by week 15) is clean."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "80h central + 50h component = 130h total.",
+      "proposed": "156h central + 39h component = 195h total.",
+      "reason": "Allocation math: Central = EP(1×0.5×3×40=60) + EM(1×0.3×3×40=36) + SA(2×0.25×3×40=60) = 156h. Component = CP(2×0.1×3×40=24) + CS(1×0.125×3×40=15) = 39h. Total = 195h. The claimed 130h does not match the staffing model."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "deficiency_severity_evaluation",
+        "material_weakness_adverse_opinion"
+      ],
+      "proposed": [
+        "deficiency_severity_evaluation",
+        "material_weakness_adverse_opinion",
+        "integrated_icfr_opinion"
+      ],
+      "reason": "The description explicitly states the partner 'determines overall ICFR conclusion (30h).' This is the terminal workflow in the Control Audit stream with no downstream ICFR opinion workflow, so integrated_icfr_opinion must be satisfied here."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Partner reviews each classification (40h), evaluates compensating controls (30h), determines overall ICFR conclusion (30h).",
+      "proposed": "Partner reviews each classification (25h), evaluates compensating controls (20h), determines overall ICFR conclusion (15h).",
+      "reason": "The partner's itemized activities total 100h but the EP allocation (1×0.5×3wks×40h) yields only 60h. Proposed breakdown redistributes 60h across the three activities proportionally. Alternatively, the EP allocation could be increased, but 0.5 is already elevated for a partner role."
+    }
+  ]
+}

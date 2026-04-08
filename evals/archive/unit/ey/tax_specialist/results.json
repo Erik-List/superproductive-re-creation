@@ -1,0 +1,41 @@
+{
+  "workflow_id": "tax_specialist",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "30 tax specialists at high allocation is on the upper end but defensible for what is arguably the most complex tax engagement in global auditing — Apple's multi-jurisdiction structure with $22B UTBs, €13B EU state aid, and Pillar Two compliance. Supporting team of 3 Senior Managers, 6 Managers, 10 Seniors, and 6 Staff provides appropriate review layers. Total ~17,080 hours over 10 weeks is substantial but proportionate to scope."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Specialist allocation at 0.90 is aggressive; 0.80-0.85 is more typical for specialist teams even on large engagements, as specialists typically serve multiple clients. However, Apple's tax complexity could justify near-dedicated staffing. Hours check: 30 × 0.9 × 10 × 40 = 10,800 specialist hours; total workflow ~17,080 hours. Not implausible but at the upper bound."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Apple-specific claims verified: (1) ~$22B UTBs is consistent with Apple's historical range (high-teens to low-twenties billion), plausible for FY25 though exact figure unconfirmed. (2) €13B EU state aid confirmed as largest in EU history; CJEU reinstated the decision September 10, 2024. (3) $38.4B deferred tax assets confirmed at $38.417B from FY2025 XBRL data. (4) 40+ jurisdictions and 20+ major entities are reasonable given Apple's 100+ subsidiaries across 20+ countries plus US states. ASC 740, GILTI/FDII/BEAT/Pillar Two references are all appropriate for this scope."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "specialist_evaluation maps to AS 1210, which explicitly excludes tax specialists from its scope (AS 1210.01: 'this standard does not apply to situations in which a person with specialized skill or knowledge in income taxes...participates in the audit'). Tax specialist work is governed by AS 1201 (Supervision) and AS 2501 (Estimates). However, specialist_evaluation is the closest available ID in the registry. More importantly, tax substantive work directly supports substantive_procedures, which is missing from the requirement_ids."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 10-20 (10-week duration) aligns well with Apple's September 27 FY-end. Tax specialist work properly begins after scoping (ScopingOutput dependency) and runs through interim/year-end periods. The extended window accommodates multi-jurisdiction ASC 740 provision review and Pillar Two calculations. Timing overlaps appropriately with other specialist streams."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "specialist_evaluation"
+      ],
+      "proposed": [
+        "specialist_evaluation",
+        "substantive_procedures"
+      ],
+      "reason": "Tax specialist work directly supports substantive audit procedures — ASC 740 provision testing, transfer pricing analysis, UTB assessment, and tax rate reconciliation are all substantive procedures. AS 1210 technically excludes tax specialists from its scope, but specialist_evaluation is retained as the closest available requirement for specialist oversight. substantive_procedures should be added to reflect the substantive nature of tax testing work."
+    }
+  ]
+}

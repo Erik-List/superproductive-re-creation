@@ -1,0 +1,36 @@
+{
+  "workflow_id": "component_instructions",
+  "engagement": "superaudit",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner and Engagement Manager are the correct roles for reviewing AI-generated component instructions. In an AI-first model, the AI drafts AS 1205 compliant instructions and the partner/manager provide review and approval. No execution-level staff needed since AI handles generation. For a Big 4 engagement of this scale, you would typically see additional senior/manager time for drafting, but the AI-first model reasonably replaces that drafting effort."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Partner at 0.25 over 3 weeks yields 30 hours (0.25 × 3 × 40). Manager at 0.25 over 3 weeks also yields 30 hours. However, the description explicitly states 20h for each role. The allocation math (30h each, 60h total) does not match the description (20h each, 40h total). The 30h figure from the allocation is more plausible for reviewing component instructions across Apple's global entity portfolio (Ireland, China, India, Japan, and others), so the description's hour claims appear understated."
+    },
+    "description": {
+      "verdict": "FLAG",
+      "detail": "AS 1205 (Part of the Audit Performed by Other Independent Auditors) is the correct PCAOB standard for component auditor instructions and supervision. The standard requires the principal auditor to communicate with component auditors regarding materiality, significant risks, and required procedures — all described here. Apple-specific emphases are reasonable: Ireland transfer pricing (Apple's well-known Irish operations for IP holding), China related-party (extensive manufacturing supply chain relationships), Japan revenue cut-off (common emphasis for revenue-heavy international components). The claim that supervision requirements are 'higher per AS 1205' for affiliates in China, India, and Japan is a reasonable interpretation — AS 1205 requires the principal auditor to consider the reputation and independence of component auditors, which may warrant more detailed instructions for certain jurisdictions — though AS 1205 does not explicitly mandate higher supervision by country. The stated review hours (20h each) conflict with allocation-derived hours (30h each)."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_id 'component_auditor_supervision' is correct and exists in the valid registry. This is the primary PCAOB requirement for this workflow. One could argue 'risk_to_procedure_linkage' applies since the instructions specify required procedures linked to risks, but that requirement is more naturally satisfied by the testing plan workflow. The mapping is appropriate."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 7-9 (3 weeks) is reasonable for generating and reviewing component instructions. Component scoping (weeks 2-4) completes well before this starts, allowing time for the testing plan to be developed in the interim (weeks 5-6). Output feeds directly into component_monitoring (weeks 9-17) with no gap. For Apple's September 27 FY-end, week 7 would fall approximately in mid-to-late Q3, giving adequate lead time before fieldwork begins. Duration of 3 weeks is sufficient for AI generation plus partner/manager review cycles across multiple entities."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Partner reviews full-scope instructions (20h), manager reviews specified procedures (20h).",
+      "proposed": "Partner reviews full-scope instructions (30h), manager reviews specified procedures (30h).",
+      "reason": "At 0.25 allocation over 3 weeks (weeks 7-9), each role's hours compute to 0.25 × 3 × 40 = 30 hours, not 20 hours as stated. 30 hours per role is reasonable given the need to review instructions across Apple's multi-jurisdiction component portfolio including Ireland, China, India, Japan and others."
+    }
+  ]
+}

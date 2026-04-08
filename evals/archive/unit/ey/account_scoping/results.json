@@ -1,0 +1,29 @@
+{
+  "workflow_id": "account_scoping",
+  "engagement": "ey",
+  "type": "unit",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate for a judgment-heavy scoping exercise at Apple's scale. Senior Manager leads the analysis, two Managers and two Seniors support across account categories, one Staff provides data-gathering support. Account scoping does not require large junior teams — it requires experienced professionals who can apply AS 2201 criteria to Apple's financial statement line items."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner at 0.05 is at the floor of the 0.05-0.25 range but appropriate — partner role here is review and approval of scoping conclusions, not detailed analysis. Senior Manager at 0.50, Manager at 0.55, and Senior at 0.45 reflect the analytical intensity of this work. Staff at 0.30 is below the typical 0.8-1.0 guideline for execution-heavy workflows, but this is contextually justified: account scoping is an analytically complex, judgment-driven exercise where staff involvement is limited to data retrieval and working paper preparation, not full-time execution."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2201 reference is correct — paragraphs 28-33 specifically address identifying significant accounts and disclosures. The claim that Apple has no manufacturing cost accounting and no inventory WIP is factually accurate: Apple outsources virtually all manufacturing to contract manufacturers (Foxconn, Pegatron, etc.), so it carries finished goods inventory but not WIP. The listed key accounts (revenue, AR, deferred revenue, legal contingencies, income taxes, PP&E, intangibles) are representative examples; the description correctly notes ~12-20 total significant accounts, acknowledging unlisted items such as cash/marketable securities, operating leases, and goodwill."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "significant_account_identification is the correct and sufficient PCAOB requirement for this workflow. This maps directly to AS 2201.28-33. No additional requirement_ids from the registry are needed — downstream requirements like control_identification_and_testing and risk_to_procedure_linkage are properly addressed by subsequent workflows."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Duration of 3 weeks (3.5-6.5) is realistic for scoping ~12-20 significant accounts at Apple's scale. Sequencing is sound: starts at week 3.5 after risk_assessment completes (week 3) and overlaps with the tail of materiality (ends week 4.5), which is appropriate since preliminary materiality is sufficient to begin scoping. Feeds correctly into component_scoping (starts week 4), which can begin once initial account-level scoping decisions are in progress."
+    }
+  },
+  "corrections": []
+}

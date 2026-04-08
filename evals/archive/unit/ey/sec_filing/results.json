@@ -1,0 +1,46 @@
+{
+  "workflow_id": "sec_filing",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "No Engagement Partner is allocated. While the EP signs the audit report during the opinion workflow (weeks 23.5-24.5), the EP typically retains at least nominal oversight of the 10-K filing on EDGAR — particularly for a $416B client. A minimal allocation (e.g., 0.05-0.10) would be expected. The heavy GDS/Offshore staffing (11 people) is appropriate for the documentation archival task spanning workpapers from 26 countries across multiple component teams. Overall headcount of ~20 is reasonable for the scope."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Total hours: SM 1×0.2×2×40=16h, Mgr 2×0.3×2×40=48h, Sr 3×0.35×2×40=84h, Staff 3×0.3×2×40=72h, GDS 11×0.45×2×40=396h = ~616 hours total. This is plausible for assembling and archiving workpapers across a global engagement (26 countries, ~194K total engagement hours of documentation) plus managing the EDGAR filing. GDS at 0.45 reflects execution-heavy but not full-time work, consistent with parallel archival tasks."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The AS 1215 reference is correct for documentation completion and retention. However, the '14-day archival' figure is incorrect for Apple FY25. PCAOB Release 2024-004 amended AS 1215.15 from 45 days to 14 days, but the effective date for large firms is fiscal years beginning on or after December 15, 2024. Apple FY25 began ~September 29, 2024, so the 45-day rule under the pre-amendment AS 1215.15 still applies. The LAF 60-day filing deadline and 'late November' target (~November 26, 2025) are correct."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "ten_k_filing_deadline correctly maps to the 10-K EDGAR filing. documentation_completion correctly maps to AS 1215.15 workpaper assembly. documentation_retention correctly maps to AS 1215.14 seven-year retention. No obvious missing requirements — CAM disclosure, opinion format, and tenure disclosure belong to the opinion workflow, not the filing workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 24.5-26.5 (2 weeks) starts immediately after the opinion workflow (23.5-24.5), which is correct since the signed audit opinion is a required input. The 2-week duration is sufficient given the team size (20 people, ~616 hours). The timing aligns with Apple's calendar: FY-end September 27 → 10-K filing well within the 60-day LAF deadline of ~November 26. Runs in parallel with mgmt_letter (also 24.5-26.5), which is standard practice."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "File Apple's 10-K with audit reports on EDGAR. LAF deadline: 60 days after September 27 FY-end (~late November). AS 1215 14-day archival across workpapers from all locations.",
+      "proposed": "File Apple's 10-K with audit reports on EDGAR. LAF deadline: 60 days after September 27 FY-end (~late November). AS 1215 45-day archival across workpapers from all locations.",
+      "reason": "PCAOB Release 2024-004 amended AS 1215.15 from 45 to 14 days, but the effective date for large firms is fiscal years beginning on or after December 15, 2024. Apple FY25 began September 29, 2024 — before the effective date — so the pre-amendment 45-day documentation completion deadline applies to this engagement."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "agents.human.team.Engagement Partner",
+      "current": null,
+      "proposed": {
+        "count": 1,
+        "allocation": 0.1
+      },
+      "reason": "The Engagement Partner should retain at least nominal oversight of the 10-K filing on EDGAR for a $416B revenue client. While the report is signed during the opinion workflow, EP involvement in reviewing the final filing package is standard practice. A minimal 1×0.10 allocation (8 hours over 2 weeks) reflects this oversight role."
+    }
+  ]
+}

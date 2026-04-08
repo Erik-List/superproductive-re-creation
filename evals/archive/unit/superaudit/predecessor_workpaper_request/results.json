@@ -1,0 +1,36 @@
+{
+  "workflow_id": "predecessor_workpaper_request",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner at 1×0.05 is appropriate. In an AI-first model, the AI generates the comprehensive workpaper request list while the partner reviews, customizes, and sends it to EY. No additional staffing needed for what is essentially a document generation and review task."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner allocation: 0.05 × 1 × 2 weeks × 40 = 4 hours. The description explicitly states '4h human (partner review + customization)' which matches exactly. 4 hours is reasonable for a partner to review an AI-generated workpaper request list, customize it for Apple's specifics, and authorize sending to EY."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2610 (Initial Audits—Communications Between Predecessor and Successor Auditors) is correctly referenced — it governs predecessor workpaper access per paragraphs .11-.13. However, AS 2510 is 'Auditing Inventories' and has no relevance to predecessor workpaper requests. This should be AS 2101 (Audit Planning), which at paragraph .18 requires communication with the predecessor per AS 2610 and at paragraph .19 addresses initial audit planning including opening balance procedures. Apple-specific claims (ASC 606 bundles, Ireland structure, €13B EU state aid, 535 retail stores, App Store/services) are factual and appropriate for the scope."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "No requirement_ids field is present in the workflow JSON. This workflow should map to 'predecessor_communication' at minimum, as it directly implements the successor auditor's obligation to request and review predecessor workpapers under AS 2610."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 0-2 is reasonable for generating and sending the request. Input PredecessorCommunicationMemo comes from predecessor_communication (weeks 0-1), so the request can be finalized in week 1-2 after that memo is available. The description correctly notes this is NOT a gate and expects 4-8 week EY response time. No sequencing issues."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Ingests PredecessorCommunicationMemo + PCAOB standards (AS 2610, AS 2510).",
+      "proposed": "Ingests PredecessorCommunicationMemo + PCAOB standards (AS 2610, AS 2101).",
+      "reason": "AS 2510 is 'Auditing Inventories' and is irrelevant to predecessor workpaper requests. AS 2101 (Audit Planning) is the correct companion standard — paragraph .18 requires predecessor communication per AS 2610 for initial audits, and paragraph .19 addresses planning considerations for opening balances."
+    }
+  ]
+}

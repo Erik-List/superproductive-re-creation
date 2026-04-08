@@ -1,0 +1,28 @@
+{
+  "workflow_id": "component_findings_evaluation",
+  "engagement": "superaudit",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner, Engagement Manager, and Component Partner are the correct roles for evaluating component findings and their group-level impact. This is inherently a senior-judgment activity — the EP assesses impact on the group opinion, the Component Partner provides component-level context, and the EM coordinates. No staff-level execution roles are needed because the AI agent handles the mechanical aggregation, currency translation, and structured output. In a Big 4 model you would also see 1-2 seniors preparing summaries, but the AI replaces that layer here."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "EP allocation of 0.375 exceeds the stated partner governance range of 0.05–0.25. This produces 30 hours (1 × 0.375 × 2 weeks × 40h), which is plausible effort for evaluating component findings on a $416B multinational with 26 countries, but the allocation percentage itself is high for a partner role even on judgment-heavy work. EM at 0.25 (20h) and Component Partner at 0.125 (10h) are reasonable. Total human hours = 60h, which is credible for this scope. The description's stated hours (30h + 30h = 60h) match the calculated total. Flagging EP allocation as above-guideline but potentially justified."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "The description accurately reflects the workflow scope: aggregating component findings, translating misstatements to group materiality via currency conversion and contribution percentages, evaluating deficiency impact on group ICFR, and identifying issues requiring group-level adjustments. No PCAOB AS paragraph numbers are cited, so none to verify. The parenthetical hours (30h + 30h = 60h) match the computed allocation total. The AI role (reasoning-tier model with workpaper access and structured output) is appropriate for the mechanical aggregation and translation work."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_ids: [\"component_findings_evaluation\"] is the correct primary mapping. While the workflow touches on activities related to deficiency_severity_evaluation (assessing whether deficiencies affect group ICFR opinion) and misstatement_accumulation (translating component misstatements to group materiality), these are ancillary to the core component evaluation function and are likely satisfied by dedicated workflows elsewhere in the engagement model. component_auditor_supervision is covered by the sibling component_monitoring workflow (weeks 9-17). The mapping is appropriate and complete."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 17-19 (2 weeks duration) is well-sequenced. It begins exactly when component_monitoring (weeks 9-17) ends, ensuring ComponentProgressReports and ComponentWorkpapers are available as inputs. For Apple's September 27 FY-end with a 23-week engagement starting early October, weeks 17-19 falls in late January/early February — appropriate for near-end-of-fieldwork component evaluation before the final reporting phase. Two weeks is tight but realistic given that the AI agent performs the mechanical aggregation and the humans focus on judgment and resolution."
+    }
+  },
+  "corrections": []
+}

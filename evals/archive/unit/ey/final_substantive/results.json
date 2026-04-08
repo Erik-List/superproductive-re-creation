@@ -1,0 +1,50 @@
+{
+  "workflow_id": "final_substantive",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "262 total headcount (2 EP, 4 SM, 12 Mgr, 28 Sr, 48 Staff, 168 GDS) is reasonable for final substantive on a $416B revenue client. Heavy GDS leverage (64% of headcount) reflects execution-intensive nature of substantive testing. All role names are valid EY roles. No Specialist role included, which is acceptable since specialist_evaluation is handled in separate specialist workflows."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Total hours: ~28,550 over 3 weeks. EP at 0.15 (governance review) within 0.05-0.25 range. SM at 0.45 reflects increased final-phase oversight. Manager at 0.80, Senior at 0.92, Staff at 0.95, GDS at 0.92 all reflect near-full-time execution work appropriate for final substantive crunch. 28,550 hours is ~14.7% of 194,000 total engagement hours — reasonable for the most labor-intensive testing phase."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2905 is 'Subsequent Discovery of Facts Existing at the Date of the Auditor's Report' (a post-report standard). The correct standard for subsequent events testing during fieldwork is AS 2801 'Subsequent Events'. Apple-specific claims are generally accurate: September 27 FY-end is correct for FY2025, services revenue bundled arrangement testing is relevant, and ~$48.5B net PP&E is within ~3% of actual FY2025 figure ($49.8B) — acceptable as an approximation."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "substantive_procedures and subsequent_events are both correct and required. However, the description explicitly mentions 'Final analytics' which maps to final_analytical_review — this requirement should be included. misstatement_accumulation could also apply but is more naturally housed in the adjustments workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 17.5-20.5 (3 weeks) aligns with post-FY-end final substantive window for a September 27 fiscal year. Interim substantive ends at week 16.5, providing a 1-week gap before final substantive begins — reasonable for transitioning from interim to final. Duration is tight but feasible given the 262-person team. Inputs (InterimResults, SpecialistOutput) are available from prior workflows."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "subsequent events (AS 2905)",
+      "proposed": "subsequent events (AS 2801)",
+      "reason": "AS 2905 is 'Subsequent Discovery of Facts Existing at the Date of the Auditor's Report' — a post-report remedial standard. The correct standard for subsequent events testing during the audit is AS 2801 'Subsequent Events'."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "substantive_procedures",
+        "subsequent_events"
+      ],
+      "proposed": [
+        "substantive_procedures",
+        "subsequent_events",
+        "final_analytical_review"
+      ],
+      "reason": "The description explicitly references 'Final analytics' as part of this workflow's scope. final_analytical_review is a valid requirement_id and should be mapped since the workflow encompasses this procedure."
+    }
+  ]
+}

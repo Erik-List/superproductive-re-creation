@@ -1,0 +1,78 @@
+{
+  "workflow_id": "eqr",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "EQR Partner ×2 and Engagement Partner ×2 are appropriate. However, 5 Senior Managers, 5 Managers, 6 Seniors, and 2 Staff (22 people, ~994 total hours) is excessive for EQR. AS 1220.07 prohibits the EQR reviewer from assuming engagement team responsibilities; an oversized EQR support team blurs that boundary. For Apple, a realistic EQR support team would be ~10-12 people producing ~400-550 hours: EQR Partner ×2, Engagement Partner ×2, Senior Manager ×3, Manager ×2, Senior ×2, Staff ×1. No GDS/Offshore is appropriate since EQR requires senior judgment."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "EQR Partner at 0.80 is high but defensible for a 2-week window on a mega-cap; they are intensively reviewing workpapers across all audit areas. Engagement Partner at 0.30 reflects consultation/availability role. Support staff allocations (0.52-0.70) are plausible for workpaper assembly and summary preparation during an intensive review period. No individual allocation produces implausible hours given the corrected headcounts."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Two issues: (1) 'Second partner-level review' is a colloquial simplification; AS 1220 characterizes EQR as an independent evaluation/concurring review, not a 'second review' of the same work. (2) '3-5 days for mega-caps' directly contradicts the workflow's own 2-week timing window (weeks 21.5-23.5). For Apple's complexity, 2-3 weeks is realistic. AS 1220 is correctly cited. All four Apple-specific judgment areas (bundled revenue recognition, legal contingencies, transfer pricing, deferred revenue) are verified as relevant."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "eqr_mandatory and eqr_independence are correct and essential. However, AS 1220.10 explicitly requires the EQR reviewer to evaluate the engagement team's determination of critical audit matters (CAMs). cam_disclosure should be added since CAM evaluation is a mandatory component of EQR under current PCAOB standards."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 21.5-23.5 maps to approximately mid-to-late October for Apple's late-September FY-end, placing EQR ~3-4 weeks before the typical ~November 1 10-K filing. This is appropriate: EQR overlaps with final_analytics (ends week 22) and precedes opinion (starts week 23.5). The 2-week duration is realistic for Apple's complexity. Minor note: EQR begins 0.5 weeks before final_analytics completes, meaning the EQR partner may need to revisit final analytics conclusions, but this overlap is common in practice."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Second partner-level review per AS 1220. Key judgment areas for Apple: revenue recognition (bundled arrangements), legal contingency estimation, transfer pricing, deferred revenue. 3-5 days for mega-caps.",
+      "proposed": "Independent concurring review per AS 1220. Key judgment areas for Apple: revenue recognition (bundled arrangements), legal contingency estimation, transfer pricing, deferred revenue. 2-3 weeks for mega-caps.",
+      "reason": "(1) AS 1220 defines EQR as an independent evaluation, not a 'second review.' (2) '3-5 days' contradicts the model's own 2-week timing window and understates the effort required for a $416B revenue client."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "agents.human.team.Senior Manager.count",
+      "current": 5,
+      "proposed": 3,
+      "reason": "5 Senior Managers on EQR is excessive. EQR needs senior coverage across key audit areas (revenue, ICFR, tax) but not one-to-one staffing. 3 Senior Managers provides adequate area coverage while respecting AS 1220's boundary between evaluation and engagement execution."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "agents.human.team.Manager.count",
+      "current": 5,
+      "proposed": 2,
+      "reason": "5 Managers on EQR exceeds the support needed for workpaper review coordination. 2 Managers can handle assembly and tracking across audit areas without the EQR function assuming engagement-level responsibilities."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "agents.human.team.Senior.count",
+      "current": 6,
+      "proposed": 2,
+      "reason": "6 Seniors performing EQR work risks violating AS 1220.07's prohibition on the reviewer assuming engagement responsibilities. 2 Seniors can support workpaper retrieval and summary preparation."
+    },
+    {
+      "confidence": "LOW",
+      "field": "agents.human.team.Staff.count",
+      "current": 2,
+      "proposed": 1,
+      "reason": "Staff role in EQR is limited to administrative support. 1 Staff is sufficient for a review-focused workflow."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "eqr_mandatory",
+        "eqr_independence"
+      ],
+      "proposed": [
+        "eqr_mandatory",
+        "eqr_independence",
+        "cam_disclosure"
+      ],
+      "reason": "AS 1220.10 explicitly requires the EQR reviewer to evaluate whether the engagement team's CAM determinations are appropriate. cam_disclosure is a valid requirement_id and should be mapped to EQR."
+    }
+  ]
+}

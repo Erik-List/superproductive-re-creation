@@ -1,0 +1,36 @@
+{
+  "workflow_id": "partner_scoping_lock",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "EP (1×0.15) and EM (1×0.05) are the right roles for a scoping lock quality gate. This is a review/approval workflow, not execution, so no staff-level resources are needed. In Big 4, a senior manager might also participate, but in Superaudit's AI-first model the Engagement Manager fulfills that validation role. Headcount of 2 people is realistic for a sign-off gate."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "EP: 1×0.15×1 week×40h = 6h, consistent with described '3-6h EP review'. EM: 1×0.05×1 week×40h = 2h, consistent with described '1-2h validation'. Both allocations are within the governance range (0.05-0.25) and produce plausible hours for a review gate on a $416B engagement."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description references '1-2h senior manager validation' but the team composition uses 'Engagement Manager', which is the valid Superaudit role. 'Senior Manager' is not a valid role in the CostConfig. The description should match the actual team to avoid confusion. Substantive content (materiality, risk matrix, significant accounts, component scope, testing plan, fraud risks) accurately describes a scoping lock review. No PCAOB AS paragraph numbers are cited, so none to verify."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "risk_assessment_procedures and audit_strategy are appropriate primary mappings. However, the description explicitly states the partner reviews materiality and fraud risks, and FraudBrainstormingMemo is a direct input. materiality_establishment and fraud_risk_assessment could reasonably be mapped here since the partner's sign-off is what finalizes those assessments. These may be intentionally mapped to the producing workflows (predecessor_calibration, fraud_brainstorming) rather than the review gate, which is a valid modeling choice."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 6-7 (1 week) is appropriate. Inputs from predecessor_calibration (ends week 6) and fraud_brainstorming (ends week 6) are available at start. Output feeds testing_plan_generation (starts week 7) with no gap. For Apple's Sept 27 FY-end on a 23-week engagement starting ~late April, week 6-7 falls in June — well-timed for pre-fieldwork scoping lock."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "3-6h EP review + 1-2h senior manager validation",
+      "proposed": "3-6h EP review + 1-2h engagement manager validation",
+      "reason": "The team composition uses 'Engagement Manager', which is the valid Superaudit role name. 'Senior Manager' does not exist in the CostConfig role registry. Description should match the actual staffing."
+    }
+  ]
+}

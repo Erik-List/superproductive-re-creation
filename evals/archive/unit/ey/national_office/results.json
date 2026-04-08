@@ -1,0 +1,28 @@
+{
+  "workflow_id": "national_office",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate for national office consultation work. The workflow is weighted toward Senior Managers (2) and Managers (3) who draft and coordinate consultation memos, with lighter Engagement Partner oversight (1×0.05) and support from Seniors (4), Staff (2), and GDS/Offshore (4). No Specialist role is listed, which is correct — national office professional practice partners are internal firm resources, not 'specialists' under AS 1210. GDS/Offshore involvement (4×0.10) for documentation and research compilation is increasingly common at Big 4 firms. Total team of 16 is reasonable for four distinct complex consultation topics on a $416B client."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations are low, which is appropriate for episodic consultation work (prepare memo, submit, await response, document conclusions). Hours breakdown over 14 weeks: EP 28h, SM 224h, Manager 336h, Senior 291h, Staff 112h, GDS 224h = ~1,215 total hours. This represents roughly 0.6% of the engagement's ~194,000 total hours. For four genuinely complex matters (bundled revenue recognition, three active legal contingencies, transfer pricing, App Store commissions) on the world's largest company by revenue, this is defensible. Partner allocation at 0.05 reflects governance-only involvement, consistent with the typical pattern where senior managers and managers drive consultation preparation."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "All claims in the description are factually verified. (1) Revenue recognition for bundled hardware + services: Apple bundles iCloud, AppleCare, software updates, and Apple One with hardware, creating complex ASC 606 performance obligation allocation. (2) Legal contingencies — Epic: Judge Gonzalez Rogers found Apple in willful violation of injunction in April 2025; EU DMA: EC fined Apple EUR 500M in April 2025 for non-compliance; DOJ: federal judge denied Apple's motion to dismiss in June 2025 — all three were actively litigated during FY25. (3) Transfer pricing: Apple's EUR 13B EU state aid case resolved in 2024 with ongoing global TP scrutiny. (4) App Store commission accounting: principal-vs-agent determination, variable rates (30%/15%), and regulatory disruption from DMA/Epic create genuine complexity. The reference to 'Professional Practice group' is EY's standard term for its national office consultation function."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "No requirement_ids are present in the workflow definition. National office consultations serve a quality control function (PCAOB QC Section 20, paragraph .19) and support audit planning (AS 2101). Relevant requirement mappings would include: audit_committee_communication (NOC conclusions on complex matters are typically communicated to the audit committee), cam_disclosure (complex matters requiring NOC consultation — revenue recognition, legal contingencies — are strong CAM candidates), and potentially materiality_establishment (transfer pricing and legal contingency conclusions inform materiality judgments). However, since the workflow JSON does not include a requirement_ids field, this may be a structural omission rather than an error in the workflow itself."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 10-24 (14 weeks) spans from approximately mid-December through late March, covering the period from substantive fieldwork through reporting. This is appropriate — NOC consultations begin after initial risk assessment identifies complex matters and continue through resolution. The long duration accommodates iterative consultation cycles (initial query, national office review, follow-up, final conclusion documentation). Apple's FY25 ends September 27, 2025, with 10-K filing due ~60 days later (late November). Week 10 starting mid-December and ending at week 24 (late March) aligns with the post-year-end fieldwork and reporting timeline. Input of TestedBalances is slightly unusual since some consultations should precede testing, but the ScopingOutput input enables early consultations while TestedBalances supports later consultations triggered by testing findings. The 14-week span accommodates both patterns."
+    }
+  },
+  "corrections": []
+}

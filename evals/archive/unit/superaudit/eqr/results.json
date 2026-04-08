@@ -1,0 +1,28 @@
+{
+  "workflow_id": "eqr",
+  "engagement": "superaudit",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate. EQR Partner is the primary reviewer as required by AS 1220. Senior Auditors and Engagement Manager prepare the review package. Engagement Partner availability for discussion and Documentation Lead for archival support are realistic. For Big 4 on a $416B client, staffing would be similar: one EQR partner plus 2-3 support staff to compile the review binder. For Superaudit's AI-first model, the human-centric approach is correct since the description properly notes EQR CANNOT be AI — AS 1220 requires an independent partner-level reviewer to exercise professional judgment."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Hours check: EQR Partner 1×0.85×1.5wk×40h=51h, Senior Auditor 2×0.2×1.5×40=24h, Engagement Manager 1×0.25×1.5×40=15h, Engagement Partner 1×0.1×1.5×40=6h, Documentation Lead 1×0.067×1.5×40=4h. Total ~100h matching the description's '50h partner + 50h support' estimate. EQR Partner at 0.85 is appropriate — this is their primary focus during this window. Engagement Partner at 0.10 is reasonable for availability to discuss findings. All allocations are within plausible ranges."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 1220 is the correct PCAOB standard for Engagement Quality Review. The characterization as 'independent second-partner review' is accurate in practice. 'CANNOT be AI' is correct — AS 1220 requires an experienced auditor exercising professional judgment. Apple CAMs listed (revenue recognition, legal contingencies, income taxes) are reasonable for Apple's complexity — Apple has disclosed revenue recognition as a CAM in recent filings, and tax/legal matters are standard CAMs for multinational mega-caps. The '10 required areas' is a reasonable approximation of the matters enumerated in AS 1220.10-.11, though the standard does not label them as exactly 10. '2-3 days for dual-opinion mega-cap' reasonably describes the concentrated review time within the 1.5-week window, with 'dual-opinion' correctly referring to the integrated audit (financial statements + ICFR)."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "eqr_mandatory and eqr_independence are both valid requirement_ids and directly correspond to AS 1220's core mandates: (1) that an EQR is required for SEC issuers, and (2) that the reviewer must be independent of the engagement team. No other requirement_ids from the valid list are obviously missing — the EQR workflow evaluates other areas' work but does not itself satisfy those other requirements."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 19.5-21 (1.5 weeks) is appropriate. EQR correctly follows final_analytical_review (weeks 19-19.5) and precedes audit_committee_communication (weeks 21-22) and opinion_and_filing (weeks 22-22.5). The inputs (ControlAuditOutput, FinalSubstantiveResults, AnalyticalReviewOutput, MisstatementSummary) would all be available by week 19.5. For Apple's September 27 FY-end with a 60-day 10-K filing deadline (~November 25), week 19.5 falls in mid-November, giving adequate time for EQR before filing. 1.5 weeks is realistic for a mega-cap EQR — enough time for package preparation, partner review, and resolution of any questions."
+    }
+  },
+  "corrections": []
+}

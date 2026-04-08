@@ -1,0 +1,36 @@
+{
+  "workflow_id": "misstatement_accumulation",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate for misstatement accumulation. Heavy Engagement Partner involvement is correct—this is the phase where the partner must personally evaluate all accumulated misstatements against materiality and qualitative factors per AS 2810. Component Partners and Component Seniors are necessary given Apple's multi-component structure (26 countries, multiple subsidiaries). AI Engineer supports the AI-first model for automated compilation and classification. For a Big 4 engagement on a $416B client, you would see similar roles with potentially more senior auditor and manager time, but the AI-first model offloads compilation and classification work. Headcount of 14 people across central and component teams is reasonable for 2 weeks of concentrated evaluation work."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Partner at 0.75 is high but defensible—this is the culmination workflow where the partner must personally evaluate aggregate misstatements, qualitative factors, and reach the audit conclusion. For 2 weeks this is the partner's primary focus. However, there is a significant internal inconsistency: the staffing math produces ~360 hours (EP: 1×0.75×2×40=60h, EM: 1×0.5×2×40=40h, SA: 2×0.5×2×40=80h, CP: 3×0.25×2×40=60h, CS: 6×0.2×2×40=96h, AIE: 1×0.3×2×40=24h = 360h total), but the description claims '80h central + 100h component = 180h total.' The description also states 'Partner: evaluates qualitative factors (30h), management discussion (20h), aggregate evaluation (30h)' totaling 80h for partner tasks, yet EP allocation only yields 60h. The 2:1 discrepancy between staffing (360h) and described hours (180h) needs resolution. For a $416B multi-component engagement, 360h is more realistic than 180h for this critical workflow."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Misstatement classification into factual, judgmental, and projected categories correctly reflects AS 2810.A4-A6. Qualitative factors listed (trend changes, loss-to-income conversion, covenant compliance, fraud involvement) align with AS 2810.17. Materiality thresholds ($3B overall at ~0.72% of revenue, $2.25B performance at 75% of overall) are reasonable for Apple. The proposed conclusion options (unmodified/qualified) are appropriate. However, the hour totals stated in the description (180h) are inconsistent with the staffing allocations which produce ~360h. The description's internal hour breakdown also doesn't reconcile: partner tasks sum to 80h but EP allocation yields only 60h. No PCAOB AS paragraph numbers are explicitly cited so there are no incorrect references to flag."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "The sole requirement_id 'misstatement_accumulation' is correct and exists in the valid registry. However, the workflow description explicitly states it 'Compiles ALL identified misstatements from ALL streams and ALL component locations' with '100h component aggregation,' which encompasses component-level misstatement evaluation. This overlaps with 'component_findings_evaluation.' Whether this should be mapped here or in a separate workflow depends on the overall engagement design. Flagging for review rather than proposing a correction since the component_findings_evaluation requirement may be satisfied by a dedicated component supervision workflow elsewhere in the model."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 18-19 (2-week duration) is appropriate. All inputs are available: FinalSubstantiveResults from final_substantive (ends week 18), FraudAssessment from fraud_procedures (ends week 18), and ComponentResults. The workflow starts precisely when its upstream dependencies complete, which is correct sequencing. For Apple's late-September FY-end (September 27, 2025), week 18-19 falls in late January/early February, providing sufficient time before the 10-K filing deadline (typically 60 days after FY-end for large accelerated filers, ~November 25). Two weeks is tight but feasible in an AI-first model where the AI handles initial compilation and classification, leaving humans to evaluate and conclude."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Partner: evaluates qualitative factors (30h), management discussion (20h), aggregate evaluation (30h). Component aggregation: +100h. 80h central + 100h component = 180h total.",
+      "proposed": "Partner: evaluates qualitative factors (30h), management discussion (20h), aggregate evaluation (30h). Component aggregation: +100h. Central team (EP+EM+SA+AIE): ~204h + component team (CP+CS): ~156h = ~360h total.",
+      "reason": "The stated 180h total contradicts the staffing allocations which produce ~360h (1×0.75 + 1×0.5 + 2×0.5 + 3×0.25 + 6×0.2 + 1×0.3 = 4.5 FTEs × 2 weeks × 40h = 360h). Additionally, the partner task breakdown sums to 80h but EP allocation only yields 60h. For a $416B multi-component engagement, ~360h is more realistic. The description should reflect the actual staffing hours."
+    }
+  ]
+}

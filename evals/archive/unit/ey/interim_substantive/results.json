@@ -1,0 +1,28 @@
+{
+  "workflow_id": "interim_substantive",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "All six roles are valid EY CostConfig names. Headcount of 142 (1 EP + 3 SM + 10 Mgr + 20 Sr + 30 Staff + 78 GDS) is proportionate for interim substantive testing on a $416B-revenue client with revenue cutoff, receivable confirmations, inventory, and deferred revenue rollforward in scope. The heavy GDS/Staff weighting reflects the execution-intensive nature of confirmations and vouching. No EQR Partner or Specialist is expected at this stage."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Allocations follow expected patterns: EP at 0.10 (governance/review), SM at 0.40 (active supervision), Managers at 0.70 (directing fieldwork), Seniors at 0.85, Staff at 0.90, and GDS at 0.88 (all execution-heavy). Total computed hours: EP 30h, SM 360h, Mgr 2,100h, Sr 5,100h, Staff 8,100h, GDS 20,592h = ~36,282 hours. This is a plausible share of the 194,000 total engagement hours for a major interim testing phase."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2601 (Consideration of an Entity's Use of a Service Organization) is the correct PCAOB standard for SOC report reliance when Apple's contract manufacturers (Foxconn, Pegatron) hold inventory. The approach of third-party confirmations and cutoff testing rather than physical observation is appropriate given Apple's outsourced manufacturing model. Finished goods inventory of $5.7B is within a plausible range for Apple's interim balance (FY2024 total inventories were ~$7.3B; interim balances fluctuate). Revenue cutoff, receivable confirmations, and deferred revenue rollforward are all standard interim substantive procedures for Apple's business model."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "substantive_procedures correctly maps to the general interim testing work. receivables_confirmation correctly maps to the explicitly described receivable confirmation procedures. The broader inventory and revenue cutoff work falls under substantive_procedures. No additional requirement_ids from the valid registry are obviously missing for this interim-specific workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 9–16.5 (7.5 weeks) places interim testing roughly in April–May/early June, which is appropriate for Apple's late-September fiscal year-end. This provides sufficient lead time before final substantive testing (weeks 17.5–20.5). The 1-week gap between interim and final allows for results compilation. Input dependency on ScopingOutput (completed in earlier weeks) and output of InterimResults feeding into final_substantive is properly sequenced."
+    }
+  },
+  "corrections": []
+}

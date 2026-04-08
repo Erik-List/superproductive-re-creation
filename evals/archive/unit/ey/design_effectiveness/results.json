@@ -1,0 +1,28 @@
+{
+  "workflow_id": "design_effectiveness",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate for design effectiveness testing on a $416B client. 66 total headcount (1 EP, 2 SM, 8 Managers, 12 Seniors, 8 Staff, 35 GDS/Offshore) reflects the breadth of controls across Apple's global operations. Heavy GDS/Offshore contingent (35) is typical for Big 4 design testing which involves significant documentation review and template-driven assessments. All role names are valid EY roles. For Superaudit AI-first model, the human role would shift to judgment-heavy areas (novel/complex control designs, IT-dependent controls requiring configuration inspection) while AI handles standardized design assessment templates."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Allocations are plausible. EP at 0.05 (7 hours over 3.5 weeks) is appropriate for periodic sign-off on design conclusions. SM at 0.4, Manager at 0.65, Senior at 0.8 reflect a proper review pyramid. Staff at 0.6 and GDS at 0.72 are reasonable execution-level allocations — not maxed out because design testing involves more judgment and review cycles than pure execution like operating effectiveness testing. Total hours: ~6,391 (EP:7, SM:112, Mgr:728, Sr:1,344, Staff:672, GDS:3,528). For design testing across hundreds of controls at Apple, this is plausible."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2201.42-43 correctly references the PCAOB paragraphs governing design effectiveness testing. Paragraph 42 requires the auditor to evaluate whether controls, if operated as prescribed by competent persons, satisfy control objectives and can effectively prevent or detect material misstatements. Paragraph 43 addresses the procedures for evaluating design effectiveness. The Apple-specific claim that automated controls are well-designed but IT-dependent is a reasonable characterization for a technology company of Apple's scale, and the emphasis on system configuration and IPCs (information processing controls) aligns with standard Big 4 methodology for tech-sector ICFR audits."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_ids: ['design_effectiveness'] correctly maps to this workflow. The design_effectiveness requirement ID exists in the valid registry and directly corresponds to the workflow's purpose. No additional requirement IDs are needed — related requirements like control_identification_and_testing and walkthrough_per_process are appropriately covered by their own dedicated sibling workflows (key_control_finalization and walkthroughs respectively)."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Duration of 3.5 weeks (weeks 9.5-13) is realistic for design effectiveness testing on Apple's control population. For a September 27 FY-end with engagement kickoff around early April, weeks 9.5-13 place this work in the June-July interim testing window, which is standard timing. There is a sequencing overlap: ControlList input comes from key_control_finalization (weeks 9.5-11) yet design_effectiveness also starts at week 9.5. However, this is standard audit practice — controls are finalized on a rolling/phased basis, allowing design testing to begin on early-finalized controls while remaining controls are still being finalized. WalkthroughResult from walkthroughs (weeks 7-10) is substantially complete by week 9.5, supporting the start of design testing."
+    }
+  },
+  "corrections": []
+}

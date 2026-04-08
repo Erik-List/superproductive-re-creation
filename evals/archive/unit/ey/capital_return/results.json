@@ -1,0 +1,55 @@
+{
+  "workflow_id": "capital_return",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team of 15 (1 EP, 1 SM, 2 Managers, 3 Seniors, 3 Staff, 5 GDS) is appropriate for a specialized capital return testing workflow on the largest buyback program in corporate history. The mix of execution (Staff/GDS) and review (Manager/SM) roles reflects the combination of high-volume transaction testing and complex ASR derivative assessment. No missing roles."
+    },
+    "allocation": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "EP allocation of 0.03 is below the stated typical governance range of 0.05-0.25. For a $90B+ annual program involving complex ASR derivatives and the largest buyback in corporate history, partner oversight should meet the minimum threshold. Total workflow hours (~1,191) are reasonable for scope. Other allocations are plausible given team members work across multiple workflows concurrently."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The cumulative buyback figure '$650B+ cumulative since 2012' is stale. By FY25 (ending September 2025), Apple's cumulative repurchases are approximately $700B+, confirmed by Yahoo Finance and derived from annual spending of ~$89-95B in FY2024-2025 on top of previously reported $600B+ totals. The '$90B+ annual' characterization is marginally high (FY25 actual ~$89.3B) but defensible given FY2024 was ~$95B. 'Largest in corporate history' is confirmed accurate. ASR and 10b5-1 usage confirmed in SEC filings. No PCAOB AS paragraph numbers are cited, so none to verify."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Currently mapped only to substantive_procedures, which is correct but incomplete. The description explicitly calls out 'ASR derivative/forward contract fair value assessment' — ASRs are accounted for as forward contracts under ASC 505-30, and their fair value measurement routinely triggers PCAOB AS 1210 specialist engagement at Big 4 firms. specialist_evaluation should be added."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 14-20.5 (6.5 weeks) spans interim through final testing, aligning well with Apple's September 27 FY-end. Capital return testing logically begins during interim (overlapping interim_substantive weeks 9-16.5) and continues through final (overlapping final_substantive weeks 17.5-20.5). Duration is adequate for the scope described. Input from ScopingOutput is available well before week 14."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team.Engagement Partner.allocation",
+      "current": 0.03,
+      "proposed": 0.05,
+      "reason": "EP allocation of 0.03 is below the typical partner governance range of 0.05-0.25. For the largest corporate buyback program in history involving complex ASR derivatives, minimum partner oversight of 0.05 is warranted. This yields ~13 hours over 6.5 weeks — still lean but meets the floor."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "$650B+ cumulative since 2012",
+      "proposed": "$700B+ cumulative since 2012",
+      "reason": "By FY25, Apple's cumulative buybacks have reached approximately $700B+, per Yahoo Finance reporting and derivable from annual spending of ~$89-95B in FY2024-2025 added to previously reported totals. The $650B figure was accurate circa 2023 but is now stale by roughly one full year of spending."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "substantive_procedures"
+      ],
+      "proposed": [
+        "substantive_procedures",
+        "specialist_evaluation"
+      ],
+      "reason": "The workflow description explicitly includes 'ASR derivative/forward contract fair value assessment.' ASRs are accounted for as equity-linked forward contracts under ASC 505-30, and their fair value measurement triggers PCAOB AS 1210 specialist requirements. Big 4 firms routinely engage valuation specialists for ASR derivative components, especially at Apple's scale with potential collar structures and VWAP-based settlement."
+    }
+  ]
+}

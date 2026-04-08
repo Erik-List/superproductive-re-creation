@@ -1,0 +1,28 @@
+{
+  "workflow_id": "preliminary_control_id",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "35-person team (2 SM, 5 Mgr, 6 Sr, 4 Staff, 18 GDS) is appropriate for building a draft control matrix across ~6-7 process areas on a $416B client. No Partner involvement is correct—partners engage at walkthroughs and later stages. GDS-heavy composition (51% of headcount) aligns with the document-intensive nature of mapping process documentation to controls. Total ~2,718 hours over 3 weeks is reasonable for Apple's scope."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "All allocations are within plausible ranges. Senior Managers at 0.6 reflect active leadership of the control identification effort. Managers at 0.65 and Seniors at 0.6 reflect hands-on mapping work balanced with other engagement responsibilities. Staff at 0.5 is appropriate as they likely split time with other onboarding tasks in weeks 5-7. GDS at 0.7 reflects heavy documentation review and control matrix drafting. No implausible hour totals: 2 SM × 0.6 × 120 = 144 hrs; 18 GDS × 0.7 × 120 = 1,512 hrs—all reasonable."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "All Apple-specific claims are accurate. 'No manufacturing, no inventory production' is correct—Apple outsources manufacturing to Foxconn, Pegatron, and others. Revenue cycle areas (retail POS, online, App Store, services) correctly capture Apple's revenue streams. Process areas listed (procurement, treasury, financial close, IT operations, retail store operations) are comprehensive and appropriate. The note about fewer process areas than industrial mega-caps is a valid observation given Apple's outsourced manufacturing model."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "Both requirement_ids are correct. 'control_identification_and_testing' (AS 2201.39-.41) directly maps to the purpose of this workflow—identifying controls to test via a top-down approach. 'entity_level_controls' (AS 2201.22-.27) is appropriate because entity-level controls are first catalogued during preliminary control identification. No obvious missing requirements—risk_assessment_procedures is satisfied by upstream scoping workflows, and walkthrough_per_process correctly belongs to the subsequent walkthroughs workflow."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "3 weeks (weeks 5-7) is realistic for preliminary control identification on a client of Apple's complexity. With Apple's September 27 FY-end, week 5 falls in the interim period (~late July/early August), which is the standard timing for control identification in a large integrated audit. The sequencing is sound: ScopingOutput feeds in from upstream, and PreliminaryControlList outputs feed the walkthroughs workflow starting week 7, allowing a smooth handoff with slight overlap."
+    }
+  },
+  "corrections": []
+}

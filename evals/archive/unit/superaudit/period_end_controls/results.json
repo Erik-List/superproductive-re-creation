@@ -1,0 +1,36 @@
+{
+  "workflow_id": "period_end_controls",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Appropriate roles for period-end roll-forward testing. Senior Auditors (×2) handle re-testing of Q4 samples, Walkthrough Specialist handles financial close walkthrough, Component Senior covers component-level work, and Engagement Manager provides oversight. No partner is staffed here, but Engagement Partner is allocated to the overlapping deficiency_evaluation workflow (weeks 16-18) which is the appropriate escalation point. Roles are sensible for an AI-first model where software re-runs full-population tests and humans focus on judgment-intensive walkthrough and sampling work."
+    },
+    "allocation": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Allocation math produces 212.5h total (Senior Auditor: 2×0.35×5×40=140h, Walkthrough Specialist: 1×0.2×5×40=40h, Component Senior: 1×0.1×5×40=20h, Engagement Manager: 1×0.0625×5×40=12.5h), but the description claims '120h central + 50h component = 170h total'. Central roles actually sum to 192.5h and component to 20h. The description's stated hours are inconsistent with the staffing allocations. The allocations themselves are plausible for the work — 212.5h for period-end roll-forward on a $416B client is reasonable."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Apple FY25 year-end of September 27 is correct. The roll-forward concept, re-running full-population tests for Q4, re-testing samples, and financial close walkthrough are all accurately described for period-end control testing under AS 2201. No incorrect PCAOB paragraph numbers are cited. However, the stated hours (120h central + 50h component = 170h) do not match the hours derived from the staffing allocations (192.5h central + 20h component = 212.5h)."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_ids: ['period_end_controls'] correctly maps to the valid registry ID 'period_end_controls'. This workflow is specifically about extending control testing through year-end. Operating effectiveness is covered by its own upstream workflow. No missing requirements — the period-end controls requirement appropriately captures the roll-forward scope."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 14-18 (5 weeks) is realistic for period-end roll-forward on this engagement. The overlap with operating_effectiveness_testing (ends week 15) is appropriate — period-end work can begin with early OE results while final OE testing completes. Output PeriodEndResults feeds into deficiency_evaluation (weeks 16-18), and the 2-week overlap allows findings to flow through. Timing aligns well with Apple's September 27 FY-end: weeks 14-18 correspond to the post-year-end fieldwork window when close processes can be traced and Q4 activity fully tested."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "120h central + 50h component = 170h total",
+      "proposed": "192.5h central + 20h component = 212.5h total",
+      "reason": "Hours stated in the description do not match the staffing allocations. Central roles (Senior Auditor 2×0.35 = 140h, Walkthrough Specialist 1×0.2 = 40h, Engagement Manager 1×0.0625 = 12.5h) total 192.5h. Component (Component Senior 1×0.1 = 20h) totals 20h. Grand total is 212.5h, not 170h."
+    }
+  ]
+}

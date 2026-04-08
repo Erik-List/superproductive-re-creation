@@ -1,0 +1,43 @@
+{
+  "workflow_id": "interim_substantive",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate for interim substantive testing in an AI-first model. Senior Auditors review AI-flagged exceptions, Component Seniors handle component-level interim testing across Apple's global entities, Engagement Manager provides oversight, Walkthrough Specialist covers retail store observation (20h described), and Component Partners provide governance. No Engagement Partner is listed, but this is interim work — EP involvement ramps up in final_substantive and fraud_procedures. For a traditional Big 4 engagement on a $416B client, interim substantive would typically staff 15-25+ people with higher allocations, but the AI-first model legitimately shifts execution burden to AI (journal entry scanning, confirmation generation, analytics)."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Individual allocation values are plausible for an AI-first model. However, the computed total hours (552h) significantly exceed the description's stated total (460h = 160h central + 300h component). From allocations: central roles (Senior Auditor 192h + Engagement Manager 48h + Walkthrough Specialist 36h) = 276h vs. described 160h central; component roles (Component Senior 240h + Component Partner 36h) = 276h vs. described 300h component. The central hours are especially divergent (276h computed vs. 160h stated). Either the allocations are too high or the description understates hours."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2310 for receivable confirmations is correct. However, AS 2401.61-.67 is an inaccurate citation for journal entry testing. Paragraphs .58-.60 contain the foundational requirements for journal entry examination (understanding the financial reporting process and controls over journal entries), while .61-.62 cover selection and timing of testing. The range .63-.67 covers accounting estimates and significant unusual transactions — related management override procedures but not journal entry testing per se. The correct citation for journal entry testing specifically is AS 2401.58-.62, or AS 2401.58-.67 for all management override procedures (which better matches the workflow's broad fraud indicator screening). Apple-specific facts are all verified accurate: $416B revenue, 535 retail stores, ~166,000 employees, September 27 FY-end."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "substantive_procedures covers interim analytics and general substantive work. receivables_confirmation covers the AS 2310 confirmation procedures. journal_entry_fraud_testing covers the journal entry fraud screening. These three requirements correctly map to the workflow's three main activities. management_override_evaluation is not needed here because it is broader than journal entry testing and is more appropriately mapped to the fraud_procedures workflow (weeks 16-18)."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 8-13 (6 weeks) is appropriate for interim substantive testing. On Apple's September 27 FY-end calendar with a 23-week engagement starting ~late June, weeks 8-13 fall in approximately mid-August to late September — the correct window for interim testing (before year-end close). Six weeks provides adequate time for journal entry testing across all entities, receivable confirmations (which need response time), and interim analytics. Inputs (ReviewedScopingOutput, FinancialData, TestingPlan) from planning-phase workflows should be available by week 8. The output (InterimSubstantiveResults) feeds into final_substantive starting week 14, which sequences correctly."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Journal entry testing (AS 2401.61-.67): analyzes 100% of journal entries across all entities — flags entries with fraud indicators (round amounts, post-close entries, unusual accounts, entries by senior management, entries without descriptions).",
+      "proposed": "Journal entry testing (AS 2401.58-.67): analyzes 100% of journal entries across all entities — flags entries with fraud indicators (round amounts, post-close entries, unusual accounts, entries by senior management, entries without descriptions).",
+      "reason": "AS 2401.58-.60 contain the foundational requirements for journal entry fraud testing — .58 establishes the requirement to examine journal entries for fraud evidence, .59-.60 require understanding the financial reporting process and controls. The current citation starting at .61 omits these foundational paragraphs. The range .58-.67 covers all management override procedures (journal entries .58-.62, accounting estimates .63-.65, unusual transactions .66-.67), which matches this workflow's broad fraud indicator screening scope."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "160h central + 300h component = 460h total.",
+      "proposed": "276h central + 276h component = 552h total.",
+      "reason": "The stated hours (460h) do not match the computed hours from team allocations. Central: Senior Auditor 2×0.4×6×40=192h + Engagement Manager 1×0.2×6×40=48h + Walkthrough Specialist 1×0.15×6×40=36h = 276h. Component: Component Senior 5×0.2×6×40=240h + Component Partner 2×0.075×6×40=36h = 276h. Total = 552h. If the 460h figure is intentional, then the allocations should be adjusted downward instead, but the allocations appear individually reasonable so the description totals are more likely in error."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "workflow_id": "year_end_close",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "No Engagement Partner is assigned. While AS 2201 does not mandate partner-level involvement specifically for roll-forward procedures, AS 1201 requires the engagement partner to supervise the engagement. For a $416B client, year-end close is a critical phase where the partner should have at least light oversight. Sibling workflows operating_effectiveness and deficiency_evaluation both include EP involvement. Remaining staffing (139 people for 1.5 weeks, heavily weighted to Staff/GDS execution) is appropriate for the scale of rolling forward controls across Apple's global operations."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Allocations are consistent with execution-heavy roll-forward work. Total hours: SM 72 + Manager 312 + Senior 918 + Staff 1,350 + GDS 4,488 = ~7,140 hours (3.7% of 194,000 total engagement hours). Staff at 0.9 and GDS at 0.88 reflect intensive execution. Senior Manager at 0.4 reflects review/supervision. All values within plausible ranges."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Description is accurate. Apple FY25 ended September 27, 2025 (confirmed via SEC filing). Year-end close procedures running October-November correctly reflects the timing for a late-September fiscal year-end. The roll-forward from interim testing to year-end is properly characterized. No PCAOB standard references are cited, so none to verify."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "period_end_controls is correct per AS 2201.26 (period-end financial reporting controls tested at/after year-end). However, the workflow explicitly performs roll-forward of interim operating effectiveness results per AS 2201.55-.56, which is a core procedure for satisfying the operating_effectiveness requirement. The roll-forward and the direct period-end control testing are two parallel workstreams in year-end close, and both applicable requirements should be mapped."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 17-18.5 (1.5 weeks) places this in early-mid October, consistent with the described October-November timing for a September 27 FY-end. Input dependency on OperatingEffectivenessResults (weeks 10.5-16.5) is satisfied with a 0.5-week gap allowing for results compilation. Overlap with deficiency_evaluation (starting week 17.5) is logical as findings from roll-forward feed into deficiency assessment. Duration is tight but feasible given heavy staffing of 139 people."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team.Engagement Partner",
+      "current": null,
+      "proposed": {
+        "count": 1,
+        "allocation": 0.1
+      },
+      "reason": "Year-end close is a critical engagement phase requiring partner oversight under AS 1201 supervision requirements. Both the preceding operating_effectiveness workflow (EP 2×0.1) and subsequent deficiency_evaluation workflow (EP 2×0.2) include partner involvement. A minimum allocation of 1×0.1 provides necessary sign-off on roll-forward conclusions for a $416B revenue client."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "period_end_controls"
+      ],
+      "proposed": [
+        "period_end_controls",
+        "operating_effectiveness"
+      ],
+      "reason": "The workflow explicitly performs roll-forward of interim operating effectiveness testing to year-end per AS 2201.55-.56. This roll-forward is necessary to satisfy the operating_effectiveness requirement — the auditor cannot conclude on operating effectiveness without extending interim evidence to the as-of date. Both period_end_controls (direct testing of close-specific controls) and operating_effectiveness (roll-forward of interim results) are addressed by this workflow."
+    }
+  ]
+}

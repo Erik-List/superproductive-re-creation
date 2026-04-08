@@ -1,0 +1,28 @@
+{
+  "workflow_id": "valuation_specialist",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Team composition is appropriate for specialist-driven valuation work. 10 specialists at 0.55 allocation (effectively ~5.5 FTEs) is reasonable for Apple's investment portfolio fair value work and limited goodwill impairment testing. The audit team (Senior Manager, Manager, Senior, Staff) serves a coordination/review role alongside the specialists, justifying their lower headcounts. GDS/Offshore at 6 supports data gathering and documentation. Total ~4,580 hours is proportionate for a client where the description correctly notes a simpler balance sheet relative to other mega-caps."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Specialist allocation at 0.55 reflects that valuation specialists typically split time across multiple engagements — plausible for Big 4. Senior Manager at 0.2 is appropriate for oversight. Manager at 0.35 and Senior at 0.4 reflect supporting/liaison roles rather than primary execution, which is reasonable since specialists are the primary executors. Staff at 0.3 and GDS at 0.3 are below the typical 0.8-1.0 execution benchmark, but this is justified because in a specialist workflow the specialists themselves are the execution layer; staff and GDS perform supporting tasks (scheduling, documentation assembly, data requests). Total hours: SM 80 + Mgr 420 + Sr 800 + Staff 360 + Specialist 2,200 + GDS 720 = 4,580 hours over 10 weeks — reasonable for scope."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "All Apple-specific claims are accurate. Apple carries approximately $15B in goodwill versus $416B revenue, so 'minimal goodwill relative to revenue' is correct. Apple maintains a large marketable securities and investment portfolio requiring fair value measurement. Apple's acquisition activity is modest compared to peers like Microsoft or Alphabet, making the 'simpler than most mega-caps' characterization accurate. No PCAOB AS paragraph numbers are cited, so none to verify. The description correctly captures the three main valuation workstreams: goodwill impairment, investment fair value, and acquisition PPA."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "specialist_evaluation (mapping to AS 1210, Using the Work of an Auditor-Engaged Specialist) is the correct and sufficient requirement for this workflow. The valuation conclusions produced here feed into substantive testing workflows that carry the substantive_procedures requirement, so there is no gap. No additional requirement_ids are needed."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 10-19 (10-week duration) aligns well with Apple's September 27 fiscal year-end. Valuation work requires year-end balances for fair value measurements, so starting at week 10 (approximately late September/early October) and completing by week 19 (approximately early December) allows specialists to work with final period-end data and complete before the 10-K filing deadline. Input dependency on ScopingOutput (completed in earlier weeks) is satisfied. Timing is consistent with sibling specialist workflows: tax_specialist (weeks 10-20) and actuarial_specialist (weeks 12-19)."
+    }
+  },
+  "corrections": []
+}

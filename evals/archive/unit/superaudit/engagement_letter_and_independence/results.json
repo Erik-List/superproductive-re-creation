@@ -1,0 +1,39 @@
+{
+  "workflow_id": "engagement_letter_and_independence",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Engagement letters require partner sign-off. The Engagement Partner appears in sibling workflow predecessor_communication during the same weeks 0-1 but has zero allocation here. For a $416B multinational client, the partner must review and sign the group engagement letter and approve independence conclusions. Big 4 would staff this with a partner (light allocation for sign-off), a dedicated independence/risk management manager, and 1-2 seniors to process ~75 confirmations. The Superaudit model reasonably leans on AI for tracking but still needs explicit partner allocation for the engagement letter signature and independence sign-off."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Engagement Manager at 0.3 = 12 hours and Senior Auditor at 0.3 = 12 hours, totaling 24 hours over 1 week. In an AI-first model where AI handles confirmation tracking, template generation for group and local engagement letters, SOX 202 inventory compilation, and PCAOB registration lookups, 24 human hours for review and judgment calls is plausible. This would be insufficient in a traditional model (Big 4 would spend 150-250+ hours) but aligns with Superaudit's AI-augmented approach."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Claims are reasonable. ~75 people needing independence confirmation is plausible for a ~44 person engagement team plus broader firm personnel with potential Apple conflicts. 8+ entities aligns with Apple's multinational subsidiary structure. SOX Section 202 pre-approval reference is correct. PCAOB registration verification for all jurisdictions is appropriate for a multi-country audit. No specific PCAOB AS paragraph numbers are cited, so no citation errors to flag."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "non_audit_service_preapproval is the correct and most relevant requirement for this workflow's independence and SOX 202 scope. No other valid requirement_ids from the registry directly map to engagement letter or independence confirmation procedures. eqr_independence relates specifically to EQR partner independence and is appropriately handled in EQR-specific workflows. audit_committee_communication relates to required communications but is a reporting requirement typically mapped to later-stage workflows."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 0-1 is correct positioning — engagement letters and independence must be established before substantive audit work begins. For Apple's September 27 FY-end, this maps to the earliest phase of engagement setup. The 1-week duration is aggressive for collecting 75 independence confirmations, but in an AI-first model the workflow likely covers initiation and AI-driven tracking rather than waiting for all responses. No sequencing conflicts with sibling workflows; outputs (EngagementLetter, IndependenceConfirmation) feed downstream work appropriately."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team.Engagement Partner",
+      "current": null,
+      "proposed": {
+        "count": 1,
+        "allocation": 0.1
+      },
+      "reason": "Engagement letters require partner signature per PCAOB standards and firm policies. The partner must also approve independence conclusions for a $416B public company audit. A 0.1 allocation (4 hours over 1 week) covers review of the group engagement letter, approval of local engagement letter terms, and sign-off on independence conclusions. The Engagement Partner is already allocated to predecessor_communication in weeks 0-1 at 0.2, so 0.1 here reflects focused review rather than drafting."
+    }
+  ]
+}

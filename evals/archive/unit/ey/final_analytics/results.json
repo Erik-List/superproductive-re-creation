@@ -1,0 +1,36 @@
+{
+  "workflow_id": "final_analytics",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Composition is appropriate for final analytical procedures on a $416B multi-segment client. 1 Engagement Partner for oversight, 3 Senior Managers to lead segment-level analytics, 4 Managers and 5 Seniors for execution, 3 Staff for support, and 10 GDS/Offshore for data compilation across 26 countries and multiple geographic segments. Total headcount of 26 is justified by the component-level scope. For Superaudit AI-first: AI could handle data compilation and variance calculations, with humans focusing on judgment over unusual fluctuations and the overall reasonableness assessment."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner at 0.15 is appropriate governance-level involvement for a 1.5-week workflow (9 hours). Senior Managers at 0.65 (117 hours total) reflects their lead role in driving segment analytics. Managers at 0.6 and Seniors at 0.55 are reasonable for analytical execution requiring professional judgment. Staff at 0.4 (72 hours) and GDS at 0.5 (300 hours) are below the typical 0.8-1.0 execution benchmark, but final analytical procedures involve more judgment-intensive review than pure execution work, so moderate allocations for supporting roles are defensible. Total ~807 hours across 1.5 weeks is plausible for a global final analytics review."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The PCAOB standard reference is incorrect. AS 2810.04 addresses accumulation of misstatements identified during the audit, not final analytical procedures. The requirement for final overall analytical review is found at AS 2810.30, which states the auditor should perform analytical procedures relating to revenue and income near the end of the audit to assist in forming an overall conclusion about the financial statements. Apple-specific claims (consolidated balances, geographic segments, component-level analytics) are factually consistent with Apple's global operations."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "requirement_id 'final_analytical_review' correctly maps to this workflow. The workflow's scope of consolidated and component-level final analytics is well captured by this single requirement. While the description mentions component-level analytics, this is a sub-activity within the final analytical review rather than a separate component_findings_evaluation requirement, which addresses evaluation of component auditor findings more broadly."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 20.5-22 (1.5 weeks) is realistic for final analytical procedures. Assuming the engagement starts around late May/early June for Apple's September 27 FY-end, week 20.5 falls in mid-to-late October — approximately 3-4 weeks after FY-end, allowing time for adjustments to be finalized. The sequencing is correct: final_analytics (20.5-22) feeds into EQR (21.5-23.5) with appropriate overlap, then audit_committee (22.5-24), then opinion (23.5-24.5). The input dependency on AdjustmentsSummary is logical, as accumulated misstatements and adjustments must be complete before the final analytical review. Duration of 1.5 weeks is tight but achievable with 26 team members working in parallel across segments."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Final overall analytical review of Apple's audited financial statements (AS 2810.04). Must cover consolidated balances and component-level analytics across all geographic segments.",
+      "proposed": "Final overall analytical review of Apple's audited financial statements (AS 2810.30). Must cover consolidated balances and component-level analytics across all geographic segments.",
+      "reason": "AS 2810.04 addresses accumulation of misstatements, not final analytical procedures. AS 2810.30 is the correct paragraph requiring the auditor to perform analytical procedures near the end of the audit to form an overall conclusion about the financial statements."
+    }
+  ]
+}

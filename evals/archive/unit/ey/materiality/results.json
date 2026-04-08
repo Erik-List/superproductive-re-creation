@@ -1,0 +1,29 @@
+{
+  "workflow_id": "materiality",
+  "engagement": "ey",
+  "type": "unit",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Four-person team of EP, SM, Manager, and Senior is appropriate for materiality determination. This is a judgment-intensive analytical task that does not require Staff or GDS support. The Senior handles data gathering and preliminary calculations, the Manager and SM perform benchmarking analysis and documentation, and the EP provides final sign-off. No headcount concerns at Apple's scale—materiality is a focused exercise regardless of entity size."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "EP at 0.10 is within the 0.05-0.25 range and reflects the review/approval nature of partner involvement in materiality. SM at 0.35 and Manager at 0.30 appropriately reflect the analytical workload of benchmark selection, computation, and documentation. Senior at 0.20 covers data extraction and preliminary calculations. Total effort ~2.4 person-weeks (~95 hours) over 2.5 weeks is proportionate for a focused analytical task on a 194,000-hour engagement."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2105 (Consideration of Materiality in Planning and Performing an Audit) is the correct PCAOB standard. Revenue of $416B is consistent with the engagement context. Pre-tax income ~$133B is plausible given FY2024 pre-tax income of ~$130.5B with modest growth. Benchmark math is correct: 0.5-1% of $416B = $2.08-4.16B (rounded to $2-4B), and 5% of $133B = $6.65B (~$6.6B). Tolerable misstatement at 50-75% of overall materiality is consistent with common firm methodology and AS 2105 guidance."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "materiality_establishment is the correct and sole applicable requirement ID. This workflow is specifically about establishing materiality and tolerable misstatement levels. Adjacent requirements like significant_account_identification and misstatement_accumulation correctly belong to downstream workflows (account_scoping and completion, respectively)."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 2-4.5 (2.5-week duration) is well-sequenced. Start at week 2 allows initial risk assessment understanding (risk_assessment runs weeks 0-3) to inform benchmark selection. Overlap with risk_assessment during weeks 2-3 reflects the iterative relationship between risk understanding and materiality. Completion at week 4.5 feeds materiality into account_scoping (starts 3.5) and component_scoping (starts 4), both of which depend on established materiality thresholds. Duration is appropriate for a focused analytical task."
+    }
+  },
+  "corrections": []
+}

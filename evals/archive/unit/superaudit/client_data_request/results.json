@@ -1,0 +1,46 @@
+{
+  "workflow_id": "client_data_request",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Description explicitly states 'partner approves (2h)' but no Engagement Partner is included in the team composition. PBC request approval on a $416B engagement would indeed require partner sign-off. The Engagement Manager role is appropriate for review. For Superaudit AI-first model, having AI draft the PBC list with human review/approval is sensible."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Manager at 0.1 × 1 week × 40h = 4 hours, but description states 'Manager reviews (2h)'. The 4-hour allocation is arguably more realistic for a comprehensive PBC list covering 535 stores, 40+ jurisdictions, and services revenue breakdowns on a $416B client, so the description understates the time. If an Engagement Partner is added at 0.05, that yields 2 hours for approval, which aligns with the description's '2h' partner figure."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "All Apple-specific claims verified: 535 retail stores across ~26 countries (confirmed), Foxconn contract manufacturing (confirmed as primary CM), 40+ jurisdictions (Apple has ~821 subsidiaries across ~42 countries), SAP as ERP (confirmed, including S/4HANA), $416B revenue (actual FY2025 reported figure: $416.16B). EDGAR/XBRL tooling for parsing 10-K is technically sound. Phase 1/Phase 2 PBC structure is standard practice. No PCAOB standard references to verify."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "No requirement_ids are present in the workflow JSON. A client data request is an administrative/planning workflow that facilitates audit execution but does not directly satisfy specific PCAOB assertion-level requirements. It indirectly supports audit_strategy and risk_assessment_procedures, but mapping those here would be a stretch since the PBC list is a delivery mechanism, not a procedure itself."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 0-1 (1 week) is appropriate for generating a PBC request list at engagement kickoff. This is a planning-phase activity that should occur early. Apple's FY ends September 27, 2025, so week 0 would be well in advance. The workflow correctly takes PublicFilings as input (10-K/XBRL data available immediately) and produces ClientDataRequest as output, which downstream workflows like opening_balance_procedures (weeks 2-4) depend on. Sequencing is sound."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team.Engagement Partner",
+      "current": null,
+      "proposed": {
+        "count": 1,
+        "allocation": 0.05
+      },
+      "reason": "Description states 'partner approves (2h)' but no Engagement Partner is in the team. Adding partner at 0.05 allocation × 1 week × 40h = 2h, matching the described approval time. Partner sign-off on PBC requests is standard for major engagements."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "description",
+      "current": "Manager reviews (2h), partner approves (2h)",
+      "proposed": "Manager reviews (4h), partner approves (2h)",
+      "reason": "Engagement Manager allocation of 0.1 × 1 week × 40h computes to 4 hours, not the 2 hours stated in the description. 4 hours is more realistic for reviewing a comprehensive PBC list spanning 535 stores, 40+ jurisdictions, and complex services revenue on a $416B client."
+    }
+  ]
+}

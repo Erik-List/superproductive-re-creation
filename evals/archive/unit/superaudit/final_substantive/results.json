@@ -1,0 +1,36 @@
+{
+  "workflow_id": "final_substantive",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "Roles are generally appropriate. Senior Auditors (3) and Component Seniors (6) handle execution; Partner/Manager roles provide governance. AI Engineer fits the AI-first model. However, 2 Walkthrough Specialists at 0.2 allocation during final substantive testing is unusual — walkthroughs are primarily an interim/controls-phase activity (AS 2201.34-35). In an AI-first model these may serve as AI output validators or roll-forward verification, but the role name is misleading for this workflow phase. For a traditional Big 4 engagement on a $416B client, final substantive would typically require 15-25 staff/seniors, 3-5 managers, and 2-3 partners. The Superaudit AI-first reduced headcount (16 people partial-time) is plausible only if AI handles the bulk of transaction-level testing."
+    },
+    "allocation": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Individual allocation values are reasonable: Partners at 0.1-0.2 (governance), Engagement Manager at 0.3 (moderate oversight), Senior Auditors at 0.4 (split execution/review), Component Seniors at 0.2 (component-level execution with AI assist), AI Engineer at 0.1875. However, computed total hours (737.5h) do not match the description's stated 590h. Breakdown: Senior Auditor 3×0.4×5×40=240h, Component Senior 6×0.2×5×40=240h, Engagement Manager 1×0.3×5×40=60h, Engagement Partner 1×0.2×5×40=40h, Component Partner 2×0.1×5×40=40h, Walkthrough Specialist 2×0.2×5×40=80h, AI Engineer 1×0.1875×5×40=37.5h. Total=737.5h, not 590h."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "PCAOB and accounting references are correct: AS 2801 is confirmed as the Subsequent Events standard (verified via pcaobus.org). ASC 606 is the correct standard for revenue recognition bundle allocation. Apple-specific claims verified: FY end September 27, 2025 confirmed; 535 retail stores confirmed; $416B revenue confirmed ($416.16B per Apple's FY25 press release); Epic v. Apple (contempt finding April 2025, Ninth Circuit ruling December 2025), EU DMA (EUR 500M fine April 2025), and DOJ antitrust (motion to dismiss denied June 2025) are all confirmed active. The $22B UTP reserve is plausible given Apple's historical UTB trajectory ($20.8B in FY2023) but could not be independently verified to the exact amount. The sole factual error is the stated hour totals: 240h central + 350h component = 590h does not match the staffing configuration which yields 737.5h."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "substantive_procedures correctly maps to the core testing work (revenue, legal contingencies, income taxes, PP&E). subsequent_events correctly maps to the described subsequent events review through opinion date per AS 2801. Both requirement_ids are valid and appropriate. receivables_confirmation could arguably apply given the revenue testing scope, but is likely covered in interim_substantive. No critical requirements are missing."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 14-18 (5 weeks) aligns well with Apple's September 27 FY-end. Working backward from a ~23-week engagement ending in late November (near the 60-day 10-K filing deadline for large accelerated filers), weeks 14-18 span approximately early September through early October — straddling the year-end date, appropriate for roll-forward testing and initial subsequent events work. Inputs (InterimSubstantiveResults from weeks 8-13, ControlAuditOutput, SpecialistOutput) are available by week 14. Outputs feed into misstatement_accumulation (weeks 18-19), sequencing correctly."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "240h central + 350h component = 590h total",
+      "proposed": "457.5h central + 280h component = 737.5h total",
+      "reason": "Staffing math produces 737.5h total, not 590h. Central: Senior Auditor 3×0.4×5wk×40h=240 + Engagement Manager 60 + Engagement Partner 40 + Walkthrough Specialist 80 + AI Engineer 37.5 = 457.5h. Component: Component Senior 6×0.2×5×40=240 + Component Partner 2×0.1×5×40=40 = 280h. Grand total = 737.5h."
+    }
+  ]
+}

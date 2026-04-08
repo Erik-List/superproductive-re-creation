@@ -1,0 +1,36 @@
+{
+  "workflow_id": "statutory_reporting",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "FLAG",
+      "detail": "4 Component Partners for 8 jurisdictions means each partner covers ~2 jurisdictions. In practice, statutory reports require a locally licensed partner to sign in each jurisdiction, so 8 partners would be more realistic. However, some partners may be dual-qualified (e.g., UK/Ireland), making 4 a defensible modeling simplification. 1 Component Senior at minimal allocation is light but acceptable in an AI-first model where AI drafts all reports. For Big 4, this workflow would typically involve 8 local partners plus 8-16 local staff (~200-400h total). The Superaudit model at ~80h total is aggressive but consistent with AI drafting and partner review-only."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Component Partner: 4 × 0.15 × 3 weeks × 40h = 72h. Component Senior: 1 × 0.0667 × 3 × 40 = 8h. Total = 80h, matching the description's stated '~10h avg × 8 jurisdictions = 80h'. Partner allocation of 0.15 is within the 0.05-0.25 governance range. All values are plausible."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Australia reference s.307C is incorrect — s.307C of the Corporations Act 2001 governs the auditor's independence declaration, not the auditor's report. The correct reference is s.308 (auditor's report on annual financial report). All other statutory references are verified correct: Ireland s.336, UK s.495, Germany HGB §322, Singapore s.207, Japan Art.396, India s.143. China's 'Chinese Auditing Standards' is generic but acceptable. Apple confirmed to have significant subsidiaries in all 8 jurisdictions."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "No requirement_ids are visible in the workflow JSON. Statutory reporting for foreign subsidiaries is primarily governed by local standards (ISA, local GAAS), not PCAOB. However, since this workflow consumes ComponentResults and involves Component Partners, PCAOB requirements component_auditor_supervision (AS 1206) and component_findings_evaluation are relevant linkages. fs_opinion_format may also apply to the extent these statutory reports parallel the group opinion format."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 20-23 (3 weeks) is appropriate for statutory reporting. These local filings follow their own jurisdiction-specific deadlines, typically months after year-end, so running well past the US 10-K filing deadline (60 days post-FY-end) is expected. Inputs (ControlAuditOutput, FinalSubstantiveResults, ComponentResults) should all be available by week 20 given upstream workflows complete by weeks 18-19. The overlap with opinion_and_filing (weeks 22-22.5) and documentation_archival (22.5-23) is logical — US opinion files first, then statutory reports finalize."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Australia (Corporations Act 2001 s.307C)",
+      "proposed": "Australia (Corporations Act 2001 s.308)",
+      "reason": "Section 307C of the Corporations Act 2001 governs the auditor's independence declaration, not the auditor's report on financial statements. Section 308 is the correct provision governing the auditor's report on the annual financial report."
+    }
+  ]
+}

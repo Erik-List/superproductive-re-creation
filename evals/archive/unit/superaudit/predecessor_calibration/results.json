@@ -1,0 +1,41 @@
+{
+  "workflow_id": "predecessor_calibration",
+  "engagement": "superaudit",
+  "verdict": "FLAG",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner at 1×0.05 is appropriate for a governance/review role in an AI-first model. The AI handles the heavy lifting (parsing predecessor workpapers, generating structured diffs, benchmarking against industry data), while the partner reviews the delta analysis. In a Big 4 model this would require 1-2 seniors for the manual comparison work plus manager and partner review, but the AI substitution is reasonable here. The described 4h partner review aligns with the allocation."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner: 0.05 × 1 × 2 weeks × 40h = 4 hours. The description explicitly states 'Partner reviews delta analysis (4h)', so the math is internally consistent. 4 hours is reasonable for reviewing a structured delta report with flagged divergences on a large engagement. AI cost of $40 is plausible for reasoning-tier model work involving document parsing and comparison across predecessor workpapers and Phase 2 output."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Description is functionally accurate. EY is correctly identified as Apple's predecessor/incumbent auditor. The two-path logic (predecessor workpapers received vs. not received) is appropriate and reflects real-world uncertainty around predecessor cooperation. The described activities (parsing risk assessment, materiality, significant accounts, control findings; generating diffs; flagging divergences) align with AS 2610 predecessor auditor communication requirements. No specific PCAOB AS paragraph numbers are cited in the description, so there are no incorrect standard references to flag. The output format (CalibratedScopingOutput JSON with delta annotations) is well-defined. 'Engagement proceeds regardless' correctly reflects that predecessor non-cooperation does not block the audit."
+    },
+    "requirements": {
+      "verdict": "FLAG",
+      "detail": "No requirement_ids are visible in the provided workflow JSON. This workflow should map to at minimum: predecessor_communication (AS 2610 — the core standard governing predecessor auditor review and communication), risk_assessment_procedures (the calibration directly involves comparing risk assessments), materiality_establishment (materiality comparison is explicitly described), and significant_account_identification (significant account comparison is explicitly described). If these mappings exist elsewhere in the model they are appropriate; if they are absent, they should be added."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 4-6 (2-week duration) is well-sequenced. It follows client_data_scoping (weeks 2-4) which produces the ScopingOutput input, and its CalibratedScopingOutput feeds into partner_scoping_lock (weeks 6-7) and overlaps appropriately with fraud_brainstorming (weeks 5-6). For Apple's September 27 FY-end, week 4 falls roughly in late July/early August, which is appropriate timing for predecessor calibration during the planning phase. Duration of 2 weeks is realistic — the AI processing is fast, but obtaining predecessor workpapers and allowing partner review time justifies the window."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": "(not visible in provided JSON — may be empty or defined elsewhere)",
+      "proposed": [
+        "predecessor_communication",
+        "risk_assessment_procedures",
+        "materiality_establishment",
+        "significant_account_identification"
+      ],
+      "reason": "This workflow directly addresses predecessor auditor communication (AS 2610), involves calibrating risk assessments and materiality against predecessor work, and explicitly compares significant account identification. All four requirement_ids are from the valid registry and map to activities described in the workflow."
+    }
+  ]
+}

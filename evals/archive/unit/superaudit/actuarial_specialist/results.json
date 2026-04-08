@@ -1,0 +1,36 @@
+{
+  "workflow_id": "actuarial_specialist",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "For DC-only plans in an AI-first model, no dedicated actuarial specialist human role is needed (no such role exists in the Superaudit cost config, and the scope doesn't warrant one). Senior Auditor handles central specialist review, Component Seniors and Component Partner handle multi-jurisdiction oversight. The split of 20h central + 30h component is coherent with the described scope. In a traditional Big 4 engagement for a $416B client, you would see an external actuarial firm engaged, but Apple's DC-only profile makes this minimal-scope work that an AI agent plus human reviewers can handle."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Hours compute correctly: Senior Auditor 1×0.085×6×40=20.4h (≈20h specialist review), Component Senior 2×0.05×6×40=24h, Component Partner 1×0.025×6×40=6h, component subtotal=30h, grand total≈50h. All match the description's stated 20h+30h=50h. Allocations are proportionate to review/oversight roles in an AI-first model. $40 AI cost is plausible for structured DC plan verification across jurisdictions."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The description claims 'local retirement obligations in 40+ jurisdictions' but the engagement context states Apple operates in 26 countries. Even accounting for sub-national variation, retirement obligations are governed at the country level, making 40+ overstated. Apple's DC-only characterization is factually accurate — Apple's 10-K filings confirm a 401(k) Savings Plan with employer match and no material defined benefit pension or OPEB obligations. No PCAOB AS paragraph numbers are cited in the description, so no standard references to verify."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "specialist_evaluation is the correct requirement for this workflow (maps to AS 1210 — Using the Work of an Auditor-Engaged Specialist). The component roles in the team serve to review specialist conclusions at the component level, which is part of the specialist evaluation process rather than a separate component_auditor_supervision concern. No missing critical requirements."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 10–16 (6 weeks) is appropriate. Actuarial/retirement plan work logically follows scoping (input: ReviewedScopingOutput) and runs concurrently with other specialist streams. For DC-only plans the 6-week window is sufficient. Timing aligns with a September 27 FY-end: this mid-engagement window allows actuarial conclusions to feed into downstream financial statement testing and disclosure review."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Non-US: reviews local retirement obligations in 40+ jurisdictions for proper classification (DC vs. DB) and disclosure.",
+      "proposed": "Non-US: reviews local retirement obligations in 26 country jurisdictions for proper classification (DC vs. DB) and disclosure.",
+      "reason": "The engagement context specifies Apple operates in 26 countries. Retirement obligations are governed at the country level, so '40+ jurisdictions' overstates the scope. Correcting to 26 aligns with stated engagement parameters."
+    }
+  ]
+}

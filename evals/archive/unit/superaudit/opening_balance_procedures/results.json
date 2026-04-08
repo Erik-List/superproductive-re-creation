@@ -1,0 +1,57 @@
+{
+  "workflow_id": "opening_balance_procedures",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Description states 'manager validates (4h)' but no Engagement Manager is staffed on this workflow. Either the manager role must be added or the description corrected. For a $416B initial-year engagement, manager sign-off on the opening balance plan is expected and appropriate—adding the manager is the better fix. Big 4 comparison: would typically staff 1 manager (partial), 1-2 seniors, and 2-3 staff/GDS for several weeks; the AI-first model compresses this but still needs the described manager review gate. Senior Auditor role is appropriate for review of AI output."
+    },
+    "allocation": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Senior Auditor: 1 × 0.1 × 2 weeks × 40h = 8 hours. Description claims 4h senior review + 4h manager validation = 8h total human effort. The 4h senior portion is plausible for reviewing a structured AI-generated OpeningBalancePlan. However, the 4h manager validation is unaccounted in staffing. Adding Engagement Manager at 0.05 over 2 weeks yields 4h (0.05 × 2 × 40), which exactly matches the described effort."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2510 is 'Auditing Inventories'—it has no relevance to opening balance procedures. The correct standard is AS 2610 'Initial Audits—Communications Between Predecessor and Successor Auditors' (paragraphs .12-.13 address opening balance evidence requirements for successor auditors). This is a clear digit transposition error. Additionally, description references 'manager validates (4h)' while no manager is in the team—this is internally inconsistent but resolved by the team correction above. All Apple-specific claims (deferred revenue, legal contingencies, tax UTPs as significant estimates) are reasonable for Apple's profile."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "Mapping to 'substantive_procedures' is correct—opening balance procedures are substantive in nature (comparing audited prior-year figures to GL opening balances, testing significant estimates carried forward). Predecessor communication is handled by a separate sibling workflow and correctly not duplicated here. No missing requirement IDs."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 2-4 is well-sequenced: predecessor_communication (weeks 0-1) and client_data_request (weeks 0-1) complete first, providing the PublicFilings and FinancialData inputs this workflow requires. Two-week duration is reasonable for AI-driven comparison with human review. For Apple's late-September FY-end, this early planning-phase timing is appropriate—opening balance work feeds downstream risk assessment and substantive procedure design."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Reasoning-tier model, public_data + client_data_read access via edgar_api + gl_reader + analytics_engine. Compares FY24 10-K balances against Q1 FY25 10-Q for consistency per AS 2510. Analyzes GL opening balances against prior year audited figures. Identifies accounts requiring additional first-year procedures: significant estimates (deferred revenue, legal contingencies, tax UTPs), areas with accounting policy changes, accounts where predecessor access would materially improve evidence. Designed to produce valid output WITHOUT predecessor workpapers. Outputs structured OpeningBalancePlan JSON with per-account procedure requirements. Senior auditor reviews (4h), manager validates (4h).",
+      "proposed": "Reasoning-tier model, public_data + client_data_read access via edgar_api + gl_reader + analytics_engine. Compares FY24 10-K balances against Q1 FY25 10-Q for consistency per AS 2610. Analyzes GL opening balances against prior year audited figures. Identifies accounts requiring additional first-year procedures: significant estimates (deferred revenue, legal contingencies, tax UTPs), areas with accounting policy changes, accounts where predecessor access would materially improve evidence. Designed to produce valid output WITHOUT predecessor workpapers. Outputs structured OpeningBalancePlan JSON with per-account procedure requirements. Senior auditor reviews (4h), manager validates (4h).",
+      "reason": "AS 2510 is 'Auditing Inventories' and has no relevance to opening balance procedures. AS 2610 'Initial Audits—Communications Between Predecessor and Successor Auditors' (paragraphs .12-.13) is the correct standard governing opening balance evidence requirements for successor auditors. Likely a digit transposition error (2510 vs 2610)."
+    },
+    {
+      "confidence": "HIGH",
+      "field": "agents.human.team",
+      "current": {
+        "Senior Auditor": {
+          "count": 1,
+          "allocation": 0.1
+        }
+      },
+      "proposed": {
+        "Senior Auditor": {
+          "count": 1,
+          "allocation": 0.1
+        },
+        "Engagement Manager": {
+          "count": 1,
+          "allocation": 0.05
+        }
+      },
+      "reason": "Description explicitly states 'manager validates (4h)' but no Engagement Manager is staffed. Adding Engagement Manager at 1×0.05 over the 2-week duration yields exactly 4 hours (0.05 × 2 × 40 = 4h), matching the described effort. Manager validation of the opening balance plan is appropriate for a first-year engagement on a $416B client."
+    }
+  ]
+}

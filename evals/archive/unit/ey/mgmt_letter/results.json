@@ -1,0 +1,48 @@
+{
+  "workflow_id": "mgmt_letter",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "15 personnel is appropriate for consolidating management letter findings across 535 retail stores in 26 countries and conducting exit meeting with Apple CFO/Controller. 2 Engagement Partners justified for exit meeting presentation. Senior Manager-heavy composition (3) is correct since they drive drafting and consolidation of findings from component auditors. GDS/Offshore (4) handles formatting and appendix compilation. No missing or extraneous roles."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Engagement Partner at 0.40 exceeds the typical 0.05-0.25 governance range. However, the exit meeting with CFO/Controller is one of the most partner-facing deliverables in the engagement, making elevated partner allocation defensible. Total hours: EP 2×0.4×2wk×40=64h, SM 3×0.5×2×40=120h, Mgr 2×0.35×2×40=56h, Sr 2×0.3×2×40=48h, Staff 2×0.2×2×40=32h, GDS 4×0.25×2×40=80h. Grand total ~400 hours. For a $34.3M fee engagement this is reasonable—management letter is a defined deliverable, not open-ended. All allocations produce plausible hours."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Description accurately reflects the management letter workflow: consolidating recommendations from all locations and conducting exit meeting with Apple's CFO/Controller. No PCAOB standard references cited to verify. No factual Apple claims beyond what is established in context. Description correctly matches the workflow scope as a post-opinion wrap-up activity."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "No requirement_ids are mapped to this workflow. The management letter is the primary vehicle for satisfying PCAOB AS 1305 (Communications About Control Deficiencies in an Audit of Financial Statements) which requires written communication of significant deficiencies and material weaknesses to management. The valid ID 'deficiency_written_communication' directly maps to this workflow. Additionally, 'documentation_completion' is relevant as this is one of the final workflows in the engagement and the management letter itself is a required documentation deliverable."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 24.5-26.5 (2-week duration) is realistic for management letter drafting, review, and exit meeting. Sequencing is correct: takes AuditOpinion as input and begins exactly when the opinion workflow ends (week 24.5). Runs concurrently with sec_filing (also 24.5-26.5), which is appropriate since management letter and 10-K filing are parallel post-opinion activities. Apple FY25 ends September 27, 2025; with ~26.5 week engagement, this places the management letter in late November/early December, consistent with post-filing wrap-up timing for a large accelerated filer."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": null,
+      "proposed": [
+        "deficiency_written_communication"
+      ],
+      "reason": "The management letter is the primary deliverable for communicating control deficiencies and recommendations to management per PCAOB AS 1305. deficiency_written_communication is the most directly applicable requirement for this workflow and must be mapped."
+    },
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": null,
+      "proposed": [
+        "deficiency_written_communication",
+        "documentation_completion"
+      ],
+      "reason": "In addition to deficiency_written_communication, documentation_completion (AS 1215) is relevant as the management letter is one of the final engagement deliverables and its issuance is tied to the documentation completion deadline (typically 45 days after report release for SEC issuers). If only one correction is applied, use the HIGH confidence one above; this expands the mapping."
+    }
+  ]
+}

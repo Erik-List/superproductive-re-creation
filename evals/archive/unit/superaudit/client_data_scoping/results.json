@@ -1,0 +1,47 @@
+{
+  "workflow_id": "client_data_scoping",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "No human team assigned; AI-only at $80 is appropriate for an AI-first model where this workflow is pure data processing (trial balance ingestion, materiality recalculation, entity contribution analysis, matrix building). Partner/manager review of these outputs occurs downstream in predecessor_calibration (weeks 4-6) and partner_scoping_lock (weeks 6-7), so human oversight is preserved in the overall stream."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "No human allocations to evaluate. AI cost of $80 for ~30 minutes of reasoning-tier model work processing trial balance, 100+ entity structures, board minutes, and segment data is plausible."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "Apple-specific claims are accurate: Apple uses SAP for ERP, reports Products vs. Services as operating segments, and has 5 geographic reporting segments (Americas, Europe, Greater China, Japan, Rest of Asia Pacific). 100+ entities is plausible for a company of Apple's scale. No PCAOB AS paragraph numbers are cited, so none to verify. The described scope (materiality recalculation, significant account matrix, component scoping, risk-to-assertion mapping) matches the workflow's inputs, outputs, and requirement_ids."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The four listed requirement_ids are appropriate, but audit_strategy (AS 2101) is missing. The workflow explicitly determines component scope type per entity (full/specified/analytical/none) based on contribution thresholds and produces the definitive ScopingOutput — this is core audit strategy work. risk_to_procedure_linkage is borderline since this workflow maps risks to assertions rather than to procedures, but it is a necessary precursor step and acceptable to retain."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 2-4 (2-week window) is appropriate. The ~30 min AI runtime fits easily within this window; the broader window accounts for client data availability (trial balance, entity list, board minutes). Sequencing is sound: public_data_scoping (weeks 0-0.5) completes well before, providing PreliminaryScopingOutput. ScopingOutput feeds predecessor_calibration (weeks 4-6) and partner_scoping_lock (weeks 6-7) with no gaps or overlaps. Timing aligns with early planning phase relative to Apple's late-September FY-end."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "risk_assessment_procedures",
+        "materiality_establishment",
+        "significant_account_identification",
+        "risk_to_procedure_linkage"
+      ],
+      "proposed": [
+        "risk_assessment_procedures",
+        "materiality_establishment",
+        "significant_account_identification",
+        "risk_to_procedure_linkage",
+        "audit_strategy"
+      ],
+      "reason": "The workflow determines component scope type per entity (full/specified/analytical/none) based on contribution thresholds and produces the definitive ScopingOutput replacing Phase 1 preliminary. This is core audit strategy work under AS 2101 (Audit Planning) and should be mapped accordingly."
+    }
+  ]
+}

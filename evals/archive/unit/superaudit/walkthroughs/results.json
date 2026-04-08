@@ -1,0 +1,36 @@
+{
+  "workflow_id": "walkthroughs",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Roles are appropriate. Walkthrough Specialists ×3 handle execution across 15-25 significant processes plus physical store visits. Component Seniors ×3 cover component entity walkthroughs. Senior Auditor provides oversight; Component Partner provides governance. In a Big 4 model for Apple, you'd see 8-12 staff on walkthroughs alone, but AI handles the software-dominant process tracing (App Store → revenue recognition → GL), so 3 specialists + AI is plausible for the Superaudit model."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "Allocation math produces 425h (3×0.55×5×40=330 + 3×0.1×5×40=60 + 1×0.1×5×40=20 + 1×0.075×5×40=15), but the description states 340h total (240h central + 100h component). This is an 85h / 25% discrepancy. Individual allocations are within plausible ranges: Walkthrough Specialists at 0.55 reflects split attention across processes, Component Partner at 0.075 is appropriate governance, Senior Auditor at 0.1 is light but acceptable for oversight in an AI-first model."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "AS 2201.34 is cited for the walkthrough requirement, but paragraph 34 sets out the understanding objectives. The walkthrough procedure itself is in AS 2201.37, which states walkthroughs are 'frequently the most effective way' of achieving the paragraph 34 objectives. The 'at least one walkthrough per significant process' mandatory language actually comes from the superseded AS No. 2 (paragraph 79), not AS 2201. Additionally, 'across ALL entities' is not found in the standard text. AS 1215 reference for documentation is correct. Apple-specific claims (535 retail stores, 30 US store visits sample) are reasonable."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "walkthrough_per_process and design_effectiveness are the correct requirement_ids. Walkthroughs serve to verify process understanding and assess control design effectiveness. No obvious missing requirements — control_identification_and_testing and operating_effectiveness are properly handled by sibling workflows."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 7-11 (5 weeks) is realistic. Inputs ControlMatrix and ControlDocumentation from control_identification (weeks 4-6) are available by week 7. Output WalkthroughResults feeds operating_effectiveness_testing (weeks 9-15) with appropriate overlap allowing progressive handoff. For Apple's late-September FY-end, week 7 falls around mid-November, which is appropriate timing for interim walkthrough procedures."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "AS 2201.34: at least one walkthrough per significant process across ALL entities.",
+      "proposed": "AS 2201.37: walkthroughs for each significant process across relevant entities.",
+      "reason": "Paragraph 34 of AS 2201 sets out understanding objectives; the walkthrough procedure is in paragraph 37. The 'at least one walkthrough per significant process' mandatory language originated in the superseded AS No. 2 (paragraph 79); AS 2201.37 describes walkthroughs as 'frequently the most effective way' rather than a per-process mandate. 'ALL entities' is not in the standard text and overstates the requirement."
+    }
+  ]
+}

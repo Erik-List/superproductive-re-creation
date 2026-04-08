@@ -1,0 +1,36 @@
+{
+  "workflow_id": "operating_effectiveness",
+  "engagement": "ey",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Pyramid structure is appropriate for execution-heavy operating effectiveness testing. GDS/Offshore dominance (122 at 0.92) reflects bulk sample testing work suitable for offshore execution. 2 Engagement Partners at 0.1 is appropriate for governance/sign-off. 25 Seniors and 35 Staff provide the on-site testing capacity needed across Apple's 535 retail locations and multiple process areas. Total ~42,000 hours (~22% of 194,000 engagement hours) is heavy but defensible for the largest single workflow on a $416B client."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Allocations follow expected patterns: Partners low (0.1) for oversight, Senior Managers moderate (0.3) for review, Managers mid-range (0.65) for supervision, and execution roles high (0.87-0.92). Hour calculations: EP 48h, SM 288h, Mgr 1,872h, Sr 5,220h, Staff 7,728h, GDS 26,918h = ~42,074 total. All values within plausible ranges for a 6-week intensive testing phase."
+    },
+    "description": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "Two issues: (1) Sample sizes '15-30 daily/weekly, 6-12 monthly/quarterly' conflates frequency categories with incorrect ranges. Per standard firm methodology (and the project's own workflow.ts lines 421-429): daily controls require 25-40 samples, weekly 5-15, monthly 2-4, quarterly 2, annual 1. Saying '6-12 quarterly' is impossible since the population is only 4. (2) '~600-1,200 key controls' overstates the key control population. Per PCAOB AS 2201.39, key controls are a subset selected for testing; for mega-caps, 150-300 total controls with 80-150 designated as key is more realistic. The 600-1,200 figure likely represents the total control population, not key controls."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "Mapping to 'operating_effectiveness' (AS 2201.44-.61) is the primary and correct requirement. Period-end controls testing is more appropriately mapped to the sibling 'year_end_close' workflow (weeks 17-18.5). Entity-level controls and control identification are covered by other sibling workflows in the stream. The single mapping is sufficient."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 10.5-16.5 maps to approximately early-to-mid September through late October 2025, bracketing Apple's September 27 FY-end. This aligns with AS 2201.52-.54 requiring testing near year-end. The 6-week duration is appropriate for the volume of controls. Inputs (ControlList, DesignConclusions) are available from upstream workflows completing by week 13, with overlap enabling progressive testing as design conclusions are finalized."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "description",
+      "current": "Test ~600-1,200 key controls across Apple's operations. Higher proportion of automated controls reduces sample sizes vs. industrial peers but Apple's heavy automation increases IT-dependent control population and ITGC reliance testing. Retail store controls tested at sample of locations. Sample sizes: 15-30 daily/weekly, 6-12 monthly/quarterly.",
+      "proposed": "Test operating effectiveness of ~150-300 controls (80-150 key controls) across Apple's operations. Higher proportion of automated controls reduces sample sizes vs. industrial peers but Apple's heavy automation increases IT-dependent control population and ITGC reliance testing. Retail store controls tested at sample of locations. Sample sizes per firm methodology: 25-40 daily, 5-15 weekly, 2-4 monthly, 2 quarterly, 1 annual.",
+      "reason": "Two fixes merged: (1) '600-1,200 key controls' conflates total control population with key controls selected for testing per AS 2201.39; 150-300 total with 80-150 key is realistic for a mega-cap. (2) Sample sizes '15-30 daily/weekly, 6-12 monthly/quarterly' are incorrect — daily controls need 25-40 samples (not 15), weekly need 5-15 (not 30), monthly need 2-4 (not 6-12), and quarterly controls have a population of only 4 making '6-12' impossible. Corrected to standard AICPA/firm methodology ranges consistent with the project's own workflow.ts implementation."
+    }
+  ]
+}

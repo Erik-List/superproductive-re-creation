@@ -1,0 +1,41 @@
+{
+  "workflow_id": "testing_plan_generation",
+  "engagement": "superaudit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "Engagement Partner (1×0.15) for approval and Engagement Manager (1×0.30) for review are the right roles for an AI-first model where the AI generates the testing plan and humans provide oversight. No execution staff needed since AI produces the structured outputs. Appropriate for a $416B client where partner sign-off on the testing plan is critical."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Partner: 0.15 × 1 week × 40h = 6h — matches the described '6h partner approval' and is reasonable for reviewing a testing plan on a complex engagement. Manager: 0.30 × 1 week × 40h = 12h — matches the described '12h manager review' and is reasonable for detailed review of risk-to-procedure linkage, control testing plan, substantive testing plan, and component instructions across 26 countries. Both allocations fall within expected ranges for governance roles."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2301.08 correctly references the requirement to design audit procedures responsive to assessed risks (risk-to-procedure linkage). AS 2201 correctly covers ICFR testing including sample size guidance based on control frequency. AS 1205 correctly applies to component audit work (Part of the Audit Performed by Other Independent Auditors) for materiality allocation and required procedures per component entity. Apple-specific claims are accurate: contract manufacturing eliminates inventory observation, 535 retail stores matches context, App Store full-population timing tests and transfer pricing procedures are appropriate for Apple's business model and 26-country footprint."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "risk_to_procedure_linkage is correct and is the core deliverable. However, the workflow explicitly produces ComponentAuditInstructions as a named output with materiality allocation and required procedures per AS 1205, which directly satisfies component_auditor_supervision. This requirement is missing."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 7-8 (1 week) follows partner_scoping_lock (weeks 6-7) with correct sequencing — consumes the locked ReviewedScopingOutput produced by that predecessor. One week is tight but plausible given AI generation with human review overlay. For Apple's late-September FY-end, having the testing plan finalized by ~week 8 leaves ample time for execution phases. No sequencing conflicts with sibling workflows."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "HIGH",
+      "field": "requirement_ids",
+      "current": [
+        "risk_to_procedure_linkage"
+      ],
+      "proposed": [
+        "risk_to_procedure_linkage",
+        "component_auditor_supervision"
+      ],
+      "reason": "The workflow explicitly produces ComponentAuditInstructions as a named output, including materiality allocation, required procedures, and reporting templates per AS 1205. This directly satisfies the component_auditor_supervision requirement (PCAOB AS 1205 supervision of component auditors). Omitting this requirement leaves a gap between the workflow's stated outputs and its requirement coverage."
+    }
+  ]
+}

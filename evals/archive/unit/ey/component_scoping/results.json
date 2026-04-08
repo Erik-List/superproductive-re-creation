@@ -1,0 +1,28 @@
+{
+  "workflow_id": "component_scoping",
+  "engagement": "ey",
+  "verdict": "PASS",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "34-person team is appropriate for component scoping across 40+ jurisdictions. Heavy use of Senior Managers (3) and Managers (6) reflects the judgment-intensive nature of scoping decisions and GAI drafting. 15 GDS/Offshore is justified for preparing and documenting GAIs across 40+ component teams. The 1 EP at low allocation provides governance oversight. All role names are valid EY CostConfig roles."
+    },
+    "allocation": {
+      "verdict": "PASS",
+      "detail": "Total hours: EP 16h, SM 336h, Mgr 672h, Sr 480h, Staff 320h, GDS 1,560h = ~3,384h total (~1.7% of 194,000 engagement hours). EP at 0.1 is within governance range. SM and Mgr at 0.7 are high but defensible given each SM/Mgr likely owns a regional cluster of components. Staff at 0.5 and GDS at 0.65 are below typical execution ranges (0.8-1.0), but component scoping is coordination-heavy rather than pure execution, and these resources share time with concurrent workflows (account_scoping runs weeks 3.5-6.5). Hours are plausible for the scope."
+    },
+    "description": {
+      "verdict": "FLAG",
+      "detail": "The core description is accurate: Apple's centralized operations do mean fewer full-scope components than a diversified industrial, and 40+ jurisdictions requiring component coverage is consistent with Apple's global footprint (26+ countries, subsidiaries in numerous tax jurisdictions). The reference to 'Amended AS 1201 (Dec 2024)' is substantially correct — the PCAOB adopted amendments to AS 1201 (Supervision) and new AS 1206 (replacing AS 1205) addressing component auditor oversight, SEC-approved in late 2024. The requirement for 'written instructions and affirmations for each component team' accurately describes the amended requirements. Minor flag: the description references only AS 1201 but the primary new component-auditor requirements are in AS 1206; mentioning both would be more precise. The 'Dec 2024' date likely refers to SEC approval or effective date but the exact month may be slightly imprecise."
+    },
+    "requirements": {
+      "verdict": "PASS",
+      "detail": "component_auditor_supervision is the correct primary requirement for this workflow. It covers the scoping, instruction-issuance, and supervisory framework for component auditors. component_findings_evaluation is not needed here as it pertains to evaluating completed component work, which occurs later in the engagement. No obvious missing requirements."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "Weeks 4-8 (4-week duration) is realistic for scoping 40+ jurisdictions and issuing GAIs. The workflow correctly follows risk_assessment (weeks 0-3) and materiality (weeks 2-4.5), and overlaps with account_scoping (weeks 3.5-6.5). The input dependency on SignificantAccountMatrix creates a minor sequencing consideration since account_scoping doesn't complete until week 6.5, but preliminary significant-account determinations would be available by week 4, with component scoping iterating as account scoping finalizes — this is standard audit practice. For Apple's September 27 FY-end, completing component scoping by week 8 allows sufficient time for component auditors to execute their procedures during interim and year-end phases."
+    }
+  },
+  "corrections": []
+}

@@ -1,0 +1,48 @@
+{
+  "workflow_id": "risk_assessment",
+  "engagement": "ey",
+  "type": "unit",
+  "verdict": "NEEDS_CORRECTION",
+  "criteria": {
+    "team": {
+      "verdict": "PASS",
+      "detail": "8-person team (1 EP, 2 SM, 2 Mgr, 2 Sr, 1 Staff) is appropriate for a judgment-heavy planning phase at Apple's scale. Risk assessment is senior-led work; the heavy SM/Mgr presence and light Staff presence correctly reflect this. No GDS/Offshore is appropriate since risk assessment requires deep engagement knowledge and professional judgment. No Specialist needed at this stage."
+    },
+    "allocation": {
+      "verdict": "FLAG",
+      "detail": "EP at 0.25 is at the ceiling of the plausible range but justified—risk assessment is a critical phase requiring significant partner judgment on a $416B engagement. SM at 0.7 and Mgr at 0.6 are reasonable for the heavy analytical and documentation work. Sr at 0.5 is plausible for supporting research and analysis. Staff at 0.4 is well below the general 0.8-1.0 guideline but defensible for a planning-phase workflow where Staff perform limited support tasks (gathering prior-year files, pulling public filings). No correction proposed, but the low Staff allocation is noted."
+    },
+    "description": {
+      "verdict": "PASS",
+      "detail": "AS 2110 (Identifying and Assessing Risks of Material Misstatement) is the correct PCAOB standard. All Apple-specific claims are factual: revenue recognition complexity from hardware+services bundles and App Store commissions is well-documented; Epic Games v. Apple, EU DMA enforcement, and the DOJ antitrust suit (filed March 2024) are real ongoing legal contingencies; transfer pricing is material given 26-country operations; stock-based compensation is substantial. The ~8-12 high-risk areas estimate is reasonable for Apple's complexity."
+    },
+    "requirements": {
+      "verdict": "NEEDS_CORRECTION",
+      "detail": "The four current requirement_ids (risk_assessment_procedures, fraud_risk_assessment, audit_strategy, risk_to_procedure_linkage) correctly cover the core risk assessment activities. However, revenue_recognition_fraud_presumption should be added. AS 2401.54 creates a specific, rebuttable presumption that revenue recognition involves fraud risk, and the auditor must explicitly address this presumption during risk assessment—either accepting it or documenting the basis for rebuttal. This is distinct from the general fraud_risk_assessment requirement. The description itself highlights revenue recognition as a key risk area, and Apple's complex multi-element arrangements make this presumption especially relevant. predecessor_communication is not needed as EY has been Apple's auditor since 2009."
+    },
+    "timing": {
+      "verdict": "PASS",
+      "detail": "3-week duration (weeks 0-3) is realistic for risk assessment on a complex multinational engagement. Starting at week 0 is correct—risk assessment is the gateway to all subsequent planning. The overlap with materiality (starting week 2) is sound, as preliminary risk findings inform materiality judgments. Account scoping begins at week 3.5 (after risk assessment completes), and component scoping at week 4, both correctly sequenced as downstream consumers. Total estimated hours (~510) represent ~0.26% of the 194,000-hour engagement, an appropriate proportion for a planning activity."
+    }
+  },
+  "corrections": [
+    {
+      "confidence": "MEDIUM",
+      "field": "requirement_ids",
+      "current": [
+        "risk_assessment_procedures",
+        "fraud_risk_assessment",
+        "audit_strategy",
+        "risk_to_procedure_linkage"
+      ],
+      "proposed": [
+        "risk_assessment_procedures",
+        "fraud_risk_assessment",
+        "revenue_recognition_fraud_presumption",
+        "audit_strategy",
+        "risk_to_procedure_linkage"
+      ],
+      "reason": "AS 2401.54 establishes a presumption that improper revenue recognition is a fraud risk, which must be explicitly addressed during risk assessment. This is a discrete PCAOB requirement separate from general fraud_risk_assessment. The workflow description explicitly identifies revenue recognition as a high-risk area for Apple, and Apple's complex bundled arrangements and App Store commission timing make this presumption particularly pertinent. Adding this requirement ensures the risk assessment workflow documents the team's evaluation of the revenue recognition fraud presumption."
+    }
+  ]
+}
