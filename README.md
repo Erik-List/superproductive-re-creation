@@ -95,7 +95,18 @@ A 5-phase evaluation using Claude agents that independently verify each engageme
 4. **System properties** -- allocation integrity, dependency DAG, requirement coverage, cost reasonableness
 5. **Corrections** -- agents have full authority to edit workflows, then iterate until vitest passes
 
-Run evaluations:
+#### Setup: Claude Code CLI
+
+The orchestrator spawns the `claude` CLI (Claude Code) with Opus model at max reasoning effort. Install and authenticate before running evaluations:
+
+```bash
+npm install -g @anthropic-ai/claude-code
+claude                  # first run prompts for authentication
+```
+
+You need a Claude account with API access. See the [Claude Code docs](https://docs.claude.com/en/docs/claude-code/overview) for details.
+
+#### Run evaluations
 
 ```bash
 npx tsx evals/eval-script.ts                    # both engagements
@@ -104,7 +115,7 @@ npx tsx evals/eval-script.ts --only superaudit  # just Superaudit
 npx tsx evals/eval-script.ts --retries 3        # multiple convergence attempts
 ```
 
-Results are stored in `evals/results/{ey,superaudit}/results.json` with full agent traces in `traces/`.
+Each run takes up to 30 minutes per engagement. Results are stored in `evals/results/{ey,superaudit}/results.json` with full agent traces in `traces/`.
 
 ## Deployment
 

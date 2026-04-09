@@ -365,9 +365,25 @@ async function runEngagement(eng: "ey" | "superaudit", maxAttempts: number): Pro
 // ---- Main ----
 
 async function main() {
-  const caffeinateProc = spawn("caffeinate", ["-is"], { stdio: "ignore", detached: true })
-  caffeinateProc.unref()
-  console.log(`☕ caffeinate started (pid ${caffeinateProc.pid})`)
+  // Prevent system sleep during long eval runs (platform-specific)
+  let sleepBlocker: ReturnType<typeof spawn> | null = null
+  if (process.platform === "darwin") {
+    sleepBlocker = spawn("caffeinate", ["-is"], { stdio: "ignore", detached: true })
+    sleepBlocker.unref()
+    console.log(`☕ caffeinate started (pid ${sleepBlocker.pid})`)
+  } else if (process.platform === "linux") {
+    // systemd-inhibit blocks suspend/idle until the child process exits
+    const check = spawnSync("which", ["systemd-inhibit"], { stdio: "ignore" })
+    if (check.status === 0) {
+      sleepBlocker = spawn("systemd-inhibit", ["--what=idle:sleep", "--who=eval-script", "--why=Running LLM evaluations", "sleep", "infinity"], { stdio: "ignore", detached: true })
+      sleepBlocker.unref()
+      console.log(`☕ systemd-inhibit started (pid ${sleepBlocker.pid})`)
+    } else {
+      console.log("⚠️  systemd-inhibit not found -- system may sleep during long runs")
+    }
+  } else {
+    console.log(`⚠️  sleep prevention not implemented for ${process.platform} -- disable sleep manually if needed`)
+  }
 
   mkdirSync(join(RESULTS_DIR, "ey"), { recursive: true })
   mkdirSync(join(RESULTS_DIR, "superaudit"), { recursive: true })
@@ -388,7 +404,7 @@ async function main() {
   const elapsed = ((Date.now() - startTime) / 1000 / 60).toFixed(1)
   console.log(`\n✅ Done in ${elapsed} min.`)
 
-  try { caffeinateProc.kill() } catch {}
+  try { sleepBlocker?.kill() } catch {}
 }
 
 function buildTrace(eng: string, cost: number, dur: number, verdict: string, messages: any[]): string {
